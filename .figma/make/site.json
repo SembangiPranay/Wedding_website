@@ -1,0 +1,10 @@
+{
+  "description": "Streamline wedding planning with a sophisticated organizer that offers elegant design inspiration, venue management, and seamless event coordination.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
