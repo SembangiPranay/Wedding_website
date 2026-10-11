@@ -6,13 +6,13 @@
     "index": true
   },
   "icons": {
-    "icon": "/images/Logo.jpg"
+    "icon": "/favicon.png"
   },
   "openGraph": {
-    "image": "https://tirumalabaljievents.vercel.app/images/Logo.jpg"
+    "image": "https://tirumalabaljievents.vercel.app/images/Logo.png"
   },
   "customScripts": {
-    "headEnd": "<meta property=\"og:site_name\" content=\"Tirumala Balaji Marriages & Events\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:url\" content=\"https://tirumalabaljievents.vercel.app/\" />\n    <meta name=\"theme-color\" content=\"#d97706\" />"
+    "headEnd": "<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\" />\n    <link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\" />\n    <link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\" />\n    <meta property=\"og:site_name\" content=\"Tirumala Balaji Marriages & Events\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:url\" content=\"https://tirumalabaljievents.vercel.app/\" />\n    <meta name=\"theme-color\" content=\"#d97706\" />"
   },
   "accessibility": {
     "addBypassLinks": false,
