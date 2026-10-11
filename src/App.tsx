@@ -777,7 +777,7 @@ function App() {
           <a href="#home" className="nav-item active" onClick={() => setMenuOpen(false)}>Home</a>
           <a href="#wedding-focus" className="nav-item" onClick={() => setMenuOpen(false)}>Traditions</a>
           <a href="#venue" className="nav-item" onClick={() => setMenuOpen(false)}>Function Hall</a>
-          <a href="#rituals" className="nav-item" onClick={() => setMenuOpen(false)}>Sacred Rituals</a>
+          <a href="#rituals" className="nav-item" onClick={() => setMenuOpen(false)}>Rituals</a>
           <a href="#services" className="nav-item" onClick={() => setMenuOpen(false)}>Services</a>
           <a href="#decorations" className="nav-item" onClick={() => setMenuOpen(false)}>Decorations</a>
           <a href="#scenery" className="nav-item" onClick={() => setMenuOpen(false)}>Sacred Hills</a>
