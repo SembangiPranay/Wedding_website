@@ -1,7 +1,18 @@
 {
-  "description": "Streamline wedding planning with a sophisticated organizer that offers elegant design inspiration, venue management, and seamless event coordination.",
+  "title": "Tirumala Balaji Marriages & Events | Tirumala & Tirupati Wedding Services",
+  "description": "Complete wedding and event management in Tirumala & Tirupati for every budget. Function hall booking, traditional mandapams, purohits, satvik bhojanam catering, photography & accommodation. Call: 94911 55403.",
+  "language": "en",
   "robots": {
-    "index": false
+    "index": true
+  },
+  "icons": {
+    "icon": "/images/Logo.jpg"
+  },
+  "openGraph": {
+    "image": "https://tirumalabaljievents.vercel.app/images/Logo.jpg"
+  },
+  "customScripts": {
+    "headEnd": "<meta property=\"og:site_name\" content=\"Tirumala Balaji Marriages & Events\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:url\" content=\"https://tirumalabaljievents.vercel.app/\" />\n    <meta name=\"theme-color\" content=\"#d97706\" />"
   },
   "accessibility": {
     "addBypassLinks": false,
