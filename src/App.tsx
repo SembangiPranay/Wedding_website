@@ -62,6 +62,7 @@ type IconName =
   | "camera"
   | "check"
   | "chevron"
+  | "clock"
   | "flower"
   | "guests"
   | "mail"
@@ -96,6 +97,12 @@ function Icon({ name, size = 20 }: { name: IconName; size?: number }) {
     ),
     check: <path d="m5 12 4 4L19 6" />,
     chevron: <path d="m9 18 6-6-6-6" />,
+    clock: (
+      <>
+        <circle cx="12" cy="12" r="10" />
+        <polyline points="12 6 12 12 16 14" />
+      </>
+    ),
     flower: (
       <>
         <circle cx="12" cy="12" r="2.25" />
@@ -906,9 +913,9 @@ function App() {
               </div>
             </div>
             <div className="metric-cell">
-              <Icon name="phone" size={18} />
+              <Icon name="clock" size={18} />
               <div>
-                <strong>94911 55403</strong>
+                <strong>24/7 Support</strong>
                 <span>Direct Coordinator</span>
               </div>
             </div>
