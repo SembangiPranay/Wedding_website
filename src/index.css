@@ -4275,12 +4275,11 @@ h4 em,
 
 
 /* ==========================================================================
-   TIRUMALA BANGARU VAKILI (THE SACRED GOLDEN ENTRANCE)
-   Museum-Grade 3D Perspective Inward-Swinging Sanctum Doors
-   60fps GPU Hardware-Accelerated Responsive Masterpiece
+   KEKA-STYLE 3D CINEMATIC BANGARU VAKILI (THREE.JS WEBGL GATEWAY)
+   Museum-Grade 3D WebGL Realtime Lighting & Camera Fly-Through
    ========================================================================== */
 
-.bangaru-vakili-viewport {
+.keka-3d-entrance-wrapper {
   position: fixed;
   inset: 0;
   width: 100vw;
@@ -4291,13 +4290,26 @@ h4 em,
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
-  background: #0d0204;
-  perspective: 1300px;
-  perspective-origin: 50% 50%;
+  background: #0c0204;
+}
+
+.keka-three-canvas-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.keka-three-canvas-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  transition: opacity 0.5s ease-out;
 }
 
 /* Accessible Glassmorphic Skip Pill */
-.vakili-skip-pill {
+.keka-skip-pill {
   position: fixed;
   top: clamp(16px, 3vh, 26px);
   right: clamp(16px, 3.5vw, 32px);
@@ -4308,10 +4320,10 @@ h4 em,
   padding: 8px 18px;
   min-height: 44px;
   border-radius: 999px;
-  background: rgba(22, 4, 7, 0.88);
+  background: rgba(20, 3, 6, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(254, 240, 138, 0.5);
+  border: 1px solid rgba(254, 240, 138, 0.55);
   color: #fef08a;
   font-family: var(--sans);
   font-size: 12px;
@@ -4319,618 +4331,100 @@ h4 em,
   letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 0 15px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 16px rgba(217, 119, 6, 0.35);
   transition: all 0.25s ease;
 }
 
-.vakili-skip-pill:hover {
-  background: rgba(48, 8, 14, 0.95);
+.keka-skip-pill:hover {
+  background: rgba(45, 8, 14, 0.95);
   border-color: #ffffff;
   color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.8), 0 0 22px rgba(254, 240, 138, 0.55);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.9), 0 0 24px rgba(254, 240, 138, 0.6);
 }
 
-/* Garbha Griha Ambient Altar Glow */
-.garbha-griha-ambient-glow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgba(245, 158, 11, 0.42) 0%,
-    rgba(180, 83, 9, 0.22) 38%,
-    rgba(13, 2, 4, 0.95) 72%
-  );
-}
-
-/* Expanding Volumetric God Rays */
-.vakili-god-rays {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.55);
-  width: 150vmax;
-  height: 150vmax;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 4;
-  background: 
-    conic-gradient(
-      from 0deg at 50% 50%,
-      rgba(254, 240, 138, 0) 0deg,
-      rgba(254, 240, 138, 0.35) 15deg,
-      rgba(217, 119, 6, 0.05) 30deg,
-      rgba(255, 255, 255, 0.5) 45deg,
-      rgba(217, 119, 6, 0.08) 60deg,
-      rgba(254, 240, 138, 0.4) 90deg,
-      rgba(217, 119, 6, 0.05) 120deg,
-      rgba(255, 255, 255, 0.6) 140deg,
-      rgba(217, 119, 6, 0.08) 180deg,
-      rgba(254, 240, 138, 0.35) 210deg,
-      rgba(217, 119, 6, 0.05) 240deg,
-      rgba(255, 255, 255, 0.55) 270deg,
-      rgba(217, 119, 6, 0.08) 310deg,
-      rgba(254, 240, 138, 0.3) 340deg,
-      rgba(254, 240, 138, 0) 360deg
-    ),
-    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.95) 0%, rgba(245, 158, 11, 0.65) 28%, rgba(180, 83, 9, 0.25) 55%, transparent 75%);
-  mix-blend-mode: screen;
-  opacity: 0;
-  will-change: opacity, transform;
-  transition: opacity 700ms ease, transform 1350ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.bangaru-vakili-viewport.is-opening .vakili-god-rays {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1.35);
-}
-
-/* 60FPS Golden Dust Canvas */
-.sanctum-dust-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 6;
-}
-
-/* TOP ARCHITECTURAL MAHA TORANA */
-.vakili-maha-torana {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: clamp(52px, 8vh, 74px);
-  z-index: 35;
-  pointer-events: none;
-  background: linear-gradient(180deg, #180306 0%, rgba(24, 3, 6, 0.95) 60%, transparent 100%);
-  border-bottom: 2px solid rgba(254, 240, 138, 0.6);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8), inset 0 2px 4px rgba(254, 240, 138, 0.4);
-}
-
-.torana-pediment-crest {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 14px;
-}
-
-.crest-kalash-icon {
-  width: 18px;
-  height: 10px;
-  background: linear-gradient(180deg, #fef08a 0%, #d97706 100%);
-  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
-}
-
-.torana-garland-strip {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  padding: 0 16px;
-}
-
-.torana-pendant-cluster {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-
-.torana-leaf-svg {
-  width: clamp(14px, 2vw, 22px);
-  height: clamp(24px, 3.5vh, 36px);
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.7));
-  animation: leafFlutter 4s ease-in-out infinite alternate;
-}
-
-@keyframes leafFlutter {
-  0% { transform: rotate(-3deg); }
-  100% { transform: rotate(3deg); }
-}
-
-/* Cast Brass Temple Ghanta (Bell) */
-.torana-ghanta-bell {
-  width: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: ghantaSway 3.6s ease-in-out infinite alternate;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.8));
-}
-
-@keyframes ghantaSway {
-  0% { transform: rotate(-4deg); }
-  100% { transform: rotate(4deg); }
-}
-
-.ghanta-body {
-  width: 12px;
-  height: 14px;
-  background: radial-gradient(circle at 35% 30%, #fff9e6 0%, #fef08a 25%, #d97706 70%, #78350f 100%);
-  border-radius: 50% 50% 20% 20%;
-  border: 1px solid #fef08a;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
-.ghanta-clapper {
-  width: 3.5px;
-  height: 5px;
-  background: #f59e0b;
-  border-radius: 50%;
-  margin-top: -1px;
-}
-
-/* Flanking Dravidian Pilasters */
-.vakili-pilaster {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: clamp(14px, 2.5vw, 32px);
-  z-index: 30;
-  pointer-events: none;
-  background: linear-gradient(90deg, #160305 0%, #3a0d14 45%, #611822 55%, #1f0508 100%);
-  border-right: 1.5px solid rgba(254, 240, 138, 0.45);
-  border-left: 1.5px solid rgba(254, 240, 138, 0.45);
-  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.7);
-}
-
-.pilaster-left { left: 0; }
-.pilaster-right { right: 0; }
-
-/* Consecrated Base Threshold (Gadapa) */
-.vakili-gadapa-threshold {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: clamp(24px, 4vh, 36px);
-  z-index: 35;
-  pointer-events: none;
-  background: linear-gradient(180deg, #451a03 0%, #d97706 40%, #78350f 70%, #1c0508 100%);
-  border-top: 2px solid #fef08a;
-  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.9), inset 0 2px 3px rgba(255, 255, 255, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.gadapa-pasupu-kumkuma {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
-}
-
-.gadapa-bindu-pair {
-  display: flex;
-  gap: 3px;
-}
-
-.bindu-pasupu {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #facc15;
-  box-shadow: 0 0 4px #facc15;
-}
-
-.bindu-kumkum {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #dc2626;
-  box-shadow: 0 0 4px #dc2626;
-}
-
-/* ==========================================================================
-   3D SPATIAL STAGE: INWARD-SWINGING DOUBLE DOORS
-   ========================================================================== */
-
-.bangaru-doors-stage {
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  z-index: 20;
-  display: flex;
-  transform-style: preserve-3d;
-}
-
-.door-leaf {
-  width: 50vw;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 1350ms cubic-bezier(0.16, 1, 0.3, 1);
-  box-sizing: border-box;
-}
-
-.door-leaf-left {
-  left: 0;
-  transform-origin: 0% 50%;
-  transform: rotateY(0deg);
-  background: radial-gradient(circle at 100% 50%, #3e0c12 0%, #200407 60%, #100204 100%);
-  box-shadow: inset -6px 0 25px rgba(0, 0, 0, 0.85), 8px 0 35px rgba(0, 0, 0, 0.7);
-}
-
-.door-leaf-right {
-  right: 0;
-  transform-origin: 100% 50%;
-  transform: rotateY(0deg);
-  background: radial-gradient(circle at 0% 50%, #3e0c12 0%, #200407 60%, #100204 100%);
-  box-shadow: inset 6px 0 25px rgba(0, 0, 0, 0.85), -8px 0 35px rgba(0, 0, 0, 0.7);
-}
-
-/* Inward Swing Transformations (Swings INTO the screen toward the sanctum) */
-.door-leaf-left.swing-inward-left {
-  transform: rotateY(78deg) !important;
-}
-
-.door-leaf-right.swing-inward-right {
-  transform: rotateY(-78deg) !important;
-}
-
-.door-face-front {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(64px, 10vh, 96px) clamp(20px, 3.5vw, 48px) clamp(36px, 6vh, 56px);
-  box-sizing: border-box;
-  transform-style: preserve-3d;
-}
-
-/* 3D Physical Door Thickness Strip (Visible as door rotates inward) */
-.door-thickness-edge {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 18px;
-  transform-style: preserve-3d;
-  pointer-events: none;
-}
-
-.edge-right {
-  right: -18px;
-  transform-origin: left center;
-  transform: rotateY(90deg);
-  background: linear-gradient(90deg, #451a03 0%, #78350f 50%, #d97706 100%);
-  border-right: 1px solid #fef08a;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
-}
-
-.edge-left {
-  left: -18px;
-  transform-origin: right center;
-  transform: rotateY(-90deg);
-  background: linear-gradient(90deg, #d97706 0%, #78350f 50%, #451a03 100%);
-  border-left: 1px solid #fef08a;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
-}
-
-/* Dynamic Inward Shadow Falloff (Simulates light darkening as surface angles away) */
-.door-dynamic-shadow {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
-  transition: opacity 1250ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.door-leaf-right .door-dynamic-shadow {
-  background: linear-gradient(to left, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
-}
-
-.is-opening .door-dynamic-shadow {
-  opacity: 0.82;
-}
-
-/* Architectural Inset Door Frame */
-.door-arch-frame {
-  width: 100%;
-  height: 100%;
-  border: 2px solid rgba(254, 240, 138, 0.45);
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: clamp(12px, 2vh, 22px);
-  padding: clamp(12px, 2vh, 22px);
-  background: rgba(20, 3, 6, 0.45);
-  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.85);
-}
-
-/* 24K Gold Repoussé Plates (Hammered Gold Relief) */
-.vakili-panel-plate {
-  width: 100%;
-  border: 2px solid #d49a22;
-  border-radius: 6px;
-  background: 
-    linear-gradient(135deg, 
-      rgba(255, 255, 255, 0.18) 0%, 
-      transparent 22%, 
-      rgba(254, 240, 138, 0.25) 45%, 
-      transparent 65%, 
-      rgba(255, 255, 255, 0.15) 80%, 
-      transparent 100%
-    ),
-    radial-gradient(circle at 50% 35%, #5a141c 0%, #26060a 65%, #150205 100%);
-  box-shadow: 
-    inset 2px 2px 5px rgba(254, 240, 138, 0.5),
-    inset -2px -2px 6px rgba(0, 0, 0, 0.9),
-    0 4px 16px rgba(0, 0, 0, 0.7);
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.vakili-panel-plate.panel-top,
-.vakili-panel-plate.panel-bot {
-  flex: 1;
-  min-height: 85px;
-}
-
-.vakili-panel-plate.panel-mid {
-  flex: 1.5;
-  min-height: 125px;
-  padding: 10px;
-}
-
-.panel-beveled-molding {
-  width: 100%;
-  height: 100%;
-  border: 1.5px solid rgba(254, 240, 138, 0.35);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7);
-}
-
-/* Conical Brass Studs (Koppulu) with Spherical Specular Glint */
-.koppulu-bosses-grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  align-items: center;
-  justify-items: center;
-}
-
-.koppam-brass-stud {
-  width: clamp(14px, 2vw, 20px);
-  height: clamp(14px, 2vw, 20px);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fef08a 22%, #d97706 65%, #78350f 92%, #451a03 100%);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.9), inset 0 1.5px 2px rgba(255, 255, 255, 0.9);
-  position: relative;
-}
-
-.stud-starburst-washer {
-  position: absolute;
-  inset: -3.5px;
-  border-radius: 50%;
-  border: 1px solid rgba(254, 240, 138, 0.55);
-  box-shadow: 0 0 3px rgba(217, 119, 6, 0.5);
-}
-
-/* Sacred Panel SVGs */
-.lotus-relief-svg,
-.kalash-motif-svg {
-  width: clamp(52px, 8vw, 84px);
-  height: clamp(52px, 8vw, 84px);
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75));
-}
-
-.panel-sacred-watermark {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  opacity: 0.35;
-}
-
-.watermark-svg {
-  width: clamp(40px, 7vw, 68px);
-  height: clamp(40px, 7vw, 68px);
-}
-
-/* Cast Brass Simhamukha (Lion Mask) Door Knocker */
-.simhamukha-knocker-wrap {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 25;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.85));
-}
-
-.knocker-left { right: 20px; }
-.knocker-right { left: 20px; }
-
-.simhamukha-mask {
-  width: clamp(28px, 4vw, 42px);
-  height: clamp(28px, 4vw, 42px);
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #fff9e6 0%, #fef08a 25%, #d97706 65%, #78350f 100%);
-  border: 2px solid #fef08a;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.85);
-}
-
-.simhamukha-brass-ring {
-  width: clamp(22px, 3.2vw, 32px);
-  height: clamp(26px, 3.8vw, 38px);
-  border-radius: 50%;
-  border: 4px solid #d97706;
-  border-bottom-width: 5.5px;
-  margin-top: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
-}
-
-/* Center Astragal Molding Seam */
-.door-astragal-trim {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(180deg, #d49a22 0%, #fff9e6 25%, #d97706 65%, #92400e 100%);
-  box-shadow: 0 0 10px rgba(254, 240, 138, 0.6);
-}
-
-.trim-right { right: -2px; }
-.trim-left { left: -2px; }
-
-/* ==========================================================================
-   FOREGROUND BANGARU MUDRA (SACRED GOLDEN SANCTUM SEAL)
-   ========================================================================== */
-
-.vakili-center-mudra {
+/* Central 24K Bangaru Mudra (Auspicious Sanctum Medallion) */
+.keka-center-medallion {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 40;
-  will-change: transform, opacity;
-  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 600ms ease;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.mudra-unlatch-bloom {
-  transform: translate(-50%, -50%) scale(1.18) !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-/* Pulsing Divine Radiance Halo */
-.mudra-aura-halo {
-  position: absolute;
-  inset: -26px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(254, 240, 138, 0.5) 0%, rgba(217, 119, 6, 0.22) 55%, transparent 75%);
-  animation: mudraPulse 3s ease-in-out infinite alternate;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1), opacity 600ms ease;
   pointer-events: none;
 }
 
-@keyframes mudraPulse {
-  0% { transform: scale(0.96); opacity: 0.6; }
-  100% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 30px rgba(254, 240, 138, 0.8)); }
+.medallion-bloom-out {
+  transform: translate(-50%, -50%) scale(1.22) !important;
+  opacity: 0 !important;
 }
 
-/* 24K Chased Gold Medallion Disc */
-.mudra-lotus-disc {
-  width: clamp(310px, 86vw, 480px);
-  min-height: clamp(330px, 86vw, 500px);
+/* Pulsing Golden Aura Halo */
+.keka-halo-pulse {
+  position: absolute;
+  inset: -28px;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 30%, #450f16 0%, #230509 68%, #110204 100%);
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.52) 0%, rgba(217, 119, 6, 0.24) 55%, transparent 75%);
+  animation: kekaHaloPulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes kekaHaloPulse {
+  0% { transform: scale(0.95); opacity: 0.55; }
+  100% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 32px rgba(254, 240, 138, 0.85)); }
+}
+
+/* Chased Gold Seal Disc */
+.keka-seal-disc {
+  width: clamp(310px, 86vw, 470px);
+  min-height: clamp(320px, 86vw, 480px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 30%, #440e15 0%, #220408 68%, #100204 100%);
   border: 3.5px solid #d49a22;
   box-shadow: 
-    0 0 55px rgba(212, 154, 34, 0.55),
-    0 25px 65px rgba(0, 0, 0, 0.9),
-    inset 0 0 35px rgba(245, 200, 98, 0.3),
+    0 0 55px rgba(212, 154, 34, 0.6),
+    0 25px 65px rgba(0, 0, 0, 0.92),
+    inset 0 0 35px rgba(245, 200, 98, 0.35),
     inset 0 0 0 6px rgba(45, 9, 13, 0.95),
-    inset 0 0 0 8.5px rgba(254, 240, 138, 0.5);
+    inset 0 0 0 8.5px rgba(254, 240, 138, 0.55);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(24px, 5vw, 44px);
+  padding: clamp(22px, 5vw, 42px);
   text-align: center;
   position: relative;
   overflow: hidden;
+  pointer-events: auto;
 }
 
-.mudra-chakra-spokes {
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(254, 240, 138, 0.05) 0deg 11.25deg,
-    transparent 11.25deg 22.5deg
-  );
-  animation: mudraSpin 42s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes mudraSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Lord Balaji Emblem */
-.mudra-sacred-emblem {
+.keka-emblem-box {
   width: clamp(110px, 26vw, 150px);
-  height: clamp(70px, 17vw, 92px);
-  margin-bottom: 6px;
-  position: relative;
-  z-index: 2;
+  height: clamp(66px, 16vw, 86px);
+  margin-bottom: 4px;
 }
 
-.sacred-emblem-svg {
+.keka-namam-svg {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.85));
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.9));
 }
 
-/* Mudra Crest Typography */
-.mudra-crest-typography {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.mudra-vedic-mantra {
+.keka-mantra-title {
   font-family: var(--sans);
   font-size: clamp(9.5px, 2.2vw, 11.5px);
   font-weight: 800;
   letter-spacing: 0.18em;
   color: #fef08a;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
-.mudra-royal-title {
+.keka-brand-heading {
   font-family: var(--font-royal);
   font-size: clamp(24px, 6vw, 36px);
   font-weight: 800;
@@ -4941,39 +4435,38 @@ h4 em,
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95);
 }
 
-.mudra-sub-brand {
+.keka-brand-sub {
   font-family: var(--sans);
   font-size: clamp(10px, 2.4vw, 12px);
   font-weight: 800;
   letter-spacing: 0.22em;
   color: #fde68a;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
-.mudra-ornate-divider {
+.keka-divider {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 140px;
   height: 14px;
   margin: 8px 0 6px;
-  position: relative;
 }
 
-.divider-line {
+.keka-div-line {
   flex: 1;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(254, 240, 138, 0.65), transparent);
 }
 
-.divider-lotus-pip {
+.keka-div-pip {
   color: #f59e0b;
   font-size: 8px;
   padding: 0 6px;
 }
 
-.mudra-sacred-caption {
+.keka-invitation-text {
   font-family: var(--sans);
   font-size: clamp(11.5px, 2.8vw, 13px);
   font-weight: 500;
@@ -4983,17 +4476,7 @@ h4 em,
   max-width: 290px;
 }
 
-/* Interactive Enter Action */
-.mudra-action-area {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.mudra-enter-button {
+.keka-enter-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -5010,74 +4493,53 @@ h4 em,
   box-shadow: 0 4px 18px rgba(217, 119, 6, 0.55), 0 0 20px rgba(254, 240, 138, 0.4);
   cursor: pointer;
   transition: all 0.25s ease;
-  animation: mudraBtnGlow 2.5s ease-in-out infinite alternate;
+  animation: kekaBtnGlow 2.5s ease-in-out infinite alternate;
 }
 
-@keyframes mudraBtnGlow {
+@keyframes kekaBtnGlow {
   0% { transform: scale(1); box-shadow: 0 4px 16px rgba(217, 119, 6, 0.5); }
   100% { transform: scale(1.03); box-shadow: 0 6px 26px rgba(254, 240, 138, 0.75); }
 }
 
-.mudra-enter-button:hover {
+.keka-enter-btn:hover {
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
   transform: translateY(-2px) scale(1.05);
 }
 
-.mudra-tap-hint {
+.keka-tap-hint {
   font-family: var(--sans);
   font-size: 10.5px;
   font-weight: 600;
   color: rgba(254, 243, 199, 0.7);
   letter-spacing: 0.02em;
+  margin-top: 6px;
 }
 
-/* Mobile Adjustments for Small Screens */
+/* Mobile Adjustments */
 @media (max-width: 480px) {
-  .door-face-front {
-    padding: 56px 12px 32px;
-  }
-  .door-arch-frame {
-    padding: 8px 6px;
-    gap: 8px;
-  }
-  .mudra-lotus-disc {
+  .keka-seal-disc {
     width: min(90vw, 340px);
     min-height: min(90vw, 340px);
     padding: 18px 12px;
   }
-  .mudra-sacred-emblem {
+  .keka-emblem-box {
     width: 95px;
-    height: 60px;
-    margin-bottom: 2px;
+    height: 58px;
   }
-  .mudra-royal-title {
+  .keka-brand-heading {
     font-size: 22px;
   }
-  .mudra-sub-brand {
+  .keka-brand-sub {
     font-size: 9.5px;
   }
-  .mudra-sacred-caption {
+  .keka-invitation-text {
     font-size: 11px;
     margin-bottom: 10px;
     max-width: 240px;
   }
-  .mudra-enter-button {
+  .keka-enter-btn {
     padding: 8px 18px;
     font-size: 12px;
-  }
-}
-
-/* Reduced Motion Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .door-leaf,
-  .vakili-center-mudra,
-  .vakili-god-rays,
-  .torana-leaf-svg,
-  .torana-ghanta-bell,
-  .mudra-chakra-spokes,
-  .mudra-enter-button {
-    animation: none !important;
-    transition: none !important;
   }
 }
 
