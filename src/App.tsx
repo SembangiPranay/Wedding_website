@@ -1,4 +1,5 @@
 import { FormEvent, ReactNode, useState, useEffect, useRef } from "react";
+import SacredEntrance from "./SacredEntrance";
 
 const images = {
   hero: "/images/tirumala_mandapam_stage_real.jpg",
@@ -631,6 +632,7 @@ const stories = [
 ];
 
 function App() {
+  const [entranceKey, setEntranceKey] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [activeStory, setActiveStory] = useState(0);
@@ -767,6 +769,7 @@ function App() {
 
   return (
     <main>
+      <SacredEntrance key={entranceKey} />
       <header className="site-header">
         <a className="brand" href="#home" aria-label="Tirumala Balaji Marriages and Events home">
           <img
@@ -1898,6 +1901,16 @@ function App() {
           <a href="#process">Approach</a>
           <a href="#stories">Stories</a>
           <button onClick={scrollToInquiry}>Contact</button>
+          <button
+            type="button"
+            className="footer-replay-btn"
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              setEntranceKey((k) => k + 1);
+            }}
+          >
+            🏛️ Replay Sacred Entrance
+          </button>
         </div>
         <div className="footer-bottom">
           <span>© 2025 Tirumala Balaji Marriages &amp; Events · All Rights Reserved</span>

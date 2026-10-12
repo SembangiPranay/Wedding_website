@@ -4272,3 +4272,637 @@ h4 em,
   .header-phone-pill { padding-inline: 10px; }
   .nav-cta-pill-desktop { padding-inline: 13px; }
 }
+
+
+/* ==========================================================================
+   SACRED SANCTUM ENTRANCE ANIMATION (TEMPLE GATES PARTING)
+   60fps GPU Hardware-Accelerated Responsive Experience
+   ========================================================================== */
+
+.sacred-sanctum-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 99990;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  background: #110204;
+}
+
+/* Light Burst Celestial Radiance Behind Gates */
+.sacred-light-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  width: 130vmax;
+  height: 130vmax;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(254, 243, 199, 0.85) 0%,
+    rgba(245, 158, 11, 0.45) 28%,
+    rgba(180, 83, 9, 0.2) 55%,
+    transparent 75%
+  );
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 900ms ease, transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.sacred-sanctum-wrapper.is-opening .sacred-light-burst {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.35);
+}
+
+/* Skip Intro Glassmorphic Pill */
+.sacred-skip-btn {
+  position: fixed;
+  top: clamp(16px, 3vh, 26px);
+  right: clamp(16px, 3.5vw, 32px);
+  z-index: 99999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  min-height: 44px;
+  border-radius: 999px;
+  background: rgba(24, 4, 7, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 200, 98, 0.45);
+  color: #f5c862;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6), 0 0 12px rgba(212, 154, 34, 0.25);
+  transition: all 0.25s ease;
+}
+
+.sacred-skip-btn:hover {
+  background: rgba(45, 8, 13, 0.95);
+  border-color: #f5c862;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.7), 0 0 18px rgba(245, 200, 98, 0.45);
+}
+
+/* Top Sacred Toran Archway */
+.sacred-toran-banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  z-index: 35;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(20, 3, 5, 0.9) 0%, rgba(20, 3, 5, 0) 100%);
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.toran-garland-beads {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.toran-leaf-pendant {
+  width: 22px;
+  height: 34px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+  animation: toranSway 4s ease-in-out infinite alternate;
+}
+
+.toran-leaf-pendant:nth-child(even) {
+  animation-duration: 3.2s;
+  animation-delay: 0.4s;
+}
+
+@keyframes toranSway {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.toran-mango-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* TEMPLE DOORS (LEFT & RIGHT) */
+.sacred-door {
+  position: absolute;
+  top: 0;
+  width: 50vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 4vh, 48px) clamp(16px, 3vw, 40px);
+  box-sizing: border-box;
+  will-change: transform;
+  transition: transform 1100ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sacred-door-left {
+  left: 0;
+  background: 
+    radial-gradient(circle at 100% 50%, rgba(68, 14, 21, 0.95) 0%, rgba(30, 6, 9, 0.98) 55%, #140305 100%),
+    repeating-linear-gradient(90deg, rgba(212, 154, 34, 0.02) 0px, rgba(212, 154, 34, 0.02) 2px, transparent 2px, transparent 16px);
+  border-right: 2px solid rgba(245, 200, 98, 0.7);
+  box-shadow: inset -10px 0 35px rgba(0, 0, 0, 0.8), 12px 0 45px rgba(0, 0, 0, 0.7);
+  transform: translate3d(0, 0, 0);
+}
+
+.sacred-door-right {
+  right: 0;
+  background: 
+    radial-gradient(circle at 0% 50%, rgba(68, 14, 21, 0.95) 0%, rgba(30, 6, 9, 0.98) 55%, #140305 100%),
+    repeating-linear-gradient(90deg, rgba(212, 154, 34, 0.02) 0px, rgba(212, 154, 34, 0.02) 2px, transparent 2px, transparent 16px);
+  border-left: 2px solid rgba(245, 200, 98, 0.7);
+  box-shadow: inset 10px 0 35px rgba(0, 0, 0, 0.8), -12px 0 45px rgba(0, 0, 0, 0.7);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Parting Doors Animation */
+.door-open-left {
+  transform: translate3d(-102%, 0, 0) !important;
+}
+
+.door-open-right {
+  transform: translate3d(102%, 0, 0) !important;
+}
+
+/* Door Inner Wood Molding */
+.door-inner-molding {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(212, 154, 34, 0.35);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(12px, 2vh, 24px);
+  gap: clamp(10px, 1.8vh, 20px);
+  background: rgba(18, 3, 5, 0.4);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.75);
+}
+
+.door-panel-box {
+  width: 100%;
+  border: 1.5px solid rgba(212, 154, 34, 0.28);
+  border-radius: 6px;
+  background: rgba(36, 7, 11, 0.5);
+  box-shadow: inset 0 3px 12px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.door-panel-box.top-panel,
+.door-panel-box.bot-panel {
+  flex: 1;
+  min-height: 80px;
+}
+
+.door-panel-box.mid-panel {
+  flex: 1.4;
+  min-height: 110px;
+  padding: 12px;
+}
+
+/* Brass Studs Grid on Temple Doors */
+.brass-studs-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
+.brass-door-stud {
+  width: clamp(12px, 2vw, 18px);
+  height: clamp(12px, 2vw, 18px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffffff 0%, #fde68a 25%, #d97706 70%, #78350f 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(120, 53, 15, 0.8);
+  position: relative;
+}
+
+.brass-door-stud::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 154, 34, 0.35);
+}
+
+/* Mandala Filigree SVG */
+.panel-center-mandala {
+  width: clamp(50px, 8vw, 84px);
+  height: clamp(50px, 8vw, 84px);
+  opacity: 0.85;
+}
+
+.mandala-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+}
+
+/* Corner Filigree Brackets */
+.door-corner-filigree {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: rgba(245, 200, 98, 0.6);
+  border-style: solid;
+}
+
+.door-corner-filigree.top-left {
+  top: 6px;
+  left: 6px;
+  border-width: 2px 0 0 2px;
+}
+
+.door-corner-filigree.top-right {
+  top: 6px;
+  right: 6px;
+  border-width: 2px 2px 0 0;
+}
+
+.door-corner-filigree.bot-left {
+  bottom: 6px;
+  left: 6px;
+  border-width: 0 0 2px 2px;
+}
+
+.door-corner-filigree.bot-right {
+  bottom: 6px;
+  right: 6px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Temple Door Handle & Pull Ring */
+.sacred-door-handle {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 25;
+}
+
+.handle-left {
+  right: 18px;
+}
+
+.handle-right {
+  left: 18px;
+}
+
+.handle-rosette {
+  width: clamp(28px, 4vw, 40px);
+  height: clamp(28px, 4vw, 40px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fde68a 0%, #d97706 60%, #78350f 100%);
+  border: 1.5px solid #f5c862;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handle-ring {
+  width: clamp(20px, 3vw, 28px);
+  height: clamp(24px, 3.5vw, 36px);
+  border-radius: 50%;
+  border: 3.5px solid #d97706;
+  border-bottom-width: 4.5px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Vertical Gold Seam Trim */
+.door-seam-trim {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #d49a22 0%, #fde68a 30%, #d97706 70%, #b45309 100%);
+  box-shadow: 0 0 8px rgba(245, 200, 98, 0.5);
+}
+
+.seam-left {
+  right: -2px;
+}
+
+.seam-right {
+  left: -2px;
+}
+
+/* ==========================================================================
+   CENTER GOLDEN SEAL & SANCTUM MEDALLION
+   ========================================================================== */
+
+.sacred-center-seal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 30;
+  will-change: transform, opacity;
+  transition: transform 750ms cubic-bezier(0.16, 1, 0.3, 1), opacity 650ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-dissolve {
+  transform: translate(-50%, -50%) scale(1.18) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Divine Aura Halo Pulse */
+.seal-aura-ring {
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 200, 98, 0.45) 0%, rgba(217, 119, 6, 0.2) 60%, transparent 80%);
+  animation: sealAuraPulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes sealAuraPulse {
+  0% { transform: scale(0.96); opacity: 0.6; }
+  100% { transform: scale(1.08); opacity: 1; filter: drop-shadow(0 0 25px rgba(245, 200, 98, 0.7)); }
+}
+
+/* Central Lotus Medallion Disc */
+.seal-lotus-disc {
+  width: clamp(310px, 86vw, 470px);
+  min-height: clamp(330px, 86vw, 490px);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 35%, #3d0c12 0%, #200609 70%, #110204 100%);
+  border: 3.5px solid #d49a22;
+  box-shadow: 
+    0 0 45px rgba(212, 154, 34, 0.5),
+    0 25px 60px rgba(0, 0, 0, 0.85),
+    inset 0 0 35px rgba(245, 200, 98, 0.25),
+    inset 0 0 0 6px rgba(45, 9, 13, 0.9),
+    inset 0 0 0 8px rgba(212, 154, 34, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 42px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Chakra Spokes Rays */
+.seal-chakra-rays {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(212, 154, 34, 0.04) 0deg 11.25deg,
+    transparent 11.25deg 22.5deg
+  );
+  animation: sealSpinSlow 40s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes sealSpinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Lord Balaji Sacred Namam & Symbols */
+.seal-sacred-symbols {
+  width: clamp(100px, 24vw, 136px);
+  height: clamp(66px, 16vw, 86px);
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.sacred-namam-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.7));
+}
+
+/* Seal Typography */
+.seal-text-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seal-vedic-mantra {
+  font-family: var(--sans);
+  font-size: clamp(9.5px, 2.2vw, 11.5px);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: #f5c862;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.seal-temple-heading {
+  font-family: var(--font-royal);
+  font-size: clamp(24px, 6vw, 36px);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9);
+}
+
+.seal-events-tag {
+  font-family: var(--sans);
+  font-size: clamp(10px, 2.4vw, 12px);
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  color: #fde68a;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.seal-divider-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 14px;
+  margin: 8px 0 6px;
+  position: relative;
+}
+
+.seal-divider-line::before,
+.seal-divider-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 200, 98, 0.6), transparent);
+}
+
+.divider-diamond {
+  color: #f59e0b;
+  font-size: 8px;
+  padding: 0 6px;
+}
+
+.seal-invitation-subtext {
+  font-family: var(--sans);
+  font-size: clamp(11.5px, 2.8vw, 13px);
+  font-weight: 500;
+  color: #f3e8d7;
+  line-height: 1.35;
+  margin: 0 0 14px 0;
+  max-width: 290px;
+}
+
+/* Action Button & Touch Hint */
+.seal-action-box {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.seal-enter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
+  border: 1.5px solid #fde68a;
+  color: #ffffff;
+  font-family: var(--sans);
+  font-size: clamp(12.5px, 2.6vw, 14px);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 18px rgba(217, 119, 6, 0.55), 0 0 20px rgba(245, 200, 98, 0.35);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  animation: enterBtnGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes enterBtnGlow {
+  0% { transform: scale(1); box-shadow: 0 4px 16px rgba(217, 119, 6, 0.5); }
+  100% { transform: scale(1.03); box-shadow: 0 6px 24px rgba(245, 200, 98, 0.7); }
+}
+
+.seal-enter-button:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.seal-touch-hint {
+  font-family: var(--sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  color: rgba(254, 243, 199, 0.7);
+  letter-spacing: 0.02em;
+}
+
+/* Mobile Adjustments for Small Screens */
+@media (max-width: 480px) {
+  .sacred-door {
+    padding: 18px 10px;
+  }
+  .door-inner-molding {
+    padding: 8px 6px;
+    gap: 8px;
+  }
+  .seal-lotus-disc {
+    width: min(90vw, 340px);
+    min-height: min(90vw, 340px);
+    padding: 18px 12px;
+  }
+  .seal-sacred-symbols {
+    width: 90px;
+    height: 58px;
+    margin-bottom: 2px;
+  }
+  .seal-temple-heading {
+    font-size: 22px;
+  }
+  .seal-events-tag {
+    font-size: 9.5px;
+  }
+  .seal-invitation-subtext {
+    font-size: 11px;
+    margin-bottom: 10px;
+    max-width: 240px;
+  }
+  .seal-enter-button {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .sacred-door,
+  .sacred-center-seal,
+  .sacred-light-burst,
+  .toran-leaf-pendant,
+  .seal-chakra-rays,
+  .seal-enter-button {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.footer-replay-btn {
+  background: rgba(212, 154, 34, 0.12);
+  border: 1px solid rgba(212, 154, 34, 0.4);
+  color: #f5c862;
+  font-family: var(--sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-replay-btn:hover {
+  background: rgba(212, 154, 34, 0.25);
+  border-color: #f5c862;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
