@@ -1568,12 +1568,12 @@ function App() {
           </div>
 
           <div className="blessing-copy-column">
-            <p className="eyebrow light"><span /> సర్వ సంపత్కర శ్రీవారి అనుగ్రహం · Divine Presence</p>
-            <h2>A Sacred Marriage Blessed<br /><em>by Lord Venkateswara.</em></h2>
+            <p className="eyebrow blessing-eyebrow"><span /> సర్వ సంపత్కర శ్రీవారి అనుగ్రహం · DIVINE PRESENCE</p>
+            <h2 className="blessing-heading">A Sacred Marriage Blessed<br /><span className="heading-bold-gold">by Lord Venkateswara.</span></h2>
 
             <div className="blessing-shloka-box">
               <div className="shloka-namam-decor">
-                <LotusIcon size={22} />
+                <LotusIcon size={20} />
               </div>
               <p className="blessing-shloka-telugu">
                 “కళ్యాణాద్భుత గాత్రాయ కామితార్థ ప్రదాయినే |<br />
@@ -1619,9 +1619,27 @@ function App() {
             </div>
 
             <div className="blessing-cta-row">
-              <button className="button hero-btn-gold" onClick={scrollToInquiry}>
-                SEEK DIVINE BLESSINGS · PLAN YOUR WEDDING <Icon name="arrow" size={16} />
+              <button className="button button-gold hero-btn-gold" onClick={scrollToInquiry}>
+                PLAN YOUR WEDDING <Icon name="arrow" size={16} />
               </button>
+              <a
+                className="button hero-btn-whatsapp"
+                href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20seek%20Lord%20Balaji%20blessings%20for%20our%20wedding."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
+              >
+                <WhatsAppIcon size={17} />
+                <span>WhatsApp Us</span>
+              </a>
+              <a
+                className="button blessing-call-btn"
+                href="tel:9491155403"
+                aria-label="Call 9491155403"
+              >
+                <Icon name="phone" size={15} />
+                <span>Call: 94911 55403</span>
+              </a>
             </div>
           </div>
         </div>

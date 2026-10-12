@@ -2790,12 +2790,15 @@ footer > p {
    ========================================================================== */
 .blessing-section {
   position: relative;
-  background: radial-gradient(circle at 30% 50%, #0d1e17 0%, #06110d 65%, #030a07 100%);
-  color: white;
-  padding: 120px clamp(24px, 6vw, 96px);
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(255, 248, 225, 0.95) 0%, rgba(254, 235, 179, 0.5) 45%, rgba(248, 219, 142, 0.25) 75%),
+    linear-gradient(135deg, #FFFDF7 0%, #FEF8E7 30%, #FDF1D0 65%, #F7E4B2 100%);
+  color: #2b130e;
+  padding: 110px clamp(24px, 6vw, 96px);
   overflow: hidden;
-  border-top: 1px solid rgba(223, 189, 125, 0.35);
-  border-bottom: 1px solid rgba(223, 189, 125, 0.35);
+  border-top: 4px solid #d4af37;
+  border-bottom: 4px solid #d4af37;
+  box-shadow: inset 0 20px 40px rgba(212, 175, 55, 0.08), inset 0 -20px 40px rgba(212, 175, 55, 0.08);
 }
 
 .blessing-backdrop-watermark {
@@ -2803,10 +2806,10 @@ footer > p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--serif);
+  font-family: var(--telugu-serif);
   font-size: clamp(60px, 11vw, 150px);
-  font-weight: 700;
-  color: rgba(223, 189, 125, 0.035);
+  font-weight: 800;
+  color: rgba(200, 138, 22, 0.06);
   white-space: nowrap;
   pointer-events: none;
   user-select: none;
@@ -2836,10 +2839,10 @@ footer > p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 110%;
-  height: 110%;
-  background: radial-gradient(circle, rgba(223, 189, 125, 0.22) 0%, rgba(189, 139, 50, 0.08) 50%, transparent 75%);
-  filter: blur(28px);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(245, 200, 98, 0.5) 0%, rgba(212, 175, 55, 0.2) 45%, transparent 70%);
+  filter: blur(36px);
   pointer-events: none;
   z-index: 0;
 }
@@ -2849,14 +2852,15 @@ footer > p {
   z-index: 1;
   width: 100%;
   max-width: 440px;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 14px;
-  background: linear-gradient(145deg, rgba(28, 44, 37, 0.85) 0%, rgba(12, 22, 18, 0.95) 100%);
-  border: 1px solid rgba(223, 189, 125, 0.45);
+  background: linear-gradient(145deg, #ffffff 0%, #fef8ea 100%);
+  border: 3px solid #d4af37;
   box-shadow: 
-    0 24px 60px rgba(0, 0, 0, 0.75),
-    0 0 40px rgba(223, 189, 125, 0.15),
-    inset 0 0 20px rgba(223, 189, 125, 0.06);
+    0 0 0 1px rgba(245, 200, 98, 0.6),
+    0 24px 60px rgba(180, 115, 20, 0.22),
+    0 10px 24px rgba(0, 0, 0, 0.08),
+    inset 0 0 16px rgba(212, 175, 55, 0.12);
 }
 
 .blessing-portrait-img {
@@ -2864,10 +2868,10 @@ footer > p {
   height: 560px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 4px;
+  border-radius: 10px;
   display: block;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-  filter: contrast(1.05) saturate(1.05);
+  box-shadow: 0 8px 24px rgba(78, 14, 18, 0.18);
+  filter: contrast(1.06) saturate(1.08);
   transition: transform 0.8s var(--ease-editorial);
 }
 
@@ -2878,36 +2882,36 @@ footer > p {
 /* Temple Filigree Corner Ornaments */
 .blessing-corner-ornament {
   position: absolute;
-  width: 22px;
-  height: 22px;
-  border-color: var(--gold-light);
+  width: 24px;
+  height: 24px;
+  border-color: #c88a16;
   border-style: solid;
   pointer-events: none;
   z-index: 2;
 }
 
 .corner-tl {
-  top: 6px;
-  left: 6px;
-  border-width: 2px 0 0 2px;
+  top: 8px;
+  left: 8px;
+  border-width: 2.5px 0 0 2.5px;
 }
 
 .corner-tr {
-  top: 6px;
-  right: 6px;
-  border-width: 2px 2px 0 0;
+  top: 8px;
+  right: 8px;
+  border-width: 2.5px 2.5px 0 0;
 }
 
 .corner-bl {
-  bottom: 6px;
-  left: 6px;
-  border-width: 0 0 2px 2px;
+  bottom: 8px;
+  left: 8px;
+  border-width: 0 0 2.5px 2.5px;
 }
 
 .corner-br {
-  bottom: 6px;
-  right: 6px;
-  border-width: 0 2px 2px 0;
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 2.5px 2.5px 0;
 }
 
 .blessing-portrait-badge {
@@ -2916,30 +2920,31 @@ footer > p {
   left: 50%;
   transform: translateX(-50%);
   width: 88%;
-  background: rgba(4, 16, 12, 0.88);
-  border: 1px solid rgba(223, 189, 125, 0.6);
-  border-radius: 6px;
+  background: rgba(58, 12, 16, 0.94);
+  border: 1.5px solid #f5c862;
+  border-radius: 8px;
   padding: 10px 16px;
   text-align: center;
   backdrop-filter: blur(10px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 28px rgba(45, 8, 12, 0.45);
 }
 
 .badge-telugu {
   display: block;
-  color: var(--gold-light);
+  color: #f5c862;
   font-family: var(--telugu-serif);
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 800;
   letter-spacing: 0.02em;
 }
 
 .badge-sub {
   display: block;
   margin-top: 2px;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 10px;
-  letter-spacing: 0.08em;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -2949,84 +2954,102 @@ footer > p {
   flex-direction: column;
 }
 
-.blessing-copy-column h2 {
-  color: white;
-  margin: 18px 0 28px;
+.blessing-eyebrow {
+  color: #b45309 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
 }
 
-.blessing-copy-column h2 em {
-  color: var(--gold-light);
+.blessing-heading {
+  color: #2b130e;
+  margin: 14px 0 24px;
+  font-family: var(--sans);
+  font-size: clamp(38px, 4.4vw, 60px);
+  font-weight: 800 !important;
+  font-style: normal !important;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
 .blessing-shloka-box {
   position: relative;
-  background: rgba(14, 30, 24, 0.65);
-  border: 1px solid rgba(223, 189, 125, 0.35);
-  border-left: 3px solid var(--gold);
-  border-radius: 4px;
+  background: linear-gradient(145deg, #ffffff 0%, #fefcf5 100%);
+  border: 1.5px solid rgba(212, 175, 55, 0.6);
+  border-left: 5px solid #c88a16;
+  border-radius: 12px;
   padding: 24px 28px;
   margin-bottom: 24px;
-  backdrop-filter: blur(6px);
+  box-shadow: 
+    0 14px 36px rgba(180, 115, 20, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .shloka-namam-decor {
   position: absolute;
   top: -14px;
   right: 22px;
-  background: #0d1e17;
-  padding: 2px 8px;
-  border: 1px solid rgba(223, 189, 125, 0.4);
+  background: #5e1116;
+  color: #f5c862;
+  padding: 3px 10px;
+  border: 1.5px solid #d4af37;
   border-radius: 999px;
   display: flex;
   align-items: center;
+  box-shadow: 0 4px 12px rgba(94, 17, 22, 0.35);
 }
 
 .blessing-shloka-telugu {
-  font-family: var(--telugu-poetic);
-  font-size: 23px;
-  font-weight: 500;
-  color: var(--gold-light);
-  line-height: 1.8;
-  margin: 0 0 12px;
-  letter-spacing: 0.02em;
+  font-family: var(--telugu-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: #5e1116;
+  line-height: 1.7;
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
 }
 
 .blessing-shloka-translation {
-  font: italic 13px var(--serif);
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.6;
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  font-style: normal !important;
+  color: #4a3728;
+  line-height: 1.65;
   margin: 0;
 }
 
 .blessing-description {
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 13.5px;
+  color: #4a3b34;
+  font-size: 14.5px;
+  font-weight: 500;
   line-height: 1.8;
-  margin: 0 0 32px;
+  margin: 0 0 28px;
 }
 
 .blessing-features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 36px;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
 .blessing-feat {
   display: flex;
   gap: 14px;
   align-items: flex-start;
-  padding: 18px 20px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(223, 189, 125, 0.22);
-  border-radius: 8px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1.5px solid rgba(212, 175, 55, 0.45);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(180, 115, 20, 0.08);
   transition: transform 0.3s var(--ease-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blessing-feat:hover {
-  border-color: rgba(223, 189, 125, 0.5);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: #ffffff;
+  border-color: #c88a16;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(180, 115, 20, 0.18);
 }
 
 .blessing-feat-icon {
@@ -3036,34 +3059,61 @@ footer > p {
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(223, 189, 125, 0.12);
-  border: 1px solid rgba(223, 189, 125, 0.38);
-  color: var(--gold-light);
+  background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
+  color: #4e1115;
   flex-shrink: 0;
   margin-top: 2px;
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
 }
 
 .blessing-feat strong {
   display: block;
   font-family: var(--telugu-serif);
-  font-size: 21px;
-  font-weight: 600;
-  color: var(--gold-light);
-  line-height: 1.35;
-  margin-bottom: 5px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #3b0c10;
+  line-height: 1.3;
+  margin-bottom: 4px;
   letter-spacing: 0.01em;
 }
 
 .blessing-feat p {
   margin: 0;
-  font-size: 11.5px;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.6;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5a4b43;
+  line-height: 1.55;
 }
 
 .blessing-cta-row {
   display: flex;
   align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.blessing-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1.5px solid #d4af37;
+  color: #5e1116;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(180, 115, 20, 0.1);
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.blessing-call-btn:hover {
+  background: #fef8ea;
+  border-color: #b45309;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(180, 115, 20, 0.2);
 }
 
 @media (max-width: 1024px) {
@@ -3648,12 +3698,14 @@ footer > p {
   .blessing-feat { padding: 14px 14px; gap: 12px; }
   .blessing-feat strong { font-size: 17px; }
   .blessing-feat p { font-size: 11px; }
-  .blessing-cta-row { width: 100%; }
-  .blessing-cta-row .button {
+  .blessing-cta-row { width: 100%; flex-direction: column; gap: 10px; }
+  .blessing-cta-row .button,
+  .blessing-cta-row .blessing-call-btn {
     width: 100%;
     min-height: 48px;
-    font-size: 10.5px;
+    font-size: 11px;
     padding: 12px 14px;
+    justify-content: center;
     text-align: center;
     white-space: normal;
     line-height: 1.35;
