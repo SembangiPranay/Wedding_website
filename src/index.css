@@ -20,10 +20,10 @@
   --sans: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
   --serif: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
   --font-royal: "Cinzel", serif;
-  --telugu-serif: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
-  --telugu-poetic: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
-  --telugu-royal: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
-  --telugu-sans: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
+  --telugu-serif: "Plus Jakarta Sans", "Manrope", sans-serif;
+  --telugu-poetic: "Plus Jakarta Sans", "Manrope", sans-serif;
+  --telugu-royal: "Cinzel", "Plus Jakarta Sans", serif;
+  --telugu-sans: "Plus Jakarta Sans", "Manrope", sans-serif;
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
 }

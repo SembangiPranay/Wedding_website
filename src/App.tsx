@@ -314,81 +314,81 @@ const services = [
   { title: "Tirumala Convention Hall", note: "Up to 800 guests · Grand 40-ft stage", image: images.mandapamV2 },
   { title: "Authentic Telugu Bhojanam", note: "Traditional satvik banana leaf feast", image: images.satvikBhojanam },
   { title: "Traditional Floral Décor", note: "Rose wall, Tirumala Namam & brass bells", image: images.floralDecor },
-  { title: "Purohit & Vedic Kalyanam", note: "కళ్యాణోత్సవం · Sampradayam honoured", image: images.poojaHomam },
-  { title: "Sacred Deepam & Ambiance", note: "దివ్య సన్నిధి · Seshachalam hill peace", image: images.templeGopuram },
+  { title: "Purohit & Vedic Kalyanam", note: "Sacred Shastras · Traditional Sampradayam Honoured", image: images.poojaHomam },
+  { title: "Sacred Deepam & Ambiance", note: "Divine Serenity · Seshachalam Hill Tranquility", image: images.templeGopuram },
   { title: "Grand Kalyana Mandapam", note: "Golden Balaji deities & floral canopy", image: images.mandapamV3 },
 ];
 
 const allServices = [
   {
     title: "Function Hall Booking",
-    telugu: "కళ్యాణ మండపం బుకింగ్",
+    telugu: "AC & Traditional Kalyana Mandapams",
     desc: "A/C & traditional marriage halls in Tirumala & Tirupati suited for all guest counts.",
     icon: "pin" as IconName,
   },
   {
     title: "Accommodation Arrangements",
-    telugu: "వసతి & గదుల ఏర్పాట్లు",
+    telugu: "Guest Cottages & Deluxe Rooms",
     desc: "Comfortable cottages, guest houses, and deluxe rooms for your visiting family and relatives.",
     icon: "check" as IconName,
   },
   {
     title: "Catering Services",
-    telugu: "సాంప్రదాయ విందు & భోజనం",
+    telugu: "Authentic Satvik Feast & Dining",
     desc: "Authentic Satvik Telugu Bhojanam served with utmost hygiene and divine Tirumala taste.",
     icon: "flower" as IconName,
   },
   {
     title: "Traditional & Modern Decorations",
-    telugu: "కళ్యాణ డెకరేషన్స్",
+    telugu: "Temple Gopurams & Floral Themes",
     desc: "Exquisite rose walls, jasmine garlands, temple gopuram backdrops, and modern lighting.",
     icon: "sparkle" as IconName,
   },
   {
     title: "Photography & Videography",
-    telugu: "ఫోటోగ్రఫీ & వీడియో",
+    telugu: "Cinematic 4K & Candid Wedding Films",
     desc: "Cinematic 4K wedding films, candid moments, traditional coverage, and premium photo albums.",
     icon: "camera" as IconName,
   },
   {
     title: "Experienced Purohits",
-    telugu: "వేద పండితులు & పురోహితులు",
+    telugu: "Learned Vedic Priests & Scholars",
     desc: "Learned Vedic scholars conducting your rituals with strict adherence to Sanatana Dharma.",
     icon: "sparkle" as IconName,
   },
   {
     title: "Pooja Materials & Articles",
-    telugu: "పూజా ద్రవ్యాలు & సామాగ్రి",
+    telugu: "Complete Sacred Homam & Ritual Samagri",
     desc: "Complete homam samagri, fresh flowers, pasupu-kumkum, kankanams, and sacred articles.",
     icon: "flower" as IconName,
   },
   {
     title: "Bridal Makeup Artists",
-    telugu: "బ్రైడల్ మేకప్ ఆర్టిస్ట్స్",
+    telugu: "Professional Bridal Makeover & Styling",
     desc: "Expert bridal makeover, saree draping, mehendi, and traditional hairstyles.",
     icon: "sparkle" as IconName,
   },
   {
     title: "Sannai Melam & Traditional Music",
-    telugu: "సన్నాయి మేళం & నాదస్వరం",
+    telugu: "Auspicious Nadaswaram & Temple Melam",
     desc: "Auspicious Nadaswaram, Tavil, and classical temple music creating divine celebrations.",
     icon: "music" as IconName,
   },
   {
     title: "Event Planning & Coordination",
-    telugu: "ఈవెంట్ ప్లానింగ్ & సమన్వయం",
+    telugu: "Single-Point Dedicated Coordination",
     desc: "End-to-end planning with dedicated event managers ensuring a seamless, worry-free wedding.",
     icon: "calendar" as IconName,
   },
   {
     title: "Guest Management",
-    telugu: "అతిథి నిర్వహణ & సత్కారం",
+    telugu: "Warm Hospitality & Guest Logistics",
     desc: "Warm Telugu hospitality, reception coordination, guest transport, and personalized care.",
     icon: "guests" as IconName,
   },
   {
     title: "And All Other Event Services",
-    telugu: "ఇతర సమస్త శుభకార్య సేవలు",
+    telugu: "Customized Requests for Every Occasion",
     desc: "All custom arrangements and supplies required to make your sacred event truly memorable.",
     icon: "check" as IconName,
   },
@@ -412,7 +412,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "rose-canopy",
     title: "Grand Rose & Jasmine Canopy Stage",
-    telugu: "గులాబీ & మల్లెల కళ్యాణ మండపం",
+    telugu: "Rose & Jasmine Wedding Mandapam",
     category: "mandapam",
     categoryLabel: "Kalyana Mandapam",
     image: "/images/decorations/decor_mandapam_rose_canopy.jpg",
@@ -423,7 +423,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "coconut-leaf",
     title: "Traditional Coconut Leaf & Bamboo Pavilion",
-    telugu: "సాంప్రదాయ కొబ్బరి ఆకుల పందిరి",
+    telugu: "Traditional Eco-Friendly Thatch Pavilion",
     category: "traditional",
     categoryLabel: "Traditional & Eco",
     image: "/images/decorations/decor_trad_coconut_leaf_pelli.jpg",
@@ -434,7 +434,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "night-gopuram",
     title: "Illuminated Temple Gopuram Night Gate",
-    telugu: "దివ్య రాత్రి ప్రవేశ గోపుర ద్వారం",
+    telugu: "Illuminated Temple Gopuram Night Gate",
     category: "entrance",
     categoryLabel: "Grand Entrance",
     image: "/images/decorations/decor_entrance_night_gopuram.jpg",
@@ -445,7 +445,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "rose-wall",
     title: "Lush Pastel Pink & Ivory Rose Wall",
-    telugu: "గులాబీ పూల గోడ & రాజరిక సోఫా",
+    telugu: "Rose Wall Backdrop & Regal Seating",
     category: "reception",
     categoryLabel: "Modern Reception",
     image: "/images/decorations/decor_reception_rose_wall_sofa.jpg",
@@ -456,7 +456,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "golden-shrine",
     title: "Royal Golden Gopuram Mandapam",
-    telugu: "రాచరిక స్వర్ణ గోపురం వేదిక",
+    telugu: "Regal Golden Gopuram Mandapam",
     category: "mandapam",
     categoryLabel: "Kalyana Mandapam",
     image: "/images/decorations/decor_mandapam_golden_shrine.jpg",
@@ -467,7 +467,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "banana-stalk",
     title: "Fresh Banana Trunk & Floral Mandapam",
-    telugu: "అరటి బోదెలు & పచ్చి పూల మండపం",
+    telugu: "Sacred Banana Trunk & Floral Mandapam",
     category: "traditional",
     categoryLabel: "Traditional & Eco",
     image: "/images/decorations/decor_trad_banana_stalk_mandapam.jpg",
@@ -478,7 +478,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "fairy-lights",
     title: "Royal Temple Archway & Light Canopy",
-    telugu: "స్వర్ణ తోరణం & విద్యుత్ దీపాల మార్గం",
+    telugu: "Golden Archway & Fairy Light Canopy",
     category: "entrance",
     categoryLabel: "Grand Entrance",
     image: "/images/decorations/decor_entrance_fairy_lights.jpg",
@@ -489,7 +489,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "ivory-canopy",
     title: "Modern Ivory Floral Canopy Stage",
-    telugu: "శ్వేత పుష్ప వితానం & రాయల్ సీటింగ్",
+    telugu: "Ivory Floral Canopy & Luxury Lounge",
     category: "reception",
     categoryLabel: "Modern Reception",
     image: "/images/decorations/decor_reception_ivory_canopy.jpg",
@@ -500,7 +500,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "amber-heritage",
     title: "Heritage Stone Pillar Temple Mandapam",
-    telugu: "సాంప్రదాయ రాతి స్తంభాల మండపం",
+    telugu: "Heritage Stone Pillar Temple Mandapam",
     category: "mandapam",
     categoryLabel: "Kalyana Mandapam",
     image: "/images/decorations/decor_mandapam_amber_heritage.jpg",
@@ -511,7 +511,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "vedic-courtyard",
     title: "Open Courtyard Vedic Homam Setup",
-    telugu: "ఆరుబయట వేద హోమ మండపం",
+    telugu: "Open Courtyard Vedic Homam Stage",
     category: "traditional",
     categoryLabel: "Traditional & Eco",
     image: "/images/decorations/decor_trad_vedic_courtyard.jpg",
@@ -522,7 +522,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "white-chandeliers",
     title: "White Floral Arch & Crystal Chandeliers",
-    telugu: "శ్వేత పుష్ప తోరణాలు & షాండ్లియర్స్",
+    telugu: "Triple Floral Arches & Chandeliers",
     category: "reception",
     categoryLabel: "Modern Reception",
     image: "/images/decorations/decor_reception_white_chandeliers.jpg",
@@ -533,7 +533,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "floral-pillars",
     title: "Four Golden Columns & Floral Arch",
-    telugu: "బంగారు స్తంభాలు & పుష్ప తోరణం",
+    telugu: "Four Golden Columns & Floral Arch",
     category: "mandapam",
     categoryLabel: "Kalyana Mandapam",
     image: "/images/decorations/decor_mandapam_floral_pillars.jpg",
@@ -544,7 +544,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "balaji-statues",
     title: "Deity Statues & Jasmine Garland Backing",
-    telugu: "శ్రీవారు & అమ్మవార్ల పుష్ప వేదిక",
+    telugu: "Divine Balaji Statues & Jasmine Drapery",
     category: "traditional",
     categoryLabel: "Traditional & Eco",
     image: "/images/decorations/decor_trad_balaji_floral_statues.jpg",
@@ -555,7 +555,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "velvet-namam",
     title: "Wide Crimson Velvet & Balaji Namam Stage",
-    telugu: "ఎరుపు వెల్వెట్ & తిరుమల నామం వేదిక",
+    telugu: "Crimson Velvet Backdrop & Golden Namam",
     category: "reception",
     categoryLabel: "Modern Reception",
     image: "/images/decorations/decor_reception_velvet_namam.jpg",
@@ -566,7 +566,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "temple-bell",
     title: "Sacred Tirumala Bell Stage Décor",
-    telugu: "దివ్య గంట & తిరుమల నామం డెకరేషన్",
+    telugu: "Golden Temple Bell & Marigold Stage",
     category: "mandapam",
     categoryLabel: "Kalyana Mandapam",
     image: "/images/decorations/decor_mandapam_temple_bell.jpg",
@@ -577,7 +577,7 @@ const decorationItems: DecorItem[] = [
   {
     id: "sanctum-arch",
     title: "Illuminated Balaji Sanctum Stage",
-    telugu: "శ్రీవారి సన్నిధి రంగస్థలం",
+    telugu: "Illuminated Balaji Sanctum Stage",
     category: "mandapam",
     categoryLabel: "Kalyana Mandapam",
     image: "/images/decorations/decor_mandapam_sanctum_arch.jpg",
@@ -587,22 +587,22 @@ const decorationItems: DecorItem[] = [
 ];
 
 const occasions = [
-  { name: "Pelli Kuthuru · పెళ్లికూతురు", image: images.pellikuthuru },
-  { name: "Nischitartham · నిశ్చితార్థం", image: images.engagementRing },
-  { name: "Haldi & Sandadi · మంగళస్నానం", image: images.haldiCelebration },
-  { name: "Reception & Hall · వేడుక", image: images.functionHall },
+  { name: "Bridal Ceremony · Pellikuthuru", image: images.pellikuthuru },
+  { name: "Engagement · Nischitartham", image: images.engagementRing },
+  { name: "Haldi & Blessings · Mangalasnanam", image: images.haldiCelebration },
+  { name: "Grand Reception & Banquet", image: images.functionHall },
 ];
 
 
 const steps = [
-  ["01", "Mee kala cheppandi", "Share your muhurtham, family traditions and the moments closest to your heart."],
-  ["02", "Sampradayam, planned", "We bring together the mandapam, bhojanam, décor and every sacred ritual."],
-  ["03", "Celebrate with joy", "Your dedicated host manages every guest and detail while your family celebrates."],
+  ["01", "Share Your Dream & Muhurtham", "Share your auspicious muhurtham, family traditions and the moments closest to your heart."],
+  ["02", "Meticulous Heritage Planning", "We bring together the mandapam, satvik dining, décor, and every sacred Vedic ritual."],
+  ["03", "Celebrate with Divine Joy", "Your dedicated coordinator manages every guest and detail while your family celebrates peacefully."],
 ];
 
 const stories = [
   {
-    ritualTelugu: "మాంగళ్యధారణ",
+    ritualTelugu: "Mangalya Dharanam",
     ritualEn: "Sacred Thali Union",
     quote: "The sacred Mangalyadharanam moment in the holy precincts of Tirumala was pure bliss. Surrounded by the divine aura of Lord Venkateswara and the pure resonance of Vedic mantras, tying the holy thali felt truly blessed for a lifetime.",
     couple: "Sravani & Karthik",
@@ -611,7 +611,7 @@ const stories = [
     alt: "Sacred Mangalasutram holding ceremony with lotus petals, jasmine flowers, and bride and groom hands in authentic Telugu wedding",
   },
   {
-    ritualTelugu: "జీలకర్ర-బెల్లం",
+    ritualTelugu: "Jeelakarra-Bellam",
     ritualEn: "Auspicious Sumuhurtham",
     quote: "The Jeelakarra-Bellam muhurtham under the guidance of learned Vedic scholars filled our families with deep reverence. Every ancient Telugu tradition, the divine floral decor, and the authentic satvik bhojanam were conducted with utmost purity.",
     couple: "Haritha & Vikram",
@@ -620,7 +620,7 @@ const stories = [
     alt: "Auspicious Jeelakarra Bellam ritual with bride and groom placing sacred betel leaves with cumin and jaggery at sumuhurtham",
   },
   {
-    ritualTelugu: "పాణిగ్రహణం & సప్తపది",
+    ritualTelugu: "Panigrahanam & Saptapadi",
     ritualEn: "Seven Sacred Steps",
     quote: "Taking our sacred Saptapadi vows at the foothills of the holy Seven Hills felt like heaven on earth. Holding hands with the sacred kankanam amidst temple bells and elders' blessings brought eternal peace and sanctity to our marriage.",
     couple: "Deepthi & Rajesh",
@@ -948,20 +948,20 @@ function App() {
           <div className="wedding-focus-image">
             <img src={images.balajiPooja} alt="Sacred Tirumala Malayappa Swamy Kalyana Utsavam mangala harathi with divine floral garlands" />
             <div className="wedding-image-seal">
-              <span className="seal-text-telugu">శుభమస్తు</span>
-              <small className="seal-subtext">కళ్యాణోత్సవం</small>
+              <span className="seal-text-telugu">DIVINE</span>
+              <small className="seal-subtext">Kalyanotsavam</small>
             </div>
           </div>
         </div>
         <div className="wedding-focus-copy">
-          <p className="eyebrow"><span /> తెలుగు పెళ్లి సంప్రదాయం · THE HEART OF WHAT WE DO</p>
+          <p className="eyebrow"><span /> SACRED VEDIC TRADITIONS · THE HEART OF WHAT WE DO</p>
           <h2 className="wedding-focus-heading">
             Your wedding,<br />
             <span className="heading-bold-gold">honoured beautifully.</span>
           </h2>
           <p className="wedding-focus-lead">
-            A Telugu wedding is a coming together of families, blessings and
-            centuries of tradition. From jeelakarra bellam to saptapadi, we
+            A traditional wedding is a coming together of families, blessings, and
+            centuries of sacred tradition. From jeelakarra bellam to saptapadi, we
             thoughtfully arrange every ritual while surrounding your guests with
             warm, gracious hospitality under the divine gaze of Lord Malayappa Swamy.
           </p>
@@ -994,7 +994,7 @@ function App() {
             </button>
             <a
               className="button hero-btn-whatsapp"
-              href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20want%20to%20plan%20our%20Telugu%20wedding."
+              href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20want%20to%20plan%20our%20wedding."
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp"
@@ -1007,15 +1007,15 @@ function App() {
       </section>
 
       <section className="section services reveal-init" id="services">
-        <div className="temple-watermark" aria-hidden="true">శ్రీ</div>
+        <div className="temple-watermark" aria-hidden="true">BALAJI</div>
         <div className="section-heading">
           <div>
-            <p className="eyebrow"><span /> మా సేవలు · Our services</p>
+            <p className="eyebrow"><span /> OUR SERVICES · COMPREHENSIVE WEDDING SOLUTIONS</p>
             <h2>Everything you need<br /><em>for a sacred celebration.</em></h2>
           </div>
           <p>
-            From muhurtham to mangala harathi, we bring venue, rituals, hospitality
-            and celebration together with heartfelt Telugu warmth.
+            From auspicious sumuhurtham to mangala harathi, we bring venue, rituals, hospitality,
+            and celebration together with heartfelt warmth.
           </p>
         </div>
         <div className="service-grid">
@@ -1039,7 +1039,7 @@ function App() {
         <div className="all-services-catalog">
           <div className="catalog-header-card">
             <div className="catalog-badge">
-              <Icon name="sparkle" size={14} /> సర్వ సంపూర్ణ సేవలు · Complete Event Management
+              <Icon name="sparkle" size={14} /> Complete Event Management · All Budgets
             </div>
             <h3>End-to-End Event Management for Every Budget</h3>
             <p className="catalog-lead">
@@ -1095,13 +1095,13 @@ function App() {
       <section className="venue-section reveal-init" id="venue">
         <div className="venue-image">
           <img src={images.mandapam} alt="Tirumala Balaji grand Kalyana Mandapam with 40-foot temple carved gopuram stage, tiered kundu lamps, and banquet seating" />
-          <div className="venue-monogram">శ్రీ</div>
+          <div className="venue-monogram">TB</div>
         </div>
         <div className="venue-copy">
-          <p className="eyebrow light"><span /> మా కళ్యాణ మండపం &amp; కన్వెన్షన్ హాల్</p>
+          <p className="eyebrow light"><span /> OUR FUNCTION HALL &amp; CONVENTION MANDAPAM</p>
           <h2>A grand convention hall<br /><em>for sacred beginnings.</em></h2>
           <p>
-            A spacious, centrally air-conditioned marriage and convention hall crafted for authentic Telugu weddings. Featuring a grand 40-foot traditional stage, royal floral archways, a dedicated banquet dining hall, and executive family suites at the holy foothills of Tirumala.
+            A spacious, centrally air-conditioned marriage and convention hall crafted for authentic traditional weddings. Featuring a grand 40-foot traditional stage, royal floral archways, a dedicated banquet dining hall, and executive family suites at the holy foothills of Tirumala.
           </p>
           <dl>
             <div><dt><AnimatedCounter value={800} /></dt><dd>seated guests</dd></div>
@@ -1114,14 +1114,14 @@ function App() {
         </div>
       </section>
 
-      <section className="rituals-section reveal-init" id="rituals" aria-label="Sacred Telugu marriage rituals">
+      <section className="rituals-section reveal-init" id="rituals" aria-label="Sacred marriage rituals">
         <div className="section-heading">
           <div>
-            <p className="eyebrow"><span /> వివాహ సంబరాలు · Sacred Wedding Moments</p>
+            <p className="eyebrow"><span /> AUSPICIOUS CEREMONIES · SACRED WEDDING MOMENTS</p>
             <h2>From Sumuhurtham to Talambralu,<br /><em>every moment, alive with joy.</em></h2>
           </div>
           <p>
-            A Telugu wedding is a vibrant celebration of lifelong vows, family laughter, and sacred Vedic traditions. Experience how each auspicious ritual unfolds with splendour, warmth, and boundless celebration.
+            A traditional wedding is a vibrant celebration of lifelong vows, family laughter, and sacred Vedic traditions. Experience how each auspicious ritual unfolds with splendour, warmth, and boundless celebration.
           </p>
         </div>
 
@@ -1129,12 +1129,12 @@ function App() {
         <div className="rituals-hero-banner">
           <img
             src={images.marriageFamily}
-            alt="Telugu wedding muhurtham with three generations of family members showering yellow akshinthalu in front of Lord Balaji mandapam"
+            alt="Traditional wedding muhurtham with three generations of family members showering yellow akshinthalu in front of Lord Balaji mandapam"
             className="rituals-hero-img"
           />
           <div className="rituals-hero-overlay">
             <span className="rituals-badge">
-              <Icon name="sparkle" size={14} /> సమష్టి ఆశీర్వాదం · The Grand Family Blessing
+              <Icon name="sparkle" size={14} /> Auspicious Akshinthalu · The Grand Family Blessing
             </span>
             <h3>When three generations shower sacred Akshinthalu.</h3>
             <p>
@@ -1149,11 +1149,11 @@ function App() {
           <article className="ritual-card">
             <div className="ritual-card-media">
               <img src={images.jeelakarraBellam} alt="Bride and groom placing betel leaves with cumin seeds and jaggery on each other's heads during Sumuhurtham" />
-              <span className="ritual-card-tag">సుముహూర్తం</span>
+              <span className="ritual-card-tag">Sumuhurtham</span>
             </div>
             <div className="ritual-card-body">
-              <span className="ritual-step-num">01 · సుముహూర్తం</span>
-              <h4>జీలకర్ర &amp; బెల్లం</h4>
+              <span className="ritual-step-num">01 · Auspicious Hour</span>
+              <h4>Jeelakarra &amp; Bellam (Cumin-Jaggery Union)</h4>
               <p>
                 The exact auspicious second when the curtain lowers and the couple places cumin and jaggery on each other's heads, uniting their hearts, souls, and thoughts for a lifetime.
               </p>
@@ -1164,11 +1164,11 @@ function App() {
           <article className="ritual-card">
             <div className="ritual-card-media">
               <img src={images.thaliHolding} alt="Sacred golden Lakshmi thali pendant touched with kumkum in bride's hands" />
-              <span className="ritual-card-tag">మాంగళ్యధారణ</span>
+              <span className="ritual-card-tag">Mangalyadharanam</span>
             </div>
             <div className="ritual-card-body">
-              <span className="ritual-step-num">02 · మాంగళ్యధారణ</span>
-              <h4>మంగళసూత్రం &amp; మూడు ముళ్ళు</h4>
+              <span className="ritual-step-num">02 · Sacred Thali</span>
+              <h4>Mangalasutram &amp; Three Sacred Knots</h4>
               <p>
                 The tying of the sacred yellow thread and golden Lakshmi thali with three knots, witnessed by Agni Deva and sanctified by the blessings of family elders.
               </p>
@@ -1179,13 +1179,13 @@ function App() {
           <article className="ritual-card">
             <div className="ritual-card-media">
               <img src={images.talambraluRitual} alt="Bride in Madhuparkam pouring white talambralu pearls over smiling groom surrounded by laughing family" />
-              <span className="ritual-card-tag">తలంబ్రాలు</span>
+              <span className="ritual-card-tag">Talambralu</span>
             </div>
             <div className="ritual-card-body">
-              <span className="ritual-step-num">03 · తలంబ్రాల వేడుక</span>
-              <h4>ముత్యాలు &amp; నవ్వుల సందడి</h4>
+              <span className="ritual-step-num">03 · Joyful Showers</span>
+              <h4>Sacred Pearls &amp; Family Showers</h4>
               <p>
-                The most joyful Telugu tradition: bride and groom playfully showering golden pearls, fragrant turmeric rice, and flower petals over each other amidst cheers from family.
+                The most joyful wedding tradition: bride and groom playfully showering golden pearls, fragrant turmeric rice, and flower petals over each other amidst cheers from family.
               </p>
             </div>
           </article>
@@ -1194,11 +1194,11 @@ function App() {
           <article className="ritual-card">
             <div className="ritual-card-media">
               <img src={images.saptapadiWalk} alt="Intertwined little fingers of bride and groom walking together in silk pattu" />
-              <span className="ritual-card-tag">సప్తపది</span>
+              <span className="ritual-card-tag">Saptapadi</span>
             </div>
             <div className="ritual-card-body">
-              <span className="ritual-step-num">04 · సప్తపది</span>
-              <h4>పాణిగ్రహణం &amp; ఏడు అడుగులు</h4>
+              <span className="ritual-step-num">04 · Seven Sacred Steps</span>
+              <h4>Panigrahanam &amp; Seven Sacred Steps</h4>
               <p>
                 Walking together hand-in-hand for seven sacred steps around the holy fire, pledging eternal friendship, nourishment, joy, and lifelong devotion.
               </p>
@@ -1210,7 +1210,7 @@ function App() {
       <section className="scenery-section reveal-init" id="scenery">
         <div className="section-heading">
           <div>
-            <p className="eyebrow"><span /> ఏడు కొండల దివ్య సన్నిధి · Sacred Hills &amp; Scenery</p>
+            <p className="eyebrow"><span /> SACRED FOOTHILLS · SEVEN HILLS SCENERY</p>
             <h2>Blessed by the sacred heights<br /><em>of Seshachalam &amp; Sapthagiri.</em></h2>
           </div>
           <p>
@@ -1225,11 +1225,11 @@ function App() {
           />
           <div className="scenery-hero-overlay">
             <span className="scenery-hero-badge">
-              <Icon name="sparkle" size={14} /> సప్తగిరి దివ్య దర్శనం · The Seven Sacred Peaks
+              <Icon name="sparkle" size={14} /> The Seven Sacred Peaks · Seshachalam Sanctuary
             </span>
             <h3>Where sacred geography meets eternal vows.</h3>
             <p>
-              Telugu families have sought the divine presence of Lord Venkateswara for generations. Our convention hall and wedding pavilions are set amidst the tranquil panorama of the Seshachalam biosphere, giving your guests a sacred spiritual retreat.
+              Traditional families have sought the divine presence of Lord Venkateswara for generations. Our convention hall and wedding pavilions are set amidst the tranquil panorama of the Seshachalam biosphere, giving your guests a sacred spiritual retreat.
             </p>
           </div>
         </div>
@@ -1238,10 +1238,10 @@ function App() {
           <article className="scenery-card">
             <div className="scenery-card-media">
               <img src={images.dweepam} alt="Sacred brass deepam flame in foreground with illuminated Tirumala temple gopuram and Seshachalam hill" />
-              <span className="scenery-card-tag">దివ్య దీపారాధన</span>
+              <span className="scenery-card-tag">Sacred Deepam</span>
             </div>
             <div className="scenery-card-body">
-              <h4>దివ్య దీపారాధన &amp; ఆలయ గోపురం</h4>
+              <h4>Sacred Deepam &amp; Temple Gopuram</h4>
               <p>
                 A sacred flame lit under the holy temple gopuram and misty hill contours. Bringing peace, radiance, and auspicious spiritual energy to every moment of your marriage.
               </p>
@@ -1254,7 +1254,7 @@ function App() {
               <span className="scenery-card-tag">Authentic Bhojanam</span>
             </div>
             <div className="scenery-card-body">
-              <h4>సాంప్రదాయ అరటి ఆకు విందు</h4>
+              <h4>Traditional Banana Leaf Feast (Satvik Bhojanam)</h4>
               <p>
                 Authentic satvik Telugu wedding feast: freshly steamed sona masoori rice, sambar, rasam, avakaya, payasam, and crisps served on fresh plantain leaves.
               </p>
@@ -1264,10 +1264,10 @@ function App() {
           <article className="scenery-card">
             <div className="scenery-card-media scenery-card-moon">
               <img src={images.templeMoon} alt="Tirumala white temple gopuram rising into twilight under glowing full moon" />
-              <span className="scenery-card-tag tag-right">పూర్ణిమ దర్శనం</span>
+              <span className="scenery-card-tag tag-right">Full Moon Darshan</span>
             </div>
             <div className="scenery-card-body">
-              <h4>పూర్ణిమ గోపుర దర్శనం · Moonlit Sanctity</h4>
+              <h4>Moonlit Gopuram Darshan · Celestial Sanctity</h4>
               <p>
                 Under the serene aura of the full moon over the sacred white gopuram. Auspicious muhurthams blessed by celestial tranquility and temple bells.
               </p>
@@ -1278,7 +1278,7 @@ function App() {
 
       <section className="section occasions reveal-init">
         <div className="center-heading">
-          <p className="eyebrow centered"><span /> ప్రతి శుభకార్యానికి <span /></p>
+          <p className="eyebrow centered"><span /> FOR EVERY AUSPICIOUS OCCASION <span /></p>
           <h2>Every occasion,<br /><em>made truly auspicious.</em></h2>
         </div>
         <div className="occasion-grid">
@@ -1295,7 +1295,7 @@ function App() {
       <section className="section decorations-section reveal-init" id="decorations" aria-label="Our Real Event & Stage Decorations">
         <div className="section-heading">
           <div>
-            <p className="eyebrow"><span /> మన వేడుకలు &amp; అలంకరణలు · Event Decoration Formations</p>
+            <p className="eyebrow"><span /> CURATED STAGE DESIGNS · EVENT DECORATION FORMATIONS</p>
             <h2>Explore Our Events<br /><em>&amp; Mandapam Formations.</em></h2>
           </div>
           <p>
@@ -1456,7 +1456,7 @@ function App() {
 
       <section className="process-section reveal-init" id="process">
         <div className="process-intro">
-          <p className="eyebrow"><span /> మా పద్ధతి · Our process</p>
+          <p className="eyebrow"><span /> OUR STRUCTURED APPROACH · THE 3-STEP PROCESS</p>
           <h2>From first call<br />to <em>mangala harathi.</em></h2>
           <p>Traditional at heart, meticulous in every detail and warm in every welcome.</p>
         </div>
@@ -1504,7 +1504,7 @@ function App() {
           <div className="story-header-meta">
             <span className="story-eyebrow">
               <span className="story-eyebrow-line" />
-              వివాహ అనుభవాలు · Sacred Testimonials
+              COUPLE STORIES · SACRED TESTIMONIALS
             </span>
             <p className="quote-mark" aria-hidden="true">“</p>
           </div>
@@ -1553,7 +1553,7 @@ function App() {
       </section>
 
       <section className="blessing-section reveal-init" id="blessing" aria-label="Divine Balaji Blessing">
-        <div className="blessing-backdrop-watermark" aria-hidden="true">శ్రీ వేంకటేశ్వరాయ నమః</div>
+        <div className="blessing-backdrop-watermark" aria-hidden="true">OM NAMO VENKATESHAYA</div>
         <div className="blessing-container">
           <div className="blessing-portrait-column">
             <div className="blessing-portrait-aura" />
@@ -1568,14 +1568,14 @@ function App() {
                 className="blessing-portrait-img"
               />
               <div className="blessing-portrait-badge">
-                <span className="badge-telugu">శ్రీ వేంకటేశ్వర దివ్య దర్శనం</span>
-                <small className="badge-sub">Lord Balaji’s Eternal Grace · తిరుమల సన్నిధి</small>
+                <span className="badge-telugu">LORD SRI VENKATESWARA</span>
+                <small className="badge-sub">Eternal Divine Grace · Tirumala Sanctum</small>
               </div>
             </div>
           </div>
 
           <div className="blessing-copy-column">
-            <p className="eyebrow blessing-eyebrow"><span /> సర్వ సంపత్కర శ్రీవారి అనుగ్రహం · DIVINE PRESENCE</p>
+            <p className="eyebrow blessing-eyebrow"><span /> AUSPICIOUS BLESSINGS · DIVINE PRESENCE</p>
             <h2 className="blessing-heading">A Sacred Marriage Blessed<br /><span className="heading-bold-gold">by Lord Venkateswara.</span></h2>
 
             <div className="blessing-shloka-box">
@@ -1583,16 +1583,16 @@ function App() {
                 <LotusIcon size={20} />
               </div>
               <p className="blessing-shloka-telugu">
-                “కళ్యాణాద్భుత గాత్రాయ కామితార్థ ప్రదాయినే |<br />
-                శ్రీమద్వేంకట నాథాయ శ్రీనివాసాయ తే నమః ||”
+                “Kalyanadbhuta Gatraya Kamitartha Pradayine |<br />
+                Srimad Venkatanathaya Srinivasaya Te Namah ||”
               </p>
               <p className="blessing-shloka-translation">
-                “Salutations to Sri Srinivasa, Lord of Venkatadri, of miraculous divine form, grantor of all cherished desires and lifelong marital bliss.”
+                “Salutations to Sri Srinivasa, Lord of Venkatadri, possessing an auspicious divine form, the grantor of all cherished wishes and lifelong marital blessings.”
               </p>
             </div>
 
             <p className="blessing-description">
-              In Telugu culture, marriage is not merely an event—it is a sacred sankalpam witnessed by the holy hills. Our halls, priests, and wedding coordinators uphold this eternal sanctity, ensuring every garland, every vedic chant, and every guest welcome is conducted with heartfelt devotion.
+              In traditional Vedic heritage, marriage is not merely an event—it is a sacred sankalpam witnessed by the holy hills. Our halls, priests, and wedding coordinators uphold this eternal sanctity, ensuring every garland, every vedic chant, and every guest welcome is conducted with heartfelt devotion.
             </p>
 
             <div className="blessing-features-grid">
@@ -1601,7 +1601,7 @@ function App() {
                   <LotusIcon size={18} />
                 </span>
                 <div>
-                  <strong>శాశ్వత దాంపత్యం</strong>
+                  <strong>Eternal Marital Union</strong>
                   <p>Eternal union blessed by the supreme grace of Sri Padmavathi &amp; Lord Balaji.</p>
                 </div>
               </div>
@@ -1610,7 +1610,7 @@ function App() {
                   <DiyaIcon size={18} />
                 </span>
                 <div>
-                  <strong>వేదోక్త సాంప్రదాయం</strong>
+                  <strong>Vedic Shastric Tradition</strong>
                   <p>Strict adherence to Shastras, authentic muhurtham and auspicious rituals.</p>
                 </div>
               </div>
@@ -1619,7 +1619,7 @@ function App() {
                   <MandalaIcon size={18} />
                 </span>
                 <div>
-                  <strong>శ్రీవారి ప్రసాదం &amp; విందు</strong>
+                  <strong>Divine Prasadam &amp; Satvik Feast</strong>
                   <p>Auspicious Tirumala prasadam tokens and satvik banana leaf feast for your guests.</p>
                 </div>
               </div>
@@ -1664,14 +1664,14 @@ function App() {
             />
             <div>
               <strong>Tirumala Balaji Marriages &amp; Events</strong>
-              <small>తిరుమలలో వివాహాలు · Official Wedding Contractor</small>
+              <small>Tirumala Weddings · Official Event Contractor</small>
             </div>
           </div>
 
-          <p className="eyebrow light"><span /> శుభారంభం ఇక్కడే · Contact Us</p>
+          <p className="eyebrow light"><span /> BEGIN YOUR CELEBRATION · CONTACT US</p>
           <h2>Let’s plan your<br /><em>sacred celebration.</em></h2>
           <p>
-            మీ శుభకార్యం గురించి మాట్లాడండి. We organize weddings and all types of events for every budget, offering complete end-to-end event management services at quality, affordable pricing.
+            Connect directly with our wedding planners. We organize weddings and all types of events for every budget, offering complete end-to-end event management services at quality, affordable pricing.
           </p>
 
           <div className="inquiry-action-cards">
@@ -1680,7 +1680,7 @@ function App() {
                 <Icon name="phone" size={20} />
               </span>
               <div>
-                <small>Direct Call / మాట్లాడండి</small>
+                <small>Direct Phone Call / Immediate Support</small>
                 <strong>+91 94911 55403</strong>
                 <span className="contact-subtext">R. Rajesh · 24/7 Available</span>
               </div>
@@ -1768,7 +1768,7 @@ function App() {
         {submitted ? (
           <div className="success-card" role="status">
             <span><Icon name="check" size={30} /></span>
-            <h3>ధన్యవాదాలు · Thank you.</h3>
+            <h3>Thank You Very Much.</h3>
             <p>Your details have been received. R. Rajesh and our celebrations team will contact you shortly on your phone/WhatsApp.</p>
             <div className="success-direct-call">
               <small>Need urgent confirmation?</small>
@@ -1786,7 +1786,7 @@ function App() {
             </div>
             <label>
               Your name
-              <input name="name" placeholder="Full name / మీ పేరు" required />
+              <input name="name" placeholder="Your full name" required />
             </label>
             <label>
               Phone / WhatsApp Number
@@ -1799,21 +1799,21 @@ function App() {
             <label>
               Celebration type
               <select name="type" defaultValue="" required>
-                <option value="" disabled>Select an occasion / శుభకార్యం</option>
-                <option>Pelli / Traditional Telugu Wedding</option>
-                <option>Nischitartham / Engagement</option>
-                <option>Reception / Vindhu</option>
-                <option>Pellikuthuru / Haldi Ceremony</option>
-                <option>Seemantham</option>
-                <option>Upanayanam</option>
-                <option>Gruhapravesam</option>
-                <option>Other Event</option>
+                <option value="" disabled>Select an occasion type</option>
+                <option>Traditional Wedding Ceremony</option>
+                <option>Engagement Ceremony (Nischitartham)</option>
+                <option>Wedding Reception &amp; Banquet</option>
+                <option>Haldi &amp; Bridal Blessing Ceremony</option>
+                <option>Seemantham Ceremony</option>
+                <option>Upanayanam Ceremony</option>
+                <option>Gruhapravesam / Housewarming</option>
+                <option>Other Custom Event</option>
               </select>
             </label>
             <label>
               Estimated guests
               <select name="guests" defaultValue="">
-                <option value="" disabled>Choose a range / అతిథుల సంఖ్య</option>
+                <option value="" disabled>Choose estimated guest count</option>
                 <option>Up to 100 (Intimate Ceremony)</option>
                 <option>100–250 (Traditional Gathering)</option>
                 <option>250–500 (Grand Wedding)</option>
@@ -1855,7 +1855,7 @@ function App() {
             <small>Marriages &amp; Events · 9491155403</small>
           </div>
         </div>
-        <p>మీ సంతోషం · మా సేవ · Your happiness is our blessing.</p>
+        <p>Your Happiness Is Our Blessing · Dedicated to Sacred Celebrations.</p>
 
         {/* Footer Offices & Credentials */}
         <div className="footer-offices-row">
