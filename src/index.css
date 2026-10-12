@@ -1351,7 +1351,8 @@ h2 em { color: #947342; font-weight: 500; }
   transition: transform 0.8s var(--ease-editorial);
 }
 .scenery-card-moon img {
-  object-position: center top !important;
+  object-position: center 28% !important;
+  transform-origin: center 28%;
 }
 .scenery-card:hover .scenery-card-media img {
   transform: scale(1.06);
@@ -4551,7 +4552,8 @@ footer > p {
   }
   .scenery-grid { grid-template-columns: 1fr; gap: 16px; }
   .scenery-card { border-radius: 6px; }
-  .scenery-card-media { height: 220px; }
+  .scenery-card-media { height: 240px; }
+  .scenery-card-moon img { object-position: center 26% !important; }
   .scenery-card-body { padding: 16px 16px 18px; }
   .scenery-card-body h4 { font-size: 21px; }
   .scenery-card-body p { font-size: 11.5px; line-height: 1.6; }
