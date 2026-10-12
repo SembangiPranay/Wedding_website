@@ -633,6 +633,31 @@ const stories = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submittedInquiry, setSubmittedInquiry] = useState<{
+    name: string;
+    phone: string;
+    email: string;
+    date: string;
+    session: string;
+    type: string;
+    guests: string;
+    budget: string;
+    services: string[];
+    notes: string;
+  } | null>(null);
+  const [selectedServices, setSelectedServices] = useState<string[]>([
+    "Mandapam AC Hall",
+    "Authentic Satvik Bhojanam",
+    "Floral & Stage Decor",
+  ]);
+
+  const toggleService = (srv: string) => {
+    setSelectedServices((prev) =>
+      prev.includes(srv) ? prev.filter((s) => s !== srv) : [...prev, srv]
+    );
+  };
+
+  const todayString = new Date().toISOString().split("T")[0];
   const [activeStory, setActiveStory] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [activeFilter, setActiveFilter] = useState<DecorCategory>("all");
@@ -762,6 +787,20 @@ function App() {
 
   const submitInquiry = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const data = {
+      name: String(formData.get("name") || ""),
+      phone: String(formData.get("phone") || ""),
+      email: String(formData.get("email") || ""),
+      date: String(formData.get("date") || ""),
+      session: String(formData.get("session") || "Morning Sumuhurtham"),
+      type: String(formData.get("type") || "Traditional Vedic Wedding (Kalyanam)"),
+      guests: String(formData.get("guests") || "100–250 Guests"),
+      budget: String(formData.get("budget") || "Standard Traditional Package"),
+      services: selectedServices,
+      notes: String(formData.get("notes") || ""),
+    };
+    setSubmittedInquiry(data);
     setSubmitted(true);
   };
 
@@ -1765,77 +1804,298 @@ function App() {
           </div>
         </div>
 
-        {submitted ? (
-          <div className="success-card" role="status">
-            <span><Icon name="check" size={30} /></span>
-            <h3>Thank You Very Much.</h3>
-            <p>Your details have been received. R. Rajesh and our celebrations team will contact you shortly on your phone/WhatsApp.</p>
-            <div className="success-direct-call">
-              <small>Need urgent confirmation?</small>
-              <a href="tel:9491155403" className="button button-gold">
-                <Icon name="phone" size={15} /> Call 94911 55403 Now
+        {submitted && submittedInquiry ? (
+          <div className="inquiry-success-card" role="status">
+            <div className="success-icon-badge">
+              <Icon name="check" size={28} />
+            </div>
+            <span className="success-mantra">|| OM NAMO VENKATESHAYA ||</span>
+            <h3>Inquiry Received with Reverence</h3>
+            <p className="success-intro-p">
+              Namaskaram <strong>{submittedInquiry.name}</strong>, your celebration details have been received. Our dedicated wedding coordinator R. Rajesh will contact you shortly on <strong>{submittedInquiry.phone}</strong> with customized package options and auspicious date confirmation.
+            </p>
+
+            <div className="success-summary-box">
+              <div className="summary-field">
+                <span className="summary-field-label">Occasion</span>
+                <strong>{submittedInquiry.type}</strong>
+              </div>
+              <div className="summary-field">
+                <span className="summary-field-label">Muhurtham Date</span>
+                <strong>{submittedInquiry.date || "Date Flexible"} · {submittedInquiry.session}</strong>
+              </div>
+              <div className="summary-field">
+                <span className="summary-field-label">Estimated Guests</span>
+                <strong>{submittedInquiry.guests}</strong>
+              </div>
+              <div className="summary-field">
+                <span className="summary-field-label">Budget Tier</span>
+                <strong>{submittedInquiry.budget}</strong>
+              </div>
+              {submittedInquiry.services.length > 0 && (
+                <div className="summary-field summary-field-full">
+                  <span className="summary-field-label">Selected Services</span>
+                  <div className="summary-services-tags">
+                    {submittedInquiry.services.map((s) => (
+                      <span key={s} className="summary-tag">✓ {s}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="success-actions-wrap">
+              <a
+                href={`https://wa.me/919491155403?text=${encodeURIComponent(
+                  `Namaskaram Tirumala Balaji Events,\nMy Name: ${submittedInquiry.name}\nPhone: ${submittedInquiry.phone}\nOccasion: ${submittedInquiry.type}\nMuhurtham Date: ${submittedInquiry.date || "Flexible"} (${submittedInquiry.session})\nEstimated Guests: ${submittedInquiry.guests}\nPackage: ${submittedInquiry.budget}\nRequired Services: ${submittedInquiry.services.join(", ")}\n\nPlease provide quotation and hall availability.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-gold success-btn-whatsapp"
+              >
+                <WhatsAppIcon size={18} />
+                <span>Open in WhatsApp for Fast Quote</span>
+              </a>
+              <a href="tel:9491155403" className="button success-btn-call">
+                <Icon name="phone" size={16} />
+                <span>Call Directly: 94911 55403</span>
               </a>
             </div>
-            <button onClick={() => setSubmitted(false)}>Send another inquiry</button>
+
+            <button
+              type="button"
+              className="success-btn-another"
+              onClick={() => {
+                setSubmitted(false);
+                setSubmittedInquiry(null);
+              }}
+            >
+              ← Submit Another Inquiry / Edit Details
+            </button>
           </div>
         ) : (
           <form onSubmit={submitInquiry} className="inquiry-form-card">
             <div className="form-card-title">
+              <span className="form-title-pill">✦ INSTANT ESTIMATES &amp; MUHURTHAM ASSISTANCE</span>
               <h3>Inquire / Request Package Details</h3>
               <p>Enter your details and our team will get back to you with custom estimates.</p>
             </div>
-            <label>
-              Your name
-              <input name="name" placeholder="Your full name" required />
-            </label>
-            <label>
-              Phone / WhatsApp Number
-              <input type="tel" name="phone" placeholder="94911 55403" required />
-            </label>
-            <label>
-              Email address
-              <input type="email" name="email" placeholder="you@example.com" />
-            </label>
-            <label>
-              Celebration type
-              <select name="type" defaultValue="" required>
-                <option value="" disabled>Select an occasion type</option>
-                <option>Traditional Wedding Ceremony</option>
-                <option>Engagement Ceremony (Nischitartham)</option>
-                <option>Wedding Reception &amp; Banquet</option>
-                <option>Haldi &amp; Bridal Blessing Ceremony</option>
-                <option>Seemantham Ceremony</option>
-                <option>Upanayanam Ceremony</option>
-                <option>Gruhapravesam / Housewarming</option>
-                <option>Other Custom Event</option>
-              </select>
-            </label>
-            <label>
-              Estimated guests
-              <select name="guests" defaultValue="">
-                <option value="" disabled>Choose estimated guest count</option>
-                <option>Up to 100 (Intimate Ceremony)</option>
-                <option>100–250 (Traditional Gathering)</option>
-                <option>250–500 (Grand Wedding)</option>
-                <option>500–800+ (Royal Celebration)</option>
-              </select>
-            </label>
-            <label>
-              Budget Preference
-              <select name="budget" defaultValue="">
-                <option value="" disabled>Select budget range</option>
-                <option>Simple &amp; Budget-Friendly Ceremony</option>
-                <option>Standard Traditional Package</option>
-                <option>Grand Royal Package</option>
-                <option>Custom Budget Discussion</option>
-              </select>
-            </label>
-            <button className="button button-gold form-submit" type="submit">
-              Request Free Consultation &amp; Quotes <Icon name="arrow" size={18} />
-            </button>
+
+            {/* Row 1: Full Name & Phone Number */}
+            <div className="form-grid-2col">
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-name">
+                  <span>Your Full Name</span>
+                  <small className="label-req">Required *</small>
+                </label>
+                <div className="form-input-wrap">
+                  <input
+                    id="field-name"
+                    name="name"
+                    placeholder="Bride / Groom / Parent Name"
+                    required
+                    autoComplete="name"
+                  />
+                </div>
+              </div>
+
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-phone">
+                  <span>Phone / WhatsApp Number</span>
+                  <small className="label-req">Required *</small>
+                </label>
+                <div className="form-input-wrap form-phone-wrap">
+                  <span className="phone-country-code">+91</span>
+                  <input
+                    id="field-phone"
+                    type="tel"
+                    name="phone"
+                    placeholder="94911 55403"
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid 10-digit mobile number"
+                    required
+                    autoComplete="tel"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Row 2: Wedding / Muhurtham Date & Session */}
+            <div className="form-grid-2col">
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-date">
+                  <span>Wedding / Muhurtham Date</span>
+                  <small className="label-req">Auspicious Date *</small>
+                </label>
+                <div className="form-input-wrap form-date-wrap">
+                  <input
+                    id="field-date"
+                    type="date"
+                    name="date"
+                    min={todayString}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-session">
+                  <span>Muhurtham Session</span>
+                  <small className="label-req">Required *</small>
+                </label>
+                <div className="form-input-wrap">
+                  <select id="field-session" name="session" defaultValue="Morning Sumuhurtham (05:00 AM – 11:30 AM)" required>
+                    <option>Morning Sumuhurtham (05:00 AM – 11:30 AM)</option>
+                    <option>Midday / Afternoon Ceremony (11:30 AM – 03:00 PM)</option>
+                    <option>Evening Kalyanam &amp; Reception (05:00 PM – 10:30 PM)</option>
+                    <option>Full Day / Multiple Days (24+ Hours)</option>
+                    <option>Date Flexible / Consulting Astrologer</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 3: Celebration Type & Estimated Guests */}
+            <div className="form-grid-2col">
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-type">
+                  <span>Celebration Type</span>
+                  <small className="label-req">Required *</small>
+                </label>
+                <div className="form-input-wrap">
+                  <select id="field-type" name="type" defaultValue="Traditional Vedic Wedding (Kalyanam)" required>
+                    <option>Traditional Vedic Wedding (Kalyanam)</option>
+                    <option>Engagement Ceremony (Nischitartham)</option>
+                    <option>Wedding Reception &amp; Grand Banquet</option>
+                    <option>Haldi &amp; Bridal Blessing Ceremony</option>
+                    <option>Seemantham Ceremony</option>
+                    <option>Upanayanam Ceremony</option>
+                    <option>Gruhapravesam / Housewarming</option>
+                    <option>Complete End-to-End Wedding Package</option>
+                    <option>Other Sacred Event</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-guests">
+                  <span>Estimated Guests</span>
+                  <small className="label-req">Required *</small>
+                </label>
+                <div className="form-input-wrap">
+                  <select id="field-guests" name="guests" defaultValue="100–250 Guests (Traditional Gathering)" required>
+                    <option>Up to 100 Guests (Intimate Ceremony)</option>
+                    <option>100–250 Guests (Traditional Gathering)</option>
+                    <option>250–500 Guests (Grand Wedding)</option>
+                    <option>500–800+ Guests (Royal Celebration)</option>
+                    <option>800–1500+ Guests (Mega Gathering)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Row 4: Budget Preference & Email Address */}
+            <div className="form-grid-2col">
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-budget">
+                  <span>Budget Preference</span>
+                  <small>Flexible</small>
+                </label>
+                <div className="form-input-wrap">
+                  <select id="field-budget" name="budget" defaultValue="Standard Traditional Package">
+                    <option>Simple &amp; Budget-Friendly Ceremony</option>
+                    <option>Standard Traditional Package</option>
+                    <option>Grand Royal Heritage Package</option>
+                    <option>Custom Budget Discussion</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-field-group">
+                <label className="form-field-label" htmlFor="field-email">
+                  <span>Email Address</span>
+                  <small>Optional for PDF quote</small>
+                </label>
+                <div className="form-input-wrap">
+                  <input
+                    id="field-email"
+                    type="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    autoComplete="email"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Row 5: Services Required Interactive Pills */}
+            <div className="form-field-group form-services-group">
+              <label className="form-field-label">
+                <span>Services Needed</span>
+                <small>Tap to toggle</small>
+              </label>
+              <div className="form-service-pills" role="group" aria-label="Select services needed">
+                {[
+                  { id: "Mandapam AC Hall", icon: "🏛️" },
+                  { id: "Authentic Satvik Bhojanam", icon: "🍃" },
+                  { id: "Vedic Priests & Pooja", icon: "🪔" },
+                  { id: "Floral & Stage Decor", icon: "🌺" },
+                  { id: "Tirumala AC Rooms", icon: "🛏️" },
+                  { id: "Guest Bus & Transport", icon: "🚌" },
+                  { id: "Photo & Video Coverage", icon: "📸" },
+                  { id: "Nadaswaram Melam", icon: "🎵" },
+                ].map((item) => {
+                  const isSelected = selectedServices.includes(item.id);
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      className={`form-service-pill ${isSelected ? "is-selected" : ""}`}
+                      onClick={() => toggleService(item.id)}
+                      aria-pressed={isSelected}
+                    >
+                      <span>{item.icon}</span>
+                      <span>{item.id}</span>
+                      <span className="pill-check-indicator">{isSelected ? "✓" : "+"}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Row 6: Special Requests Textarea */}
+            <div className="form-field-group">
+              <label className="form-field-label" htmlFor="field-notes">
+                <span>Special Requests / Family Traditions</span>
+                <small>Optional</small>
+              </label>
+              <div className="form-input-wrap">
+                <textarea
+                  id="field-notes"
+                  name="notes"
+                  rows={2}
+                  placeholder="e.g. Sub-sect rituals, specific muhurtham lagna timings, or room count..."
+                />
+              </div>
+            </div>
+
+            {/* Row 7: Submit CTA & Direct Contact */}
+            <div className="form-submit-row">
+              <button className="button button-gold form-submit-btn" type="submit">
+                <span>Request Free Consultation &amp; Quotes</span>
+                <Icon name="arrow" size={18} />
+              </button>
+            </div>
+
             <div className="form-direct-call-hint">
-              <span>Or call directly for immediate inquiry: </span>
-              <a href="tel:9491155403">📞 +91 94911 55403</a>
+              <span>Immediate question? </span>
+              <a href="https://wa.me/919491155403" target="_blank" rel="noopener noreferrer">
+                💬 WhatsApp 94911 55403
+              </a>
+              <span> or </span>
+              <a href="tel:9491155403">
+                📞 Call +91 94911 55403
+              </a>
             </div>
           </form>
         )}
