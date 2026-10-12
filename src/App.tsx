@@ -1806,54 +1806,69 @@ function App() {
 
             <div className="blessing-features-grid">
               <div className="blessing-feat">
-                <span className="blessing-feat-icon">
-                  <LotusIcon size={18} />
-                </span>
-                <div>
+                <div className="blessing-feat-top">
+                  <span className="blessing-feat-icon">
+                    <LotusIcon size={20} />
+                  </span>
+                  <span className="blessing-feat-pill">01 · VEDIC UNION</span>
+                </div>
+                <div className="blessing-feat-content">
                   <strong>Eternal Marital Union</strong>
+                  <span className="blessing-feat-rule" />
                   <p>Eternal union blessed by the supreme grace of Sri Padmavathi &amp; Lord Balaji.</p>
                 </div>
               </div>
+
               <div className="blessing-feat">
-                <span className="blessing-feat-icon">
-                  <DiyaIcon size={18} />
-                </span>
-                <div>
+                <div className="blessing-feat-top">
+                  <span className="blessing-feat-icon">
+                    <DiyaIcon size={20} />
+                  </span>
+                  <span className="blessing-feat-pill">02 · SHASTRIC CODE</span>
+                </div>
+                <div className="blessing-feat-content">
                   <strong>Vedic Shastric Tradition</strong>
+                  <span className="blessing-feat-rule" />
                   <p>Strict adherence to Shastras, authentic muhurtham and auspicious rituals.</p>
                 </div>
               </div>
+
               <div className="blessing-feat">
-                <span className="blessing-feat-icon">
-                  <MandalaIcon size={18} />
-                </span>
-                <div>
-                  <strong>Divine Prasadam &amp; Satvik Feast</strong>
+                <div className="blessing-feat-top">
+                  <span className="blessing-feat-icon">
+                    <MandalaIcon size={20} />
+                  </span>
+                  <span className="blessing-feat-pill">03 · SATVIK FEAST</span>
+                </div>
+                <div className="blessing-feat-content">
+                  <strong>Divine Prasadam &amp; Feast</strong>
+                  <span className="blessing-feat-rule" />
                   <p>Auspicious Tirumala prasadam tokens and satvik banana leaf feast for your guests.</p>
                 </div>
               </div>
             </div>
 
             <div className="blessing-cta-row">
-              <button className="button button-gold hero-btn-gold" onClick={scrollToInquiry}>
-                PLAN YOUR WEDDING <Icon name="arrow" size={16} />
+              <button className="blessing-btn-primary" onClick={scrollToInquiry}>
+                <span>PLAN YOUR WEDDING</span>
+                <Icon name="arrow" size={16} />
               </button>
               <a
-                className="button hero-btn-whatsapp"
+                className="blessing-btn-whatsapp"
                 href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20seek%20Lord%20Balaji%20blessings%20for%20our%20wedding."
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Chat on WhatsApp"
               >
-                <WhatsAppIcon size={17} />
+                <WhatsAppIcon size={18} />
                 <span>WhatsApp Us</span>
               </a>
               <a
-                className="button blessing-call-btn"
+                className="blessing-btn-call"
                 href="tel:9491155403"
                 aria-label="Call 9491155403"
               >
-                <Icon name="phone" size={15} />
+                <Icon name="phone" size={16} />
                 <span>Call: 94911 55403</span>
               </a>
             </div>

@@ -2,21 +2,24 @@
 @import 'tailwindcss';
 
 :root {
-  --ink: #2b130e;
-  --forest: #7e241e;
-  --forest-deep: #4e1115;
-  --sindoor: #a51d24;
-  --sindoor-deep: #5e1116;
-  --cream: #faf7f0;
-  --paper: #fdfbf7;
-  --gold: #c88a16;
-  --gold-light: #f5c862;
-  --gold-warm: #d97706;
-  --temple-gold: #d49a22;
-  --turmeric: #f59e0b;
-  --turmeric-soft: #fbf7ee;
-  --line: #e8d9c0;
-  --muted: #6b5c53;
+  --ink: #241014;
+  --forest: #3b1118;
+  --forest-deep: #21090f;
+  --wine: #3b1118;
+  --wine-deep: #21090f;
+  --sindoor: #541923;
+  --sindoor-deep: #2b0b12;
+  --cream: #f7f0e5;
+  --paper: #fffdf8;
+  --gold: #d6b878;
+  --gold-light: #e8d8b1;
+  --gold-warm: #c5a35e;
+  --temple-gold: #d6b878;
+  --turmeric: #c99416;
+  --turmeric-deep: #9e6e0b;
+  --turmeric-soft: #f4e3a6;
+  --line: rgba(96, 61, 43, 0.18);
+  --muted: #776c66;
   --sans: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
   --serif: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
   --font-royal: "Cinzel", serif;
@@ -3844,62 +3847,108 @@ footer > p {
 .blessing-features-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: 18px;
+  margin-bottom: 34px;
 }
 
 .blessing-feat {
+  position: relative;
   display: flex;
-  gap: 14px;
-  align-items: flex-start;
-  padding: 16px 18px;
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid rgba(212, 175, 55, 0.45);
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(180, 115, 20, 0.08);
-  transition: transform 0.3s var(--ease-smooth), border-color 0.3s ease, box-shadow 0.3s ease;
+  flex-direction: column;
+  padding: 22px 20px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+  border: 1px solid rgba(189, 139, 50, 0.4);
+  border-top: 3px solid #c88a16;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(45, 9, 13, 0.05);
+  transition: transform 0.35s var(--ease-editorial), border-color 0.3s ease, box-shadow 0.35s ease;
 }
 
 .blessing-feat:hover {
   background: #ffffff;
-  border-color: #c88a16;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(180, 115, 20, 0.18);
+  border-color: #d4af37;
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(189, 139, 50, 0.16);
 }
 
-.blessing-feat-icon {
+.blessing-feat-top {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+/* Royal Jewel Medallion (Replaces the crude yellow ball) */
+.blessing-feat-icon {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 100%);
-  color: #4e1115;
+  background: linear-gradient(135deg, #380b10 0%, #1e0508 100%);
+  border: 1.5px solid rgba(223, 189, 125, 0.75);
+  color: #f7e2a9;
   flex-shrink: 0;
-  margin-top: 2px;
-  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.3);
+  box-shadow: 
+    0 4px 12px rgba(45, 9, 13, 0.22),
+    inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: all 0.3s ease;
+}
+
+.blessing-feat:hover .blessing-feat-icon {
+  border-color: #f0c976;
+  box-shadow: 
+    0 6px 16px rgba(189, 139, 50, 0.35),
+    inset 0 1px 2px rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.blessing-feat-pill {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8b682e;
+  background: rgba(189, 139, 50, 0.12);
+  border: 1px solid rgba(189, 139, 50, 0.25);
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.blessing-feat-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .blessing-feat strong {
   display: block;
-  font-family: var(--telugu-serif);
+  font-family: var(--serif);
   font-size: 19px;
-  font-weight: 800;
-  color: #3b0c10;
+  font-weight: 600;
+  color: #2b080c;
   line-height: 1.3;
-  margin-bottom: 4px;
-  letter-spacing: 0.01em;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.blessing-feat-rule {
+  display: block;
+  width: 32px;
+  height: 1.5px;
+  background: linear-gradient(90deg, #d4af37 0%, transparent 100%);
+  margin-bottom: 10px;
 }
 
 .blessing-feat p {
   margin: 0;
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 500;
-  color: #5a4b43;
-  line-height: 1.55;
+  color: #5c4d44;
+  line-height: 1.6;
 }
 
+/* Unified Royal Action Suite */
 .blessing-cta-row {
   display: flex;
   align-items: center;
@@ -3907,28 +3956,82 @@ footer > p {
   flex-wrap: wrap;
 }
 
-.blessing-call-btn {
+.blessing-btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 0 22px;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 28px;
   border-radius: 999px;
-  background: #ffffff;
-  border: 1.5px solid #d4af37;
-  color: #5e1116;
-  font-size: 12px;
-  font-weight: 800;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(180, 115, 20, 0.1);
+  background: linear-gradient(135deg, #d4af37 0%, #aa7c11 100%);
+  color: #1a0407;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 24px rgba(189, 139, 50, 0.32);
+  cursor: pointer;
   transition: all 0.25s var(--ease-editorial);
 }
 
-.blessing-call-btn:hover {
-  background: #fef8ea;
-  border-color: #b45309;
+.blessing-btn-primary:hover {
+  background: linear-gradient(135deg, #e4bf47 0%, #b88a1c 100%);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(180, 115, 20, 0.2);
+  box-shadow: 0 12px 30px rgba(189, 139, 50, 0.45);
+}
+
+.blessing-btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 0 26px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.blessing-btn-whatsapp:hover {
+  background: #1ebc59;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.38);
+}
+
+.blessing-btn-call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1.5px solid #d4af37;
+  color: #2b080c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(189, 139, 50, 0.12);
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.blessing-btn-call:hover {
+  background: #fdfaf3;
+  border-color: #aa7c11;
+  color: #1a0407;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(189, 139, 50, 0.22);
 }
 
 @media (max-width: 1024px) {
@@ -4743,21 +4846,21 @@ footer > p {
   .blessing-shloka-telugu { font-size: 15.5px; line-height: 1.7; }
   .blessing-shloka-translation { font-size: 11.5px; line-height: 1.55; }
   .blessing-description { font-size: 12.5px; line-height: 1.75; margin-bottom: 20px; }
-  .blessing-features-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 22px; }
-  .blessing-feat { padding: 14px 14px; gap: 12px; }
-  .blessing-feat strong { font-size: 17px; }
-  .blessing-feat p { font-size: 11px; }
+  .blessing-features-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 24px; }
+  .blessing-feat { padding: 18px 16px; }
+  .blessing-feat-top { margin-bottom: 12px; }
+  .blessing-feat-icon { width: 40px; height: 40px; }
+  .blessing-feat strong { font-size: 18px; }
+  .blessing-feat p { font-size: 12px; }
   .blessing-cta-row { width: 100%; flex-direction: column; gap: 10px; }
-  .blessing-cta-row .button,
-  .blessing-cta-row .blessing-call-btn {
+  .blessing-btn-primary,
+  .blessing-btn-whatsapp,
+  .blessing-btn-call {
     width: 100%;
-    min-height: 48px;
-    font-size: 11px;
-    padding: 12px 14px;
+    min-height: 50px;
+    font-size: 12px;
     justify-content: center;
     text-align: center;
-    white-space: normal;
-    line-height: 1.35;
   }
 
   /* Inquiry section on mobile */
@@ -5347,4 +5450,186 @@ h4 em,
   border-color: #f5c862;
   color: #ffffff;
   transform: translateY(-1px);
+}
+
+/* Premium heritage direction: deep wine, ivory, champagne, and Telugu turmeric. */
+.site-header {
+  background: rgba(33, 9, 15, 0.88);
+  border-bottom-color: rgba(232, 216, 177, 0.2);
+}
+
+.hero-shade-left {
+  background:
+    linear-gradient(90deg, rgba(33, 9, 15, 0.9) 0%, rgba(33, 9, 15, 0.65) 35%, rgba(33, 9, 15, 0.18) 65%, transparent 82%),
+    linear-gradient(180deg, rgba(33, 9, 15, 0.35), transparent 45%, rgba(33, 9, 15, 0.75));
+}
+
+.hero-title-left,
+.section-heading h2,
+.wedding-focus-heading,
+.image-card h3,
+.catalog-header-card h3,
+.venue-copy h2,
+.rituals-hero-overlay h3,
+.scenery-hero-overlay h3,
+.occasion-card-info h3 {
+  font-family: var(--serif);
+}
+
+.hero-btn-gold,
+.button-gold {
+  background: var(--gold);
+  color: var(--wine-deep);
+  box-shadow: 0 10px 28px rgba(214, 184, 120, 0.18);
+}
+
+.hero-btn-gold:hover,
+.button-gold:hover {
+  background: var(--gold-light);
+  box-shadow: 0 12px 30px rgba(214, 184, 120, 0.26);
+}
+
+.hero-btn-whatsapp,
+.hero-btn-call,
+.nav-cta-pill-desktop {
+  border-radius: 4px;
+}
+
+.hero-btn-whatsapp,
+.hero-btn-call {
+  background: rgba(33, 9, 15, 0.62);
+  border-color: rgba(232, 216, 177, 0.55);
+}
+
+.hero-btn-call:hover,
+.header-phone-pill:hover,
+.nav-cta-pill-desktop:hover {
+  background: var(--gold);
+  color: var(--wine-deep);
+  border-color: var(--gold);
+}
+
+.hero-subtitle-left,
+.kicker-lines,
+.metric-cell,
+.scroll-discover-link,
+.mandala-text strong {
+  color: var(--gold-light);
+}
+
+.wedding-focus,
+.proof-strip {
+  background: var(--cream);
+}
+
+.wedding-focus {
+  border-top-color: var(--gold);
+}
+
+.wedding-focus-image {
+  background: var(--wine);
+}
+
+.eyebrow,
+.ritual-step-num,
+.occasion-modal-kicker {
+  color: var(--turmeric-deep);
+}
+
+.rituals-section {
+  background: linear-gradient(135deg, var(--turmeric-soft) 0%, #fbf8f1 34%, #faf8f5 100%);
+}
+
+.rituals-section .rituals-hero-banner,
+.rituals-section .ritual-card {
+  border-color: rgba(201, 148, 22, 0.35);
+}
+
+.rituals-section .ritual-step-num,
+.rituals-section .ritual-check-icon {
+  color: var(--turmeric-deep);
+}
+
+.rituals-section .ritual-check-icon {
+  background: var(--turmeric);
+  color: var(--wine-deep);
+}
+
+.decor-filter-tab.active,
+.decor-toggle-btn.active {
+  background: var(--wine);
+  border-color: var(--turmeric);
+}
+
+.catalog-header-card,
+.venue-section {
+  background: linear-gradient(135deg, var(--wine) 0%, var(--wine-deep) 100%);
+}
+
+.catalog-header-card {
+  border-color: rgba(232, 216, 177, 0.42);
+  border-radius: 5px;
+}
+
+.catalog-service-card,
+.occasion-card,
+.ritual-card,
+.scenery-card {
+  border-radius: 5px;
+  border-color: var(--line);
+  box-shadow: 0 10px 28px rgba(36, 16, 20, 0.06);
+}
+
+.occasion-card::before,
+.ritual-card-tag,
+.scenery-card-tag {
+  border-radius: 3px;
+}
+
+.temple-watermark {
+  color: var(--gold-warm);
+  opacity: 0.045;
+}
+
+.catalog-badge,
+.rituals-badge,
+.scenery-hero-badge {
+  border-radius: 3px;
+}
+
+.inquiry-section,
+.footer {
+  background: var(--wine-deep);
+}
+
+/* Return to the softer modern type system; keep heritage character in the palette. */
+.promise-check {
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  border-radius: 5px;
+  background: var(--champagne-soft);
+  border: 1px solid var(--champagne);
+  color: var(--wine);
+  box-shadow: none;
+}
+
+.promise-card {
+  border-radius: 5px;
+  background: rgba(255, 253, 248, 0.72);
+  border-color: rgba(96, 61, 43, 0.14);
+}
+
+.promise-card:hover {
+  border-color: var(--champagne);
+  box-shadow: 0 8px 20px rgba(36, 16, 20, 0.07);
+}
+
+.promise-card-text strong {
+  font-family: var(--sans);
+  color: var(--wine-deep);
+}
+
+.promise-card-text span {
+  color: var(--muted);
 }
