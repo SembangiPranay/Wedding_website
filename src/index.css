@@ -1,23 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700&family=Peddana&family=Ramabhadra&family=Suranna&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@400;500;600;700;800&family=Cinzel:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 :root {
-  --ink: #18251f;
-  --forest: #102d24;
-  --forest-deep: #082019;
-  --cream: #f6f1e8;
-  --paper: #fbf8f2;
-  --gold: #bd8b32;
-  --gold-light: #dfbd7d;
-  --kumkum: #7f1916;
-  --line: #dcd3c4;
-  --muted: #6d746f;
-  --serif: "Cormorant Garamond", "Peddana", Georgia, serif;
-  --sans: "Manrope", "Anek Telugu", Arial, sans-serif;
-  --telugu-serif: "Peddana", "Suranna", serif;
-  --telugu-poetic: "Suranna", "Peddana", serif;
-  --telugu-royal: "Ramabhadra", "Peddana", serif;
-  --telugu-sans: "Anek Telugu", "Manrope", sans-serif;
+  --ink: #2b130e;
+  --forest: #7e241e;
+  --forest-deep: #4e1115;
+  --sindoor: #a51d24;
+  --sindoor-deep: #5e1116;
+  --cream: #faf7f0;
+  --paper: #fdfbf7;
+  --gold: #c88a16;
+  --gold-light: #f5c862;
+  --gold-warm: #d97706;
+  --temple-gold: #d49a22;
+  --turmeric: #f59e0b;
+  --turmeric-soft: #fbf7ee;
+  --line: #e8d9c0;
+  --muted: #6b5c53;
+  --sans: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
+  --serif: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
+  --font-royal: "Cinzel", serif;
+  --telugu-serif: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
+  --telugu-poetic: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
+  --telugu-royal: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
+  --telugu-sans: "Anek Telugu", "Plus Jakarta Sans", sans-serif;
   --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -233,9 +239,9 @@ img { display: block; width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 52%;
-  /* No dark filter! Clear, vibrant natural hill & mist */
-  filter: saturate(1.08) contrast(1.05);
+  object-position: center 48%;
+  /* Bright, natural photographic finish while preserving the reference image. */
+  filter: saturate(1.12) contrast(1.06) brightness(1.08);
   transform-origin: center center;
   animation: templeSlowDrift 30s ease-in-out infinite alternate;
   will-change: transform;
@@ -249,8 +255,8 @@ img { display: block; width: 100%; }
   inset: 0;
   /* Soft gradient ONLY on the left behind text; mountains in center & right are 100% crystal clear! */
   background:
-    linear-gradient(90deg, rgba(2, 12, 9, 0.88) 0%, rgba(2, 12, 9, 0.65) 30%, rgba(2, 12, 9, 0.2) 52%, transparent 70%),
-    linear-gradient(180deg, rgba(2, 12, 9, 0.6) 0%, transparent 15%, transparent 75%, rgba(2, 10, 8, 0.85) 100%);
+    linear-gradient(90deg, rgba(83, 15, 19, 0.72) 0%, rgba(83, 15, 19, 0.42) 28%, rgba(83, 15, 19, 0.08) 54%, transparent 72%),
+    linear-gradient(180deg, rgba(35, 10, 12, 0.28) 0%, transparent 18%, transparent 74%, rgba(38, 10, 10, 0.72) 100%);
   pointer-events: none;
 }
 
@@ -3740,4 +3746,477 @@ footer > p {
   .hero-temple, .hero-center-glow, .toran-accent, .scroll-arrow, .badge-glow-dot {
     animation: none !important;
   }
+}
+
+/* ==========================================================================
+   ROYAL TELUGU WEDDING DESIGN SYSTEM: CLEAN, BOLD & PROFESSIONAL TYPOGRAPHY
+   Strictly zero italic / slanted scripts ("Italian style").
+   Bold, confident, upright and authoritative typography.
+   ========================================================================== */
+
+body {
+  background: var(--paper);
+  font-family: var(--sans);
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+/* STRICT: Zero Italic "Italian" styles across the site. Clean, bold, upright typography. */
+em, i, cite, address {
+  font-style: normal !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--sans);
+  font-style: normal !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.035em;
+}
+
+/* All heading accents & highlights: Clean, upright, bold gold / temple amber */
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+.hero-subtitle-left,
+.heading-bold-gold,
+.section-heading h2 em,
+.wedding-focus-copy h2 em {
+  font-style: normal !important;
+  font-weight: 800 !important;
+  color: #c88a16;
+  background: linear-gradient(135deg, #d97706 0%, #b45309 60%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Header & Navigation: Executive Royal Finish */
+.site-header {
+  height: 80px;
+  padding-inline: clamp(20px, 3.2vw, 56px);
+  background: rgba(58, 12, 16, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(245, 200, 98, 0.4);
+  box-shadow: 0 8px 24px rgba(40, 8, 12, 0.25);
+}
+
+.brand {
+  gap: 13px;
+}
+.brand-logo-img {
+  width: 46px;
+  height: 46px;
+  border: 2px solid var(--gold-light);
+  box-shadow: 0 0 12px rgba(245, 200, 98, 0.4);
+}
+.brand-title {
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+.brand-subtitle {
+  font-size: 7.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+}
+
+.nav-links {
+  gap: clamp(10px, 1.25vw, 22px);
+}
+.nav-item {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.nav-item.active::after {
+  background: var(--gold-light);
+  height: 2.5px;
+}
+.header-phone-pill {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: rgba(245, 200, 98, 0.15);
+  border-color: rgba(245, 200, 98, 0.55);
+}
+.nav-cta-pill-desktop {
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #f5c862 0%, #c88a16 100%);
+  color: var(--forest-deep);
+  border: none;
+}
+.nav-cta-pill-desktop:hover {
+  background: linear-gradient(135deg, #fcd34d 0%, #d97706 100%);
+  color: #000;
+}
+
+/* Hero Section: Majestic, Clean & Bold */
+.hero {
+  padding-top: 80px;
+}
+.hero-shade-left {
+  background:
+    linear-gradient(90deg, rgba(22, 5, 7, 0.88) 0%, rgba(22, 5, 7, 0.72) 34%, rgba(22, 5, 7, 0.18) 58%, transparent 75%),
+    linear-gradient(180deg, rgba(20, 4, 6, 0.4) 0%, transparent 22%, transparent 70%, rgba(20, 4, 6, 0.78) 100%);
+}
+.hero-container-left {
+  max-width: 1440px;
+  padding-inline: clamp(28px, 6.5vw, 108px);
+  margin-bottom: 24px;
+}
+.hero-kicker-stack {
+  margin-bottom: 16px;
+}
+.kicker-rule {
+  background: var(--gold-light);
+}
+.kicker-lines {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+}
+.hero-lotus-ornament {
+  margin-left: 0;
+  margin-bottom: 10px;
+}
+.hero-title-left {
+  max-width: 760px;
+  font-family: var(--sans);
+  font-size: clamp(48px, 5.2vw, 80px);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -0.045em;
+  color: #ffffff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+.hero-subtitle-left {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.58em;
+  font-weight: 800 !important;
+  font-style: normal !important;
+  letter-spacing: -0.025em;
+  margin-top: 8px;
+  color: #f5c862;
+  background: linear-gradient(135deg, #ffe082 0%, #ffb300 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+.hero-copy-left {
+  max-width: 580px;
+  margin: 20px 0 26px;
+  font-size: clamp(14px, 1.08vw, 16.5px);
+  font-weight: 500;
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+}
+.hero-actions-left {
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.hero-btn-gold {
+  min-height: 50px;
+  padding-inline: 26px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  background: linear-gradient(135deg, #fcd34d 0%, #f59e0b 50%, #d97706 100%);
+  color: #2b130e;
+}
+.hero-btn-whatsapp {
+  min-height: 50px;
+  padding-inline: 24px;
+  font-weight: 800;
+  background: rgba(16, 68, 48, 0.85);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+.hero-btn-whatsapp:hover {
+  background: rgba(16, 88, 60, 0.95);
+  border-color: #4ade80;
+}
+.hero-btn-call {
+  min-height: 50px;
+  padding-inline: 22px;
+  font-weight: 800;
+  background: rgba(40, 10, 14, 0.65);
+  border: 1px solid rgba(245, 200, 98, 0.5);
+}
+.metric-cell strong {
+  font-family: var(--sans);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #ffffff;
+}
+.metric-cell span {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+}
+
+/* Wedding Focus / Telugu Pelli: Luxury, High-End Presentation */
+.wedding-focus {
+  position: relative;
+  min-height: 680px;
+  padding: 60px clamp(24px, 5.5vw, 88px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(360px, 1fr);
+  gap: clamp(40px, 5.5vw, 90px);
+  align-items: center;
+  background: #fdfbf7;
+  background-image: radial-gradient(circle at 85% 20%, rgba(245, 200, 98, 0.12) 0%, transparent 60%);
+  border-top: 5px solid var(--gold);
+  border-bottom: 1px solid var(--line);
+}
+.wedding-focus-image-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.wedding-focus-image {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  height: 580px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #d4af37;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.4),
+    0 24px 60px rgba(78, 14, 18, 0.18),
+    0 10px 24px rgba(0, 0, 0, 0.08);
+  background: #4e1115;
+}
+.wedding-focus-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s var(--ease-editorial);
+}
+.wedding-focus-image:hover img {
+  transform: scale(1.03);
+}
+.wedding-image-seal {
+  position: absolute;
+  z-index: 3;
+  right: 28px;
+  bottom: 28px;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(55, 10, 14, 0.94);
+  border: 2px solid #f5c862;
+  box-shadow:
+    0 0 0 4px rgba(245, 200, 98, 0.2),
+    0 12px 28px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+}
+.wedding-image-seal::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed rgba(245, 200, 98, 0.55);
+  border-radius: 50%;
+}
+.seal-text-telugu {
+  z-index: 1;
+  font-family: var(--telugu-serif);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #f5c862;
+  letter-spacing: 0.02em;
+}
+.seal-subtext {
+  z-index: 1;
+  margin-top: 3px;
+  font-size: 8px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.wedding-focus-copy {
+  max-width: 580px;
+}
+.wedding-focus-heading {
+  margin: 12px 0 20px;
+  font-family: var(--sans);
+  font-size: clamp(38px, 4.4vw, 62px);
+  font-weight: 800 !important;
+  font-style: normal !important;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #2b130e;
+}
+.heading-bold-gold {
+  display: inline-block;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  color: #c88a16;
+  background: linear-gradient(135deg, #c88a16 0%, #b45309 60%, #92400e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.wedding-focus-lead {
+  margin: 0 0 24px;
+  color: #5a4b43;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.75;
+  font-weight: 500;
+}
+.wedding-promises-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.promise-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(232, 217, 192, 0.7);
+  transition: all 0.25s var(--ease-editorial);
+}
+.promise-card:hover {
+  background: #ffffff;
+  border-color: #d4af37;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(180, 83, 9, 0.08);
+}
+.promise-check {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5c862 0%, #c88a16 100%);
+  color: #4e1115;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(200, 138, 22, 0.3);
+}
+.promise-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.promise-card-text strong {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #2b130e;
+  letter-spacing: -0.01em;
+}
+.promise-card-text span {
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b5c53;
+  line-height: 1.5;
+}
+.wedding-focus-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Sections & Cards Polish */
+.proof-strip {
+  background: #fbf7ee;
+  border-bottom: 1px solid var(--line);
+}
+.proof-strip span {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 800;
+  color: #2b130e;
+}
+
+.section-heading h2 {
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  color: #2b130e;
+}
+.section-heading h2 em {
+  font-style: normal !important;
+  font-weight: 800 !important;
+  color: #c88a16;
+}
+
+/* Responsive Overrides */
+@media (max-width: 1024px) {
+  .wedding-focus {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 44px 20px;
+  }
+  .wedding-focus-image {
+    max-width: 100%;
+    height: 440px;
+  }
+  .wedding-focus-copy {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-focus {
+    padding: 36px 16px;
+    gap: 32px;
+  }
+  .wedding-focus-image {
+    height: 340px;
+    border-radius: 14px;
+  }
+  .wedding-image-seal {
+    width: 90px;
+    height: 90px;
+    right: 16px;
+    bottom: 16px;
+  }
+  .seal-text-telugu {
+    font-size: 17px;
+  }
+  .seal-subtext {
+    font-size: 7px;
+  }
+  .wedding-focus-heading {
+    font-size: clamp(30px, 7.5vw, 40px);
+  }
+  .wedding-focus-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .wedding-focus-cta-group .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1160px) {
+  .nav-links { gap: 9px; }
+  .nav-item { font-size: 10px; }
+  .header-phone-pill { padding-inline: 10px; }
+  .nav-cta-pill-desktop { padding-inline: 13px; }
 }

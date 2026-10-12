@@ -9,7 +9,9 @@ const images = {
   ballroom: "/images/telugu_function_hall.jpg",
   flowers: "/images/telugu_floral_decor.jpg",
   dinner: "/images/satvik_bhojanam.jpg",
-  temple: "/images/tirumala-background.png",
+  // Temple_5 has the clearest real photographic composition: bright gopuram,
+  // visible Seshachalam ridge, and open sky for the hero copy.
+  temple: "/images/Temple_reference/Temple_5.jpg",
   hillsPanorama: "/images/tirumala_overview.jpg",
   hillsMorning: "/images/tirumala_morning_hills.jpg",
   hillsRidge: "/images/sapthagiri_hills.jpg",
@@ -935,30 +937,65 @@ function App() {
       </section>
 
       <section className="wedding-focus reveal-init" id="wedding-focus" aria-label="Telugu wedding planning">
-        <div className="wedding-focus-image">
-          <img src={images.balajiPooja} alt="Sacred Tirumala Malayappa Swamy Kalyana Utsavam mangala harathi with divine floral garlands" />
-          <div className="wedding-image-seal">
-            <span>శుభమస్తు</span>
-            <small>కళ్యాణోత్సవం</small>
+        <div className="wedding-focus-image-wrapper">
+          <div className="wedding-focus-image">
+            <img src={images.balajiPooja} alt="Sacred Tirumala Malayappa Swamy Kalyana Utsavam mangala harathi with divine floral garlands" />
+            <div className="wedding-image-seal">
+              <span className="seal-text-telugu">శుభమస్తు</span>
+              <small className="seal-subtext">కళ్యాణోత్సవం</small>
+            </div>
           </div>
         </div>
         <div className="wedding-focus-copy">
-          <p className="eyebrow"><span /> తెలుగు పెళ్లి · The heart of what we do</p>
-          <h2>Your wedding,<br /><em>honoured beautifully.</em></h2>
-          <p>
+          <p className="eyebrow"><span /> తెలుగు పెళ్లి సంప్రదాయం · THE HEART OF WHAT WE DO</p>
+          <h2 className="wedding-focus-heading">
+            Your wedding,<br />
+            <span className="heading-bold-gold">honoured beautifully.</span>
+          </h2>
+          <p className="wedding-focus-lead">
             A Telugu wedding is a coming together of families, blessings and
             centuries of tradition. From jeelakarra bellam to saptapadi, we
             thoughtfully arrange every ritual while surrounding your guests with
             warm, gracious hospitality under the divine gaze of Lord Malayappa Swamy.
           </p>
-          <div className="wedding-promises">
-            <span><Icon name="check" size={16} /> Authentic traditions</span>
-            <span><Icon name="check" size={16} /> Complete family hospitality</span>
-            <span><Icon name="check" size={16} /> One dedicated wedding team</span>
+          <div className="wedding-promises-grid">
+            <div className="promise-card">
+              <span className="promise-check"><Icon name="check" size={15} /></span>
+              <div className="promise-card-text">
+                <strong>Authentic Traditions</strong>
+                <span>Traditional Vedic rituals &amp; experienced Tirumala Purohits</span>
+              </div>
+            </div>
+            <div className="promise-card">
+              <span className="promise-check"><Icon name="check" size={15} /></span>
+              <div className="promise-card-text">
+                <strong>Complete Family Hospitality</strong>
+                <span>Tirumala AC accommodation, guest transport &amp; Satvik bhojanam</span>
+              </div>
+            </div>
+            <div className="promise-card">
+              <span className="promise-check"><Icon name="check" size={15} /></span>
+              <div className="promise-card-text">
+                <strong>One Dedicated Wedding Team</strong>
+                <span>Single coordinator for hall booking, decor, catering &amp; pooja</span>
+              </div>
+            </div>
           </div>
-          <button className="button button-forest" onClick={scrollToInquiry}>
-            Plan your wedding <Icon name="arrow" size={18} />
-          </button>
+          <div className="wedding-focus-cta-group">
+            <button className="button button-gold hero-btn-gold" onClick={scrollToInquiry}>
+              PLAN YOUR WEDDING <Icon name="arrow" size={16} />
+            </button>
+            <a
+              className="button hero-btn-whatsapp"
+              href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20want%20to%20plan%20our%20Telugu%20wedding."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+            >
+              <WhatsAppIcon size={17} />
+              <span>WhatsApp Us</span>
+            </a>
+          </div>
         </div>
       </section>
 
