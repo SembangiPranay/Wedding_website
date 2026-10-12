@@ -1393,36 +1393,483 @@ h2 em { color: #947342; font-weight: 500; }
 .occasions { background: var(--cream); }
 .center-heading { margin: 0 auto 48px; text-align: center; }
 .eyebrow.centered { justify-content: center; }
-.occasion-grid { max-width: 1240px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.occasion-grid article {
+.occasion-grid {
+  max-width: 1240px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.occasion-card {
   position: relative;
-  padding-bottom: 17px;
-  border-bottom: 1px solid #bdb3a4;
-  transition: transform 0.35s var(--ease-editorial);
+  background: #ffffff;
+  border: 1px solid rgba(223, 189, 125, 0.38);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s var(--ease-editorial), box-shadow 0.35s var(--ease-editorial), border-color 0.3s ease;
+  box-shadow: 0 6px 20px rgba(45, 9, 13, 0.05);
+  cursor: pointer;
+  text-align: left;
 }
-.occasion-grid article:hover {
-  transform: translateY(-3px);
+
+.occasion-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 18px 42px rgba(45, 9, 13, 0.16);
 }
-.occasion-grid article::before {
+
+.occasion-card::before {
   content: "AUSPICIOUS";
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: 12px;
   left: 12px;
   padding: 4px 9px;
   color: #f6e7c6;
-  background: rgba(88,21,17,.88);
+  background: rgba(88, 21, 17, 0.9);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(223, 189, 125, 0.45);
+}
+
+.occasion-card-image-wrap {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: #24070a;
+}
+
+.occasion-card-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.75s var(--ease-editorial);
+  display: block;
+}
+
+.occasion-card:hover .occasion-card-image-wrap img {
+  transform: scale(1.06);
+}
+
+.occasion-card-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 4px 10px;
+  background: rgba(20, 4, 6, 0.82);
+  border: 1px solid rgba(223, 189, 125, 0.4);
+  color: var(--gold-light);
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(6px);
+}
+
+.occasion-card-info {
+  padding: 20px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.occasion-card-info h3 {
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--forest-deep);
+}
+
+.occasion-card-snippet {
+  margin: 0 0 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.occasion-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(223, 189, 125, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.occasion-explore-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--forest-deep);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+}
+
+.occasion-explore-cta svg {
+  color: var(--gold);
+  transition: transform 0.25s ease;
+}
+
+.occasion-card:hover .occasion-explore-cta {
+  color: var(--gold-dark);
+}
+
+.occasion-card:hover .occasion-explore-cta svg {
+  transform: translateX(4px);
+}
+
+.occasion-capacity-badge {
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  border-radius: 2px;
+  color: #8b682e;
+  background: rgba(189, 139, 50, 0.12);
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(189, 139, 50, 0.25);
+  white-space: nowrap;
 }
-.occasion-grid article > div { height: 270px; overflow: hidden; border-radius: 2px; }
-.occasion-grid img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.75s var(--ease-editorial); }
-.occasion-grid article:hover img { transform: scale(1.045); }
-.occasion-grid h3 { margin: 18px 0 4px; font-family: var(--telugu-serif); font-size: 24px; font-weight: 600; }
-.occasion-grid article > span { display: flex; align-items: center; justify-content: space-between; color: #95713b; font-size: 9px; text-transform: uppercase; letter-spacing: .12em; }
+
+/* ==========================================================================
+   Ceremony Exploration Modal
+   ========================================================================== */
+.occasion-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(18, 3, 5, 0.94);
+  backdrop-filter: blur(12px);
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3.5vw, 40px);
+  overflow-y: auto;
+  animation: modalBackdropFadeIn 0.25s ease both;
+}
+
+@keyframes modalBackdropFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.occasion-modal-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  background: #fffdf9;
+  border: 1.5px solid var(--gold);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+  animation: modalContainerIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes modalContainerIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.occasion-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(223, 189, 125, 0.45);
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 30;
+  transition: all 0.2s ease;
+}
+
+.occasion-modal-close-btn:hover {
+  background: var(--gold);
+  color: var(--forest-deep);
+  transform: rotate(90deg);
+}
+
+.occasion-modal-media-col {
+  background: linear-gradient(180deg, #28080c 0%, #160305 100%);
+  color: #ffffff;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-right: 1px solid rgba(223, 189, 125, 0.3);
+}
+
+.occasion-modal-img-wrap {
+  position: relative;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(223, 189, 125, 0.45);
+  background: #190406;
+}
+
+.occasion-modal-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+.occasion-modal-tag-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 4px 12px;
+  background: rgba(35, 7, 10, 0.9);
+  border: 1px solid rgba(223, 189, 125, 0.6);
+  color: var(--gold-light);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 4px;
+  backdrop-filter: blur(6px);
+}
+
+.occasion-modal-meta-box {
+  background: rgba(45, 9, 13, 0.85);
+  border: 1px solid rgba(223, 189, 125, 0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.occasion-meta-pill {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.occasion-meta-pill strong {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.occasion-meta-pill span {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+.occasion-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.occasion-btn-whatsapp {
+  width: 100%;
+  justify-content: center;
+  min-height: 48px;
+  font-size: 12px;
+}
+
+.occasion-btn-inquiry {
+  width: 100%;
+  justify-content: center;
+  min-height: 48px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.occasion-decor-link-btn {
+  background: transparent;
+  border: 0;
+  color: var(--gold-light);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  padding: 6px 0;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.occasion-decor-link-btn:hover {
+  color: #ffffff;
+}
+
+.occasion-modal-content-col {
+  padding: 34px 32px;
+  overflow-y: auto;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.occasion-modal-kicker {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--gold-dark);
+  font-weight: 700;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.occasion-modal-title {
+  margin: 0 0 4px;
+  font: 600 clamp(24px, 2.6vw, 30px) var(--serif);
+  color: var(--forest-deep);
+  line-height: 1.25;
+}
+
+.occasion-modal-tagline {
+  margin: 0 0 16px;
+  font-size: 13.5px;
+  color: #8b682e;
+  font-weight: 500;
+}
+
+.occasion-modal-overview {
+  margin: 0 0 24px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  border-left: 3px solid var(--gold);
+  padding-left: 14px;
+  background: rgba(223, 189, 125, 0.08);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 0 6px 6px 0;
+}
+
+.occasion-rituals-section {
+  margin-bottom: 24px;
+}
+
+.occasion-rituals-section h4,
+.occasion-inclusions-section h4 {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--forest-deep);
+  margin: 0 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.occasion-rituals-section h4 svg,
+.occasion-inclusions-section h4 svg {
+  color: var(--gold);
+}
+
+.occasion-rituals-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.occasion-ritual-item {
+  background: #fbf9f5;
+  border: 1px solid rgba(223, 189, 125, 0.3);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ritual-item-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ritual-check-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--forest-deep);
+  font-size: 9px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.ritual-item-header strong {
+  font-size: 12.5px;
+  color: var(--forest-deep);
+  font-weight: 600;
+}
+
+.occasion-ritual-item p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.occasion-inclusions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.occasion-inclusions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: #3f3933;
+  line-height: 1.5;
+  padding: 6px 10px;
+  background: #fdfcf9;
+  border-radius: 4px;
+  border-left: 2px solid var(--gold);
+}
+
+.inclusion-bullet {
+  color: var(--gold);
+  font-size: 12px;
+  flex-shrink: 0;
+}
 
 /* ==========================================================================
    Real Event & Mandapam Decorations Gallery (Client Showcase)
@@ -3667,6 +4114,12 @@ footer > p {
   .lightbox-image-wrap { min-height: 280px; max-height: 380px; }
   .lightbox-next { left: auto; right: 14px; }
   .lightbox-info { padding: 24px 20px 24px; }
+
+  /* Occasion Modal responsive */
+  .occasion-modal-container { grid-template-columns: 1fr; max-height: 88vh; max-width: 580px; }
+  .occasion-modal-media-col { border-right: 0; border-bottom: 1px solid rgba(223, 189, 125, 0.3); padding: 22px 20px; }
+  .occasion-modal-content-col { padding: 24px 20px 28px; max-height: none; }
+  .occasion-rituals-list { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {
@@ -4003,16 +4456,27 @@ footer > p {
   /* Occasions */
   .occasions { padding: 58px 14px; }
   .center-heading { margin-bottom: 28px; }
-  .occasion-grid { grid-template-columns: 1fr 1fr; gap: 20px 10px; }
-  .occasion-grid article > div { height: 185px; border-radius: 4px; }
-  .occasion-grid article::before { top: 8px; left: 8px; padding: 3px 8px; font-size: 11px; }
-  .occasion-grid h3 {
-    font-size: clamp(14px, 3.8vw, 17px);
-    margin: 10px 0 4px;
-    line-height: 1.25;
-    word-break: break-word;
+  .occasion-grid { grid-template-columns: 1fr 1fr; gap: 14px 10px; }
+  .occasion-card-image-wrap { height: 175px; }
+  .occasion-card::before { top: 8px; left: 8px; padding: 3px 7px; font-size: 8.5px; }
+  .occasion-card-tag { bottom: 8px; left: 8px; padding: 3px 8px; font-size: 8px; }
+  .occasion-card-info { padding: 14px 12px 16px; }
+  .occasion-card-info h3 { font-size: clamp(15px, 3.8vw, 17px); margin: 0 0 6px; }
+  .occasion-card-snippet { font-size: 11px; line-height: 1.5; margin-bottom: 12px; }
+  .occasion-card-footer { padding-top: 10px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .occasion-explore-cta { font-size: 10px; }
+  .occasion-capacity-badge { font-size: 8.5px; padding: 2px 6px; }
+  .occasion-modal-container { max-height: 90vh; }
+  .occasion-modal-img-wrap { height: 210px; }
+  .occasion-modal-title { font-size: 22px; }
+  .occasion-modal-tagline { font-size: 12px; }
+  .occasion-modal-overview { font-size: 12px; }
+
+  @media (max-width: 440px) {
+    .occasion-grid { grid-template-columns: 1fr; gap: 16px; }
+    .occasion-card-image-wrap { height: 210px; }
+    .occasion-card-footer { flex-direction: row; align-items: center; }
   }
-  .occasion-grid article > span { font-size: 8.5px; }
 
   /* Decorations gallery mobile: 2-at-a-time efficiency */
   .decorations-section { padding: 48px 12px; }

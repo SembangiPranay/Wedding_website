@@ -586,11 +586,117 @@ const decorationItems: DecorItem[] = [
   },
 ];
 
-const occasions = [
-  { name: "Bridal Ceremony · Pellikuthuru", image: images.pellikuthuru },
-  { name: "Engagement · Nischitartham", image: images.engagementRing },
-  { name: "Haldi & Blessings · Mangalasnanam", image: images.haldiCelebration },
-  { name: "Grand Reception & Banquet", image: images.functionHall },
+interface OccasionItem {
+  id: string;
+  name: string;
+  tag: string;
+  tagline: string;
+  shortDesc: string;
+  image: string;
+  overview: string;
+  guestCapacity: string;
+  decorCategory: DecorCategory;
+  rituals: { name: string; desc: string }[];
+  inclusions: string[];
+}
+
+const occasions: OccasionItem[] = [
+  {
+    id: "pellikuthuru",
+    name: "Bridal Ceremony · Pellikuthuru",
+    tag: "Pre-Wedding Blessing",
+    tagline: "Sacred Pre-Wedding Adornment & Family Blessings",
+    shortDesc: "Traditional turmeric adornment, fresh jasmine garlands, green glass bangles, and sacred mangala harathi from family elders.",
+    image: images.pellikuthuru,
+    overview: "In traditional Telugu heritage, making the bride 'Pellikuthuru' (or groom 'Pellikoduku') marks the holy commencement of wedding festivities. Sanctified with pure turmeric, aromatic oils, and Vedic blessings, this joyous ceremony prepares the soul and senses for the sacred muhurtham.",
+    guestCapacity: "50 – 250 Guests",
+    decorCategory: "traditional",
+    rituals: [
+      { name: "Pasupu Danchadam", desc: "Traditional pounding of sacred turmeric roots with pestle by married women (Muthaidhavalu) with auspicious songs." },
+      { name: "Nalugu & Mangala Snanam", desc: "Anointing the bride with fragrant herbal paste, followed by a sacred bath with temple theertham and rose petals." },
+      { name: "Gajulu & Bridal Silk", desc: "Adorning the bride with auspicious green glass bangles (Aparanji Gajulu) and new silk Madhuparkam pattu." },
+      { name: "Mangala Harathi", desc: "Family elders waving brass camphor lamps to invoke Lord Balaji's protective grace and ward off evil glances." },
+    ],
+    inclusions: [
+      "Custom Floral Jhoola (Swing) or Traditional Lotus Backdrop",
+      "Experienced Tirumala Vedic Purohits for Sacred Gauri Puja",
+      "Organic Chemical-Free Turmeric Paste, Fresh Jasmine & Bangles",
+      "Traditional Satvik Morning Feast, Sweets & Coconut Water",
+      "Candid Bridal Portraiture & 4K Cinematic Video Coverage",
+    ],
+  },
+  {
+    id: "nischitartham",
+    name: "Engagement · Nischitartham",
+    tag: "Formal Betrothal",
+    tagline: "Formal Betrothal & Auspicious Muhurtham Agreement",
+    shortDesc: "Formal alliance agreement, exchanging auspicious thambulam, rings, and official proclamation of the wedding muhurtham.",
+    image: images.engagementRing,
+    overview: "Nischitartham is the sacred covenant uniting two families. Witnessed by elder relatives and Vedic purohits, the horoscope matching is formalized, the auspicious Lagna Patrika is recited aloud, and gifts of silk and jewelry are lovingly exchanged.",
+    guestCapacity: "100 – 400 Guests",
+    decorCategory: "entrance",
+    rituals: [
+      { name: "Lagna Patrika Vachanam", desc: "The head purohit formally recites the wedding sumuhurtham date, tithi, and nakshatram from the sacred scroll." },
+      { name: "Thambulam Exchange", desc: "Mutual exchange of coconuts, betel leaves, dry fruits, and gifts of honor between the bride's and groom's parents." },
+      { name: "Ring Exchange & Blessing", desc: "Bride and groom exchanging consecrated engagement rings amidst showers of yellow akshinthalu." },
+      { name: "Family Felicitation", desc: "Elders blessing the couple with golden silk shawls, gifts, and heartfelt prayers for a joyous marriage." },
+    ],
+    inclusions: [
+      "Royal Carved Stage Mandapam with Couple Monogram & Lighting",
+      "Sacred Lagna Patrika Scroll & Experienced Head Purohit Coordination",
+      "Auspicious Welcome Uruli Floral Bowls & Brass Kundu Deepams",
+      "Multi-Course Authentic South Indian Banana Leaf Feast (Bhojanam)",
+      "Dedicated Event Coordinator for Smooth Guest Hospitality",
+    ],
+  },
+  {
+    id: "mangalasnanam",
+    name: "Haldi & Blessings · Mangalasnanam",
+    tag: "Purification Ritual",
+    tagline: "Joyful Turmeric Showers, Holy Bath & Melam Resonance",
+    shortDesc: "Vibrant celebration showering bride and groom with fragrant turmeric, rose water, and marigold petals accompanied by live nadaswaram.",
+    image: images.haldiCelebration,
+    overview: "Mangalasnanam is a pure festival of joy, color, and devotion. As sacred nadaswaram melodies echo through the air, loved ones unite to pour holy water and shower bright marigold petals over the couple, symbolizing spiritual purity and auspicious health.",
+    guestCapacity: "50 – 300 Guests",
+    decorCategory: "traditional",
+    rituals: [
+      { name: "Nalugu Snanam", desc: "Herbal turmeric and sandalwood application to purify skin and soul before entering marital life." },
+      { name: "Marigold Flower Showers", desc: "Family playfully showering thousands of yellow and orange marigold petals over the smiling couple." },
+      { name: "Holy Kalash Pouring", desc: "Parents pouring sacred theertham from consecrated brass kalasham pots onto the couple." },
+      { name: "Kalyana Harathi", desc: "Auspicious flame harathi to complete the purification ceremony with chanting and songs." },
+    ],
+    inclusions: [
+      "Vibrant Yellow Marigold Floral Canopy & Brass Uruli Setup",
+      "Live Nadaswaram, Shehnai & Traditional Melam Artists",
+      "Pure Organic Fragrant Turmeric, Sandalwood & Rosewater",
+      "Traditional Handcrafted Brass Pooja Vessels & Thambulam Plates",
+      "Refreshing Tender Coconut & Satvik Festive Brunch Counter",
+    ],
+  },
+  {
+    id: "reception",
+    name: "Grand Reception & Banquet",
+    tag: "Royal Celebration",
+    tagline: "Majestic Evening Reception, Banquet Dining & Celebrations",
+    shortDesc: "Royal evening banquet with luxury floral arches, crystal chandeliers, air-conditioned convention hall, and grand catering.",
+    image: images.functionHall,
+    overview: "The grand wedding reception is an evening of celebration, warm felicitations, and royal hospitality. Held in our centrally air-conditioned convention hall, guests enjoy an unforgettable evening with stunning stage backdrops, ambient illumination, and an exquisite culinary banquet.",
+    guestCapacity: "200 – 1,000+ Guests",
+    decorCategory: "reception",
+    rituals: [
+      { name: "Royal Grand Entry", desc: "Couple's majestic welcome under sparkling fairy light canopies and floral arches." },
+      { name: "Stage Felicitation", desc: "Formal greetings, photography with extended family, and blessings from invited dignitaries." },
+      { name: "Family Cake & Toast", desc: "Celebratory cake cutting and warm family toasts celebrating the new marital journey." },
+      { name: "Grand Feast Banquet", desc: "Live culinary stations and lavish multi-course buffet banquet for all guests." },
+    ],
+    inclusions: [
+      "Grand 40-Foot Reception Stage with Velvet Backing & Crystal Chandeliers",
+      "Centrally Air-Conditioned Hall with Seating for up to 800+ Guests",
+      "Comprehensive Banquet Dining with Live Food Counters & Servers",
+      "Professional Acoustic Audio, Mood Uplighting & Stage Follow-Spots",
+      "Dedicated Guest Parking Concierge & Executive Family Suites",
+    ],
+  },
 ];
 
 
@@ -662,10 +768,26 @@ function App() {
   const [isPaused, setIsPaused] = useState(false);
   const [activeFilter, setActiveFilter] = useState<DecorCategory>("all");
   const [selectedModalImage, setSelectedModalImage] = useState<DecorItem | null>(null);
+  const [selectedOccasion, setSelectedOccasion] = useState<OccasionItem | null>(null);
   const [isMobileExpanded, setIsMobileExpanded] = useState(false);
   const [mobileViewMode, setMobileViewMode] = useState<"grid" | "list">("grid");
   const touchStartX = useRef<number | null>(null);
   const modalTouchStartX = useRef<number | null>(null);
+
+  const handleSelectOccasionForInquiry = (occ: OccasionItem) => {
+    setSelectedOccasion(null);
+    scrollToInquiry();
+  };
+
+  const handleSelectOccasionForDecor = (occ: OccasionItem) => {
+    setSelectedOccasion(null);
+    setActiveFilter(occ.decorCategory);
+    setIsMobileExpanded(true);
+    const decorSection = document.getElementById("decorations");
+    if (decorSection) {
+      decorSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const filteredDecorations =
     activeFilter === "all"
@@ -719,6 +841,7 @@ function App() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         setSelectedModalImage(null);
+        setSelectedOccasion(null);
       } else if (e.key === "ArrowLeft" && selectedModalImage) {
         prevModalImage();
       } else if (e.key === "ArrowRight" && selectedModalImage) {
@@ -727,7 +850,18 @@ function App() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [selectedModalImage, modalIndex, filteredDecorations]);
+  }, [selectedModalImage, modalIndex, filteredDecorations, selectedOccasion]);
+
+  useEffect(() => {
+    if (selectedModalImage || selectedOccasion) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedModalImage, selectedOccasion]);
 
   useEffect(() => {
     if (isPaused) return;
@@ -1332,10 +1466,36 @@ function App() {
         </div>
         <div className="occasion-grid">
           {occasions.map((occasion) => (
-            <article key={occasion.name}>
-              <div><img src={occasion.image} alt={occasion.name} /></div>
-              <h3>{occasion.name}</h3>
-              <span>Explore <Icon name="arrow" size={15} /></span>
+            <article 
+              key={occasion.name}
+              className="occasion-card"
+              onClick={() => setSelectedOccasion(occasion)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setSelectedOccasion(occasion);
+                }
+              }}
+              aria-label={`Explore ceremony details for ${occasion.name}`}
+            >
+              <div className="occasion-card-image-wrap">
+                <img src={occasion.image} alt={occasion.name} />
+                <span className="occasion-card-tag">{occasion.tag}</span>
+              </div>
+              <div className="occasion-card-info">
+                <h3>{occasion.name}</h3>
+                <p className="occasion-card-snippet">{occasion.shortDesc}</p>
+                <div className="occasion-card-footer">
+                  <span className="occasion-explore-cta">
+                    Explore Details <Icon name="arrow" size={14} />
+                  </span>
+                  <span className="occasion-capacity-badge">
+                    👥 {occasion.guestCapacity}
+                  </span>
+                </div>
+              </div>
             </article>
           ))}
         </div>
@@ -2261,6 +2421,114 @@ function App() {
                 <a href="tel:9491155403" className="button button-gold">
                   <Icon name="phone" size={16} /> Call: 94911 55403
                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Interactive Ceremony Exploration Modal */}
+      {selectedOccasion && (
+        <div 
+          className="occasion-modal-overlay" 
+          role="dialog" 
+          aria-modal="true" 
+          aria-label={selectedOccasion.name}
+          onClick={() => setSelectedOccasion(null)}
+        >
+          <div 
+            className="occasion-modal-container" 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className="occasion-modal-close-btn" 
+              onClick={() => setSelectedOccasion(null)}
+              aria-label="Close ceremony details"
+            >
+              <Icon name="x" size={20} />
+            </button>
+
+            <div className="occasion-modal-media-col">
+              <div className="occasion-modal-img-wrap">
+                <img src={selectedOccasion.image} alt={selectedOccasion.name} />
+                <span className="occasion-modal-tag-badge">{selectedOccasion.tag}</span>
+              </div>
+
+              <div className="occasion-modal-meta-box">
+                <div className="occasion-meta-pill">
+                  <strong>Recommended Capacity:</strong>
+                  <span>👥 {selectedOccasion.guestCapacity}</span>
+                </div>
+                <div className="occasion-meta-pill">
+                  <strong>Venue Setting:</strong>
+                  <span>📍 Centrally A/C Convention Hall &amp; Mandapam</span>
+                </div>
+              </div>
+
+              <div className="occasion-modal-actions">
+                <a
+                  href={`https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20would%20like%20to%20plan%20our%20${encodeURIComponent(selectedOccasion.name)}%20ceremony.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button hero-btn-whatsapp occasion-btn-whatsapp"
+                >
+                  <WhatsAppIcon size={17} /> Plan on WhatsApp
+                </a>
+                <button
+                  type="button"
+                  className="button button-gold occasion-btn-inquiry"
+                  onClick={() => handleSelectOccasionForInquiry(selectedOccasion)}
+                >
+                  <Icon name="sparkle" size={15} /> Inquire in Booking Form
+                </button>
+                <button
+                  type="button"
+                  className="occasion-decor-link-btn"
+                  onClick={() => handleSelectOccasionForDecor(selectedOccasion)}
+                >
+                  View Matching Stage Décor →
+                </button>
+              </div>
+            </div>
+
+            <div className="occasion-modal-content-col">
+              <div className="occasion-modal-kicker">
+                <span className="lotus-bullet">✦</span> SACRED OCCASION · TIRUMALA HERITAGE
+              </div>
+              <h2 className="occasion-modal-title">{selectedOccasion.name}</h2>
+              <p className="occasion-modal-tagline">{selectedOccasion.tagline}</p>
+              
+              <p className="occasion-modal-overview">{selectedOccasion.overview}</p>
+
+              <div className="occasion-rituals-section">
+                <h4>
+                  <Icon name="sparkle" size={14} /> Sacred Rituals &amp; Traditions
+                </h4>
+                <div className="occasion-rituals-list">
+                  {selectedOccasion.rituals.map((r) => (
+                    <div key={r.name} className="occasion-ritual-item">
+                      <div className="ritual-item-header">
+                        <span className="ritual-check-icon">✓</span>
+                        <strong>{r.name}</strong>
+                      </div>
+                      <p>{r.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="occasion-inclusions-section">
+                <h4>
+                  <Icon name="check" size={14} /> What Tirumala Balaji Events Arranges
+                </h4>
+                <ul className="occasion-inclusions-list">
+                  {selectedOccasion.inclusions.map((inc, i) => (
+                    <li key={i}>
+                      <span className="inclusion-bullet">⚜</span>
+                      <span>{inc}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
