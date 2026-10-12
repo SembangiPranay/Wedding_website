@@ -1062,14 +1062,27 @@ h2 em { color: #947342; font-weight: 500; }
   overflow: hidden;
   box-shadow: 0 20px 48px rgba(45, 9, 13, 0.16);
   border: 1px solid rgba(189, 139, 50, 0.35);
+  background: #24070a;
+}
+
+.rituals-hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .rituals-hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 30%;
   transition: transform 1.2s var(--ease-editorial);
+}
+
+.rituals-hero-tag {
+  display: none;
 }
 
 .rituals-hero-banner:hover .rituals-hero-img {
@@ -1079,7 +1092,7 @@ h2 em { color: #947342; font-weight: 500; }
 .rituals-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(35, 7, 10, 0.08) 0%, rgba(35, 7, 10, 0.48) 45%, rgba(26, 5, 8, 0.94) 100%);
+  background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(26, 5, 8, 0.65) 70%, rgba(20, 4, 6, 0.96) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1228,7 +1241,17 @@ h2 em { color: #947342; font-weight: 500; }
   overflow: hidden;
   box-shadow: 0 20px 48px rgba(45, 9, 13, 0.2);
   border: 1px solid rgba(189, 139, 50, 0.35);
+  background: #180508;
 }
+
+.scenery-hero-media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .scenery-hero-card img {
   width: 100%;
   height: 100%;
@@ -1236,19 +1259,26 @@ h2 em { color: #947342; font-weight: 500; }
   object-position: center 42%;
   transition: transform 1.2s var(--ease-editorial);
 }
+
+.scenery-hero-tag {
+  display: none;
+}
+
 .scenery-hero-card:hover img {
   transform: scale(1.03);
 }
+
 .scenery-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 4, 6, 0.15) 0%, rgba(20, 4, 6, 0.5) 45%, rgba(18, 3, 5, 0.94) 100%);
+  background: linear-gradient(180deg, transparent 0%, transparent 40%, rgba(20, 4, 6, 0.65) 70%, rgba(18, 3, 5, 0.96) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: clamp(24px, 4vw, 48px);
   color: white;
 }
+
 .scenery-hero-badge {
   display: inline-flex;
   align-items: center;
@@ -1265,15 +1295,18 @@ h2 em { color: #947342; font-weight: 500; }
   margin-bottom: 12px;
   backdrop-filter: blur(8px);
 }
+
 .scenery-hero-badge svg {
   color: var(--gold-light);
 }
+
 .scenery-hero-overlay h3 {
   font: 500 clamp(26px, 3.2vw, 42px) var(--serif);
   margin: 0 0 10px;
   letter-spacing: -.02em;
   color: #fff;
 }
+
 .scenery-hero-overlay p {
   max-width: 720px;
   margin: 0;
@@ -1371,16 +1404,18 @@ h2 em { color: #947342; font-weight: 500; }
   transform: translateY(-3px);
 }
 .occasion-grid article::before {
-  content: "శుభం";
+  content: "AUSPICIOUS";
   position: absolute;
   z-index: 2;
   top: 12px;
   left: 12px;
-  padding: 5px 10px;
+  padding: 4px 9px;
   color: #f6e7c6;
   background: rgba(88,21,17,.88);
-  font-family: var(--telugu-serif);
-  font-size: 13px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   border-radius: 2px;
 }
 .occasion-grid article > div { height: 270px; overflow: hidden; border-radius: 2px; }
@@ -3509,9 +3544,93 @@ footer > p {
   .venue-section { grid-template-columns: 1fr; }
   .venue-image { min-height: 460px; }
   .rituals-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .rituals-hero-banner { height: 400px; }
+  .rituals-hero-banner {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .rituals-hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(260px, 45vw, 360px);
+    overflow: hidden;
+  }
+  .rituals-hero-tag {
+    display: inline-flex;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: rgba(35, 7, 10, 0.9);
+    border: 1px solid rgba(223, 189, 125, 0.55);
+    color: var(--gold-light);
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .rituals-hero-overlay {
+    position: relative;
+    inset: auto;
+    background: linear-gradient(180deg, #2b080c 0%, #170305 100%);
+    border-top: 1px solid rgba(223, 189, 125, 0.35);
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
   .scenery-grid { grid-template-columns: 1fr; gap: 20px; }
-  .scenery-hero-card { height: 400px; }
+  .scenery-hero-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .scenery-hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(260px, 45vw, 360px);
+    overflow: hidden;
+  }
+  .scenery-hero-tag {
+    display: inline-flex;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    background: rgba(24, 5, 8, 0.9);
+    border: 1px solid rgba(223, 189, 125, 0.55);
+    color: var(--gold-light);
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .scenery-hero-overlay {
+    position: relative;
+    inset: auto;
+    background: linear-gradient(180deg, #240a10 0%, #150306 100%);
+    border-top: 1px solid rgba(223, 189, 125, 0.35);
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
   .process-section { padding: 80px 24px; }
   .story-section { grid-template-columns: 1fr; }
   .story-image { height: 400px; }
@@ -3709,17 +3828,83 @@ footer > p {
 
   /* Sacred rituals */
   .rituals-section { padding: 58px 16px; }
-  .rituals-hero-banner { height: 320px; margin-bottom: 20px; border-radius: 6px; }
-  .rituals-hero-img { object-position: center 20%; }
-  .rituals-hero-overlay { padding: 16px 14px; }
-  .rituals-hero-overlay h3 { font-size: clamp(19px, 5vw, 24px); line-height: 1.25; margin: 0 0 6px; }
-  .rituals-hero-overlay p {
-    font-size: 11.5px;
-    line-height: 1.55;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  .rituals-hero-banner {
+    height: auto;
+    margin-bottom: 22px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    background: #24070a;
+    border: 1px solid rgba(189, 139, 50, 0.4);
+    box-shadow: 0 10px 28px rgba(35, 7, 10, 0.16);
+  }
+  .rituals-hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(230px, 64vw, 290px);
+    overflow: hidden;
+    background: #1c0508;
+  }
+  .rituals-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    display: block;
+  }
+  .rituals-hero-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(35, 7, 10, 0.9);
+    border: 1px solid rgba(223, 189, 125, 0.55);
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .rituals-hero-overlay {
+    position: relative;
+    inset: auto;
+    background: linear-gradient(180deg, #2b080c 0%, #170305 100%);
+    border-top: 1px solid rgba(223, 189, 125, 0.35);
+    padding: 20px 16px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .rituals-badge {
+    margin-bottom: 10px;
+    font-size: 10px;
+    padding: 4px 12px;
+    background: rgba(189, 139, 50, 0.22);
+    border: 1px solid rgba(223, 189, 125, 0.55);
+    color: #fff;
+    width: fit-content;
+  }
+  .rituals-hero-overlay h3 {
+    font-size: clamp(20px, 5.2vw, 24px);
+    line-height: 1.25;
+    margin: 0 0 8px;
+    color: #ffffff;
+  }
+  .rituals-hero-overlay p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
   }
   .rituals-grid { grid-template-columns: 1fr; gap: 16px; }
   .ritual-card { border-radius: 6px; }
@@ -3730,16 +3915,83 @@ footer > p {
 
   /* Sacred scenery */
   .scenery-section { padding: 58px 16px; }
-  .scenery-hero-card { height: 300px; margin-bottom: 20px; border-radius: 6px; }
-  .scenery-hero-overlay { padding: 16px 14px; }
-  .scenery-hero-overlay h3 { font-size: clamp(19px, 5vw, 24px); line-height: 1.25; margin: 0 0 6px; }
-  .scenery-hero-overlay p {
-    font-size: 11.5px;
-    line-height: 1.55;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  .scenery-hero-card {
+    height: auto;
+    margin-bottom: 22px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    background: #180508;
+    border: 1px solid rgba(189, 139, 50, 0.4);
+    box-shadow: 0 10px 28px rgba(35, 7, 10, 0.16);
+  }
+  .scenery-hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(220px, 60vw, 280px);
+    overflow: hidden;
+    background: #120406;
+  }
+  .scenery-hero-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 45%;
+    display: block;
+  }
+  .scenery-hero-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    background: rgba(24, 5, 8, 0.9);
+    border: 1px solid rgba(223, 189, 125, 0.55);
+    color: var(--gold-light);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .scenery-hero-overlay {
+    position: relative;
+    inset: auto;
+    background: linear-gradient(180deg, #240a10 0%, #150306 100%);
+    border-top: 1px solid rgba(223, 189, 125, 0.35);
+    padding: 20px 16px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .scenery-hero-badge {
+    margin-bottom: 10px;
+    font-size: 10px;
+    padding: 4px 12px;
+    background: rgba(189, 139, 50, 0.22);
+    border: 1px solid rgba(223, 189, 125, 0.55);
+    color: #fff;
+    width: fit-content;
+  }
+  .scenery-hero-overlay h3 {
+    font-size: clamp(20px, 5.2vw, 24px);
+    line-height: 1.25;
+    margin: 0 0 8px;
+    color: #ffffff;
+  }
+  .scenery-hero-overlay p {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.9);
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
   }
   .scenery-grid { grid-template-columns: 1fr; gap: 16px; }
   .scenery-card { border-radius: 6px; }

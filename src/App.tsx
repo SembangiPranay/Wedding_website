@@ -1166,11 +1166,16 @@ function App() {
 
         {/* Grand Family Blessing Showcase Card: Marrage.jpg */}
         <div className="rituals-hero-banner">
-          <img
-            src={images.marriageFamily}
-            alt="Traditional wedding muhurtham with three generations of family members showering yellow akshinthalu in front of Lord Balaji mandapam"
-            className="rituals-hero-img"
-          />
+          <div className="rituals-hero-media">
+            <img
+              src={images.marriageFamily}
+              alt="Traditional wedding muhurtham with three generations of family members showering yellow akshinthalu in front of Lord Balaji mandapam"
+              className="rituals-hero-img"
+            />
+            <span className="rituals-hero-tag">
+              <Icon name="sparkle" size={12} /> Sacred Muhurtham
+            </span>
+          </div>
           <div className="rituals-hero-overlay">
             <span className="rituals-badge">
               <Icon name="sparkle" size={14} /> Auspicious Akshinthalu · The Grand Family Blessing
@@ -1258,10 +1263,15 @@ function App() {
         </div>
 
         <div className="scenery-hero-card">
-          <img 
-            src={images.hillsPanorama} 
-            alt="Panoramic vista of the holy Seshachalam mountain ranges and valleys of Tirumala" 
-          />
+          <div className="scenery-hero-media">
+            <img 
+              src={images.hillsPanorama} 
+              alt="Panoramic vista of the holy Seshachalam mountain ranges and valleys of Tirumala" 
+            />
+            <span className="scenery-hero-tag">
+              <Icon name="sparkle" size={12} /> Tirumala Foothills
+            </span>
+          </div>
           <div className="scenery-hero-overlay">
             <span className="scenery-hero-badge">
               <Icon name="sparkle" size={14} /> The Seven Sacred Peaks · Seshachalam Sanctuary
