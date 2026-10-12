@@ -631,8 +631,6 @@ const stories = [
 ];
 
 function App() {
-  const [heroReplayKey, setHeroReplayKey] = useState(0);
-  const [isHeroSettled, setIsHeroSettled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [activeStory, setActiveStory] = useState(0);
@@ -733,26 +731,6 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  // Storyboard Cinematic Hero Animation Lifecycle (0.0s - 6.5s)
-  useEffect(() => {
-    // 6.5s matches the exact storyboard timeline from stillness to settled ambient state
-    const timer = setTimeout(() => {
-      setIsHeroSettled(true);
-    }, 6500);
-
-    const handleScrollOrKey = () => {
-      if (window.scrollY > 40) {
-        setIsHeroSettled(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScrollOrKey, { passive: true });
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("scroll", handleScrollOrKey);
-    };
-  }, [heroReplayKey]);
-
   const prevStory = () => {
     setActiveStory((prev) => (prev === 0 ? stories.length - 1 : prev - 1));
   };
@@ -840,45 +818,15 @@ function App() {
         </div>
       </header>
 
-      <section
-        className={`hero ${isHeroSettled ? "hero-cinematic-settled" : "hero-cinematic-playing"}`}
-        id="home"
-        key={heroReplayKey}
-      >
+      <section className="hero" id="home">
         <div className="hero-media-wrapper">
-          {/* Base authentic temple photograph - awakens from twilight stillness */}
           <img
-            className="hero-temple hero-temple-base"
+            className="hero-temple"
             src={images.temple}
             alt="Sacred Tirumala Seshachalam hills and Venkateswara temple gopurams illuminated at twilight"
           />
-          {/* Divine illumination bloom layer - awakens golden lights between 1.0s and 2.0s */}
-          <div className="hero-temple-illumination" aria-hidden="true">
-            <img
-              className="hero-temple hero-temple-bloom-img"
-              src={images.temple}
-              alt=""
-            />
-            <div className="hero-golden-shimmer-bloom" />
-          </div>
-          {/* Left deep shade ensuring razor-sharp WCAG AAA text contrast */}
           <div className="hero-shade-left" />
-          {/* Subtle perimeter vignette */}
-          <div className="hero-cinematic-vignette" />
         </div>
-
-        {/* Unobtrusive skip intro pill (visible only during the 6.5s intro) */}
-        {!isHeroSettled && (
-          <button
-            type="button"
-            className="hero-skip-intro-pill"
-            onClick={() => setIsHeroSettled(true)}
-            aria-label="Skip hero animation"
-          >
-            <span>Skip Intro</span>
-            <span aria-hidden="true">✕</span>
-          </button>
-        )}
 
         {/* Right-Side Vertical Progress Slider */}
         <aside className="hero-vertical-nav" aria-label="Page sections">
@@ -1955,11 +1903,9 @@ function App() {
             className="footer-replay-btn"
             onClick={() => {
               window.scrollTo({ top: 0, behavior: "smooth" });
-              setIsHeroSettled(false);
-              setHeroReplayKey((k) => k + 1);
             }}
           >
-            ✨ Replay Hero Cinematic
+            ↑ Back to Top
           </button>
         </div>
         <div className="footer-bottom">
