@@ -2249,63 +2249,130 @@ function App() {
         )}
       </section>
 
-      <footer>
+      <footer className="site-footer">
+        {/* Sacred Auspicious Shloka Banner */}
+        <div className="footer-sacred-banner">
+          <span className="footer-sacred-symbol">🪔</span>
+          <span className="footer-sacred-text">॥ శ్రీరస్తు · శుభమస్తు · కళ్యాణమస్తు · సర్వేజనాః సుఖినో భవంతు ॥</span>
+          <span className="footer-sacred-symbol">🪔</span>
+        </div>
+
+        {/* Brand Header */}
         <div className="footer-brand">
           <img
             src={images.logo}
             alt="Tirumala Balaji Marriages & Events"
             className="footer-logo-img"
-            width={48}
-            height={48}
+            width={58}
+            height={58}
           />
-          <div>
-            <strong>Tirumala Balaji</strong>
-            <small>Marriages &amp; Events · 9491155403</small>
+          <div className="footer-brand-info">
+            <strong className="footer-brand-title">Tirumala Balaji Marriages &amp; Events</strong>
+            <span className="footer-brand-tagline">
+              శ్రీ వేంకటేశ్వర స్వామి సన్నిధిలో పవిత్ర వివాహాలు · Dedicated to Sacred Celebrations
+            </span>
           </div>
         </div>
-        <p>Your Happiness Is Our Blessing · Dedicated to Sacred Celebrations.</p>
+
+        {/* Positive Auspicious Commitment Message */}
+        <div className="footer-positive-message">
+          <p className="footer-blessing-heading">
+            “మీ కుటుంబ సంబరానికి స్వామివారి ఆశీస్సులు · Your Happiness Is Our Sacred Blessing”
+          </p>
+          <p className="footer-blessing-sub">
+            Serving families with utmost devotion, ritual authenticity, transparent guidance, and complete peace of mind across Tirumala &amp; Tirupati.
+          </p>
+        </div>
+
+        {/* Elder-Friendly High Visibility Contact Action Bar */}
+        <div className="footer-quick-helpline-grid">
+          <div className="footer-helpline-card call-card">
+            <span className="helpline-badge">📞 24/7 DIRECT PHONE HELPLINE</span>
+            <a href="tel:9491155403" className="helpline-tel-link">
+              +91 94911 55403
+            </a>
+            <span className="helpline-note">One-Tap Call · Direct Coordination with Senior Coordinator</span>
+          </div>
+          <div className="footer-helpline-card whatsapp-card">
+            <span className="helpline-badge">💬 INSTANT WHATSAPP ASSISTANCE</span>
+            <a
+              href="https://wa.me/919491155403?text=Namaskaram%2C%20I%20would%20like%20to%20inquire%20about%20marriage%20arrangements%20in%20Tirumala."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="helpline-wa-link"
+            >
+              Chat on WhatsApp · 94911 55403
+            </a>
+            <span className="helpline-note">Instant Response for Muhurtham Dates, Hall Availability &amp; Packages</span>
+          </div>
+        </div>
 
         {/* Footer Offices & Credentials */}
         <div className="footer-offices-row">
           <div className="footer-office-block">
-            <span className="footer-block-heading">TIRUMALA MAIN OFFICE</span>
-            <p># 935, Balaji Nagar, Tirumala, Tirupati Urban, AP - 517504</p>
+            <div className="footer-block-header">
+              <span className="office-icon">🏔️</span>
+              <span className="footer-block-heading">TIRUMALA MAIN OFFICE</span>
+            </div>
+            <p className="office-address">
+              # 935, Balaji Nagar, Tirumala, Tirupati Urban, Andhra Pradesh - 517504
+            </p>
+            <span className="office-landmark">Near TTD Kalyana Vedika &amp; Outer Ring Road</span>
             <a
               href="https://maps.app.goo.gl/BMSA9nHjBXEPgDqR8"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-map-action"
             >
-              📍 Open in Google Maps →
+              📍 Open Tirumala Office on Google Maps →
             </a>
           </div>
 
           <div className="footer-office-block">
-            <span className="footer-block-heading">TIRUPATI CITY BRANCH</span>
-            <p># 4-2-268, Gaju Street, Tirupati, AP</p>
+            <div className="footer-block-header">
+              <span className="office-icon">🏛️</span>
+              <span className="footer-block-heading">TIRUPATI CITY BRANCH</span>
+            </div>
+            <p className="office-address">
+              # 4-2-268, Gaju Street, Tirupati, Andhra Pradesh - 517501
+            </p>
+            <span className="office-landmark">Convenient Access from Railway Station &amp; Bus Stand</span>
             <p className="footer-phone-line">
               📞 Direct Call: <a href="tel:9491155403"><strong>+91 94911 55403</strong></a>
             </p>
           </div>
 
           <div className="footer-office-block">
-            <span className="footer-block-heading">CONNECT &amp; INQUIRE</span>
-            <p>✉️ <a href="mailto:rajeshtml.rt@gmail.com">rajeshtml.rt@gmail.com</a></p>
-            <p>🌐 <a href="http://www.marriagesintirumala.in" target="_blank" rel="noopener noreferrer">www.marriagesintirumala.in</a></p>
-            <p>💬 <a href="https://wa.me/919491155403" target="_blank" rel="noopener noreferrer">WhatsApp: 9491155403</a></p>
+            <div className="footer-block-header">
+              <span className="office-icon">✉️</span>
+              <span className="footer-block-heading">CONNECT &amp; INQUIRE</span>
+            </div>
+            <p className="office-contact-item">
+              ✉️ Email: <a href="mailto:rajeshtml.rt@gmail.com">rajeshtml.rt@gmail.com</a>
+            </p>
+            <p className="office-contact-item">
+              🌐 Portal: <a href="http://www.marriagesintirumala.in" target="_blank" rel="noopener noreferrer">www.marriagesintirumala.in</a>
+            </p>
+            <p className="office-contact-item">
+              💬 WhatsApp: <a href="https://wa.me/919491155403" target="_blank" rel="noopener noreferrer">+91 94911 55403</a>
+            </p>
+            <div className="office-trust-badge">
+              ✓ Verified Local Vedic Wedding Network
+            </div>
           </div>
         </div>
 
+        {/* Footer Navigation Links */}
         <div className="footer-links">
           <a href="#services">Services</a>
           <a href="#decorations">Decorations</a>
-          <a href="#venue">Function hall</a>
-          <a href="#rituals">Sacred rituals</a>
-          <a href="#scenery">Sacred hills</a>
-          <a href="#blessing">Divine grace</a>
-          <a href="#process">Approach</a>
-          <a href="#stories">Stories</a>
-          <button onClick={scrollToInquiry}>Contact</button>
+          <a href="#venue">Function Hall</a>
+          <a href="#rituals">Sacred Rituals</a>
+          <a href="#scenery">Sacred Hills</a>
+          <a href="#blessing">Divine Grace</a>
+          <a href="#process">Our Approach</a>
+          <a href="#stories">Real Stories</a>
+          <button onClick={scrollToInquiry} className="footer-nav-btn">Inquire Now</button>
           <button
             type="button"
             className="footer-replay-btn"
@@ -2316,16 +2383,18 @@ function App() {
             ↑ Back to Top
           </button>
         </div>
+
+        {/* Footer Bottom Bar */}
         <div className="footer-bottom">
-          <span>© 2025 Tirumala Balaji Marriages &amp; Events · All Rights Reserved</span>
-          <span>Tirumala · Tirupati · Andhra Pradesh</span>
+          <span className="footer-copy">© 2025 Tirumala Balaji Marriages &amp; Events · All Rights Reserved</span>
+          <span className="footer-geo">Tirumala · Tirupati · Andhra Pradesh</span>
           <a
             href="https://maps.app.goo.gl/BMSA9nHjBXEPgDqR8"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-gmaps-link-tag"
           >
-            Google Maps Verified Partner
+            ⭐ Google Maps Verified Local Partner
           </a>
         </div>
       </footer>

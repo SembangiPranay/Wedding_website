@@ -3197,54 +3197,6 @@ blockquote {
   border-color: var(--wine);
 }
 
-footer {
-  color: var(--wine-deep);
-  background: linear-gradient(180deg, #fffaf1 0%, #f7edda 100%);
-  border-top: 4px solid var(--turmeric);
-}
-
-.footer-brand strong {
-  color: var(--wine-deep);
-}
-
-.footer-brand small,
-.footer-block-heading,
-.footer-office-block a,
-.footer-map-action,
-.footer-gmaps-link-tag {
-  color: var(--turmeric-deep);
-}
-
-footer > p {
-  color: var(--muted);
-}
-
-.footer-offices-row {
-  background: rgba(255, 253, 248, 0.72);
-  border-color: rgba(201, 148, 22, 0.3);
-  box-shadow: 0 10px 26px rgba(74, 43, 22, 0.06);
-}
-
-.footer-office-block p,
-.footer-links a,
-.footer-links button {
-  color: var(--muted);
-}
-
-.footer-phone-line strong {
-  color: var(--wine-deep);
-}
-
-.footer-links a:hover,
-.footer-links button:hover {
-  color: var(--turmeric-deep);
-}
-
-.footer-bottom {
-  color: rgba(59, 17, 24, 0.58);
-  border-top-color: rgba(96, 61, 43, 0.18);
-}
-
 .form-field-group {
   display: flex;
   flex-direction: column;
@@ -3616,156 +3568,427 @@ footer > p {
 .success-card p { max-width: 400px; color: var(--muted); font-size: 12px; line-height: 1.7; }
 .success-card button { padding: 12px 0 4px; color: #8a6836; border: 0; border-bottom: 1px solid currentColor; background: none; font-size: 9px; text-transform: uppercase; letter-spacing: .1em; }
 
-/* Footer Enhanced Styles */
-footer {
-  padding: 70px clamp(24px, 6vw, 96px) 28px;
-  color: white;
-  background: #24070a;
-  border-top: 4px solid var(--gold);
+/* ==========================================================================
+   Elevated Auspicious Royal Footer (Senior-Friendly & High Legibility)
+   ========================================================================== */
+footer, .site-footer {
+  padding: 68px clamp(20px, 5vw, 84px) 36px;
+  color: #fffdf5;
+  background: radial-gradient(ellipse at 50% 0%, #2e0508 0%, #1c0305 60%, #120203 100%);
+  border-top: 4px solid #ffd700;
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6), 0 -2px 14px rgba(255, 215, 0, 0.25);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Sacred Auspicious Shloka Banner */
+.footer-sacred-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 0 auto 36px;
+  padding: 14px 28px;
+  max-width: 920px;
+  background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.16) 0%, rgba(255, 215, 0, 0.03) 70%, transparent 100%);
+  border-top: 1px solid rgba(255, 215, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 4px;
+}
+
+.footer-sacred-symbol {
+  font-size: 24px;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+  line-height: 1;
+}
+
+.footer-sacred-text {
+  font-family: var(--telugu-serif, serif);
+  font-size: clamp(17px, 2.2vw, 23px);
+  font-weight: 700;
+  color: #ffd700;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 14px rgba(255, 215, 0, 0.45);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Brand Header */
 .footer-brand {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-}
-
-.footer-logo-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: 1.5px solid var(--gold-light);
-  object-fit: cover;
-  box-shadow: 0 0 12px rgba(223, 189, 125, 0.4);
-}
-
-.footer-brand > div {
+  gap: 18px;
+  margin-bottom: 22px;
   text-align: left;
 }
 
-.footer-brand strong {
-  display: block;
-  font-family: var(--serif);
-  font-size: 24px;
-  color: #ffffff;
-  line-height: 1.1;
+.footer-logo-img {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  object-fit: cover;
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.45);
+  flex-shrink: 0;
 }
 
-.footer-brand small {
+.footer-brand-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-title {
   display: block;
-  font-size: 9.5px;
-  color: var(--gold-light);
-  letter-spacing: 0.18em;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.2vw, 32px);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.footer-brand-tagline {
+  display: block;
+  font-size: clamp(13.5px, 1.4vw, 15.5px);
+  font-weight: 600;
+  color: #ffd700;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+/* Positive Auspicious Commitment Message */
+.footer-positive-message {
+  max-width: 880px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.footer-blessing-heading {
+  font-family: var(--telugu-serif, serif);
+  font-size: clamp(19px, 2.3vw, 24px);
+  font-weight: 600;
+  color: #fffdf5;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-blessing-sub {
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.65;
+  color: #e8dacb;
+  margin: 0;
+}
+
+/* Elder-Friendly High Visibility Contact Action Bar */
+.footer-quick-helpline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto 38px;
+}
+
+.footer-helpline-card {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.08) 0%, rgba(139, 26, 26, 0.38) 100%);
+  border: 1.5px solid rgba(255, 215, 0, 0.45);
+  border-radius: 14px;
+  padding: 20px 22px;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.helpline-badge {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+.helpline-tel-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(20px, 2.5vw, 25px);
+  font-weight: 800;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #8b1a1a 0%, #ba2929 100%);
+  border: 1.5px solid #ffd700;
+  border-radius: 30px;
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.28);
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+  min-height: 48px;
+}
+
+.helpline-tel-link:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #a02020 0%, #db3434 100%);
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.5);
+  color: #ffffff;
+}
+
+.helpline-wa-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(16px, 1.8vw, 19px);
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #167036 0%, #22a351 100%);
+  border: 1.5px solid #6ee7b7;
+  border-radius: 30px;
+  box-shadow: 0 6px 18px rgba(34, 163, 81, 0.35);
+  transition: all 0.25s ease;
+  min-height: 48px;
+}
+
+.helpline-wa-link:hover {
+  transform: scale(1.03);
+  background: linear-gradient(135deg, #1b8540 0%, #28bd5e 100%);
+  box-shadow: 0 8px 24px rgba(40, 189, 94, 0.5);
+  color: #ffffff;
+}
+
+.helpline-note {
+  font-size: 13px;
+  color: #e2d3c3;
+  line-height: 1.4;
   margin-top: 2px;
 }
 
-footer > p {
-  margin: 20px 0 36px;
-  color: rgba(255, 255, 255, 0.7);
-  text-align: center;
-  font-family: var(--telugu-serif);
-  font-size: 21px;
-  line-height: 1.5;
-}
-
+/* Footer Offices & Credentials */
 .footer-offices-row {
-  max-width: 1100px;
-  margin: 0 auto 36px;
+  max-width: 1140px;
+  margin: 0 auto 38px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 24px 28px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(223, 189, 125, 0.2);
-  border-radius: 6px;
+  gap: 22px;
 }
 
 .footer-office-block {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
+  padding: 22px 22px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(255, 215, 0, 0.28);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-office-block:hover {
+  border-color: rgba(255, 215, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+.footer-block-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.office-icon {
+  font-size: 18px;
+  line-height: 1;
 }
 
 .footer-block-heading {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 13.5px;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  color: #ffd700;
+  margin: 0;
 }
 
-.footer-office-block p {
+.office-address {
   margin: 0;
-  font-size: 11.5px;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 15px;
+  font-weight: 500;
+  color: #fffdf5;
   line-height: 1.6;
 }
 
-.footer-office-block a {
-  color: var(--gold-light);
-  text-decoration: none;
-}
-
-.footer-office-block a:hover {
-  text-decoration: underline;
+.office-landmark {
+  font-size: 13px;
+  color: #d5c7b3;
+  font-style: italic;
+  line-height: 1.4;
 }
 
 .footer-map-action {
   display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--gold-light);
-  margin-top: 4px;
+  margin-top: auto;
+  padding: 9px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.2s ease;
 }
 
-.footer-phone-line strong {
+.footer-map-action:hover {
+  background: rgba(255, 215, 0, 0.22);
+  border-color: #ffd700;
   color: #ffffff;
 }
 
+.footer-phone-line {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: #fffdf5;
+  line-height: 1.5;
+}
+
+.footer-phone-line strong {
+  color: #ffd700;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+.footer-phone-line a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-phone-line a:hover strong {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.office-contact-item {
+  margin: 0;
+  font-size: 14.5px;
+  color: #fffdf5;
+  line-height: 1.5;
+}
+
+.office-contact-item a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.office-contact-item a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.office-trust-badge {
+  margin-top: auto;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 6px;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+/* Footer Navigation Links */
 .footer-links {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: clamp(14px, 2.5vw, 26px);
   flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.footer-links a, .footer-links button {
-  color: rgba(255, 255, 255, 0.7);
+.footer-links a,
+.footer-links button {
+  color: #e6d6c2;
   border: 0;
   background: none;
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  transition: color 0.2s ease;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.footer-links a:hover, .footer-links button:hover {
-  color: var(--gold-light);
+.footer-links a:hover,
+.footer-links button:hover {
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.08);
 }
 
+.footer-replay-btn {
+  background: rgba(255, 215, 0, 0.15) !important;
+  border: 1.5px solid rgba(255, 215, 0, 0.55) !important;
+  color: #ffd700 !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 8px 18px !important;
+  border-radius: 20px !important;
+}
+
+.footer-replay-btn:hover {
+  background: rgba(255, 215, 0, 0.3) !important;
+  border-color: #ffd700 !important;
+  color: #ffffff !important;
+}
+
+/* Footer Bottom Bar */
 .footer-bottom {
-  margin-top: 45px;
-  padding-top: 22px;
+  margin-top: 40px;
+  padding-top: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.45);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 9px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: #d0c0ad;
+  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  font-size: 13px;
+  letter-spacing: 0.05em;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 14px;
+}
+
+.footer-copy {
+  font-weight: 500;
+}
+
+.footer-geo {
+  color: #ffd700;
+  font-weight: 600;
 }
 
 .footer-gmaps-link-tag {
-  color: var(--gold-light);
+  color: #ffd700;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.footer-gmaps-link-tag:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -5116,13 +5339,26 @@ footer > p {
   }
   .success-card { padding: 32px 20px; }
 
-  /* Footer */
-  footer { padding: 48px 16px 24px; }
-  .footer-offices-row { grid-template-columns: 1fr; gap: 18px; padding: 18px 14px; margin-bottom: 28px; }
-  footer > p { font-size: 16px; margin: 16px 0 24px; }
-  .footer-links { gap: 12px 16px; justify-content: center; }
-  .footer-links a, .footer-links button { font-size: 12px; padding: 6px 4px; }
-  .footer-bottom { gap: 10px; align-items: center; flex-direction: column; text-align: center; font-size: 10.5px; margin-top: 28px; }
+  /* Footer Mobile Senior-Friendly Styles */
+  footer, .site-footer { padding: 48px 18px 28px; }
+  .footer-sacred-banner { padding: 10px 14px; gap: 10px; margin-bottom: 24px; }
+  .footer-sacred-text { font-size: 15.5px; line-height: 1.4; }
+  .footer-brand { flex-direction: column; text-align: center; gap: 12px; margin-bottom: 18px; }
+  .footer-brand-info { text-align: center; }
+  .footer-brand-title { font-size: 24px; }
+  .footer-brand-tagline { font-size: 13px; }
+  .footer-blessing-heading { font-size: 17.5px; line-height: 1.4; }
+  .footer-blessing-sub { font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+  .footer-quick-helpline-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 28px; }
+  .footer-helpline-card { padding: 18px 16px; }
+  .helpline-tel-link { width: 100%; font-size: 21px; padding: 11px 16px; }
+  .helpline-wa-link { width: 100%; font-size: 16.5px; padding: 11px 16px; }
+  .footer-offices-row { grid-template-columns: 1fr; gap: 16px; padding: 0; background: transparent; border: none; margin-bottom: 28px; }
+  .footer-office-block { padding: 20px 18px; }
+  .office-address { font-size: 14.5px; }
+  .footer-links { gap: 10px 14px; justify-content: center; margin-top: 16px; }
+  .footer-links a, .footer-links button { font-size: 13.5px; padding: 8px 10px; }
+  .footer-bottom { gap: 12px; align-items: center; flex-direction: column; text-align: center; font-size: 12.5px; margin-top: 28px; padding-top: 20px; }
 }
 
 /* Extra compact mobile (e.g. iPhone SE, 360px Android devices) */
@@ -5663,13 +5899,13 @@ h4 em,
 
 
 .footer-replay-btn {
-  background: rgba(212, 154, 34, 0.12);
-  border: 1px solid rgba(212, 154, 34, 0.4);
-  color: #f5c862;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1.5px solid rgba(255, 215, 0, 0.55);
+  color: #ffd700;
   font-family: var(--sans);
-  font-size: 11.5px;
+  font-size: 14px;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 8px 18px;
   border-radius: 999px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -5679,11 +5915,12 @@ h4 em,
 }
 
 .footer-replay-btn:hover {
-  background: rgba(212, 154, 34, 0.25);
-  border-color: #f5c862;
+  background: rgba(255, 215, 0, 0.3);
+  border-color: #ffd700;
   color: #ffffff;
   transform: translateY(-1px);
 }
+
 
 /* ==========================================================================
    AUTHENTIC TELUGU SINDHOOR & LUMINOUS TEMPLE GOLD LUXURY PALETTE
@@ -6006,10 +6243,6 @@ h4 em {
     inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
-.footer {
-  background: #220303;
-  border-top: 2px solid rgba(201, 168, 76, 0.45);
-}
 
 /* Ceremony & Trust Cards */
 .promise-check {
