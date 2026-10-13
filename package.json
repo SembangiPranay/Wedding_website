@@ -5,9 +5,9 @@
   "type": "module",
   "packageManager": "pnpm@10.34.7",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 6060",
     "build": "vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 6060",
     "format": "oxfmt"
   },
   "dependencies": {
