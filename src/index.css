@@ -378,9 +378,14 @@ img { display: block; width: 100%; }
 .hero-actions-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   margin-bottom: 26px;
+}
+.hero-sub-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
 }
 .hero-btn-gold {
   position: relative;
@@ -5857,8 +5862,24 @@ h4 em,
 .center-heading h2 em,
 h2 em,
 h4 em {
-  color: #8b1a1a !important;
+  color: #8b1a1a;
   font-weight: 700;
+}
+
+/* Luminous 24K Gold for Heading Italics on Dark Backgrounds (Inquiry & Venues) */
+.inquiry-section h2 em,
+.inquiry-copy h2 em,
+.inquiry-section em,
+.venue-section h2 em,
+.catalog-header-card h2 em {
+  color: #ffd700 !important;
+  background: linear-gradient(135deg, #fff2a6 0%, #ffd700 45%, #e8c97a 80%, #ffd700 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  filter: drop-shadow(0 2px 14px rgba(255, 215, 0, 0.55)) !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  display: inline-block !important;
 }
 
 /* Golden Border Frame 1: Wedding Focus Section */
@@ -6112,40 +6133,90 @@ h4 em {
     color: var(--color-crimson) !important;
   }
 
+  /* Mobile Hero High Efficiency & Clear Mountain Gopuram Framing */
+  .hero {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 580px !important;
+    padding-top: 74px !important;
+    padding-bottom: 0px !important;
+    justify-content: space-between !important;
+    overflow: hidden !important;
+  }
+
   .hero-media-wrapper {
     background: #0d0205;
   }
 
   .hero-temple {
-    filter: saturate(1.05) contrast(1.04) brightness(1.08);
+    object-position: 48% 28% !important;
+    filter: saturate(1.1) contrast(1.06) brightness(1.02);
   }
 
   .hero-shade-left {
     background:
-      linear-gradient(180deg, rgba(12, 2, 5, 0.3) 0%, transparent 35%, rgba(10, 2, 4, 0.88) 100%),
-      linear-gradient(90deg, rgba(14, 3, 6, 0.78) 0%, transparent 90%) !important;
+      linear-gradient(180deg, rgba(10, 2, 4, 0.22) 0%, rgba(10, 2, 4, 0.55) 32%, rgba(10, 2, 4, 0.82) 62%, rgba(10, 2, 4, 0.96) 100%),
+      radial-gradient(ellipse 95% 75% at 50% 55%, rgba(14, 2, 5, 0.65) 0%, transparent 85%) !important;
   }
 
   .hero-container-left {
-    text-shadow: 0 2px 10px rgba(36, 16, 20, 0.35);
+    padding: 12px 18px 8px !important;
+    margin-top: auto !important;
+    margin-bottom: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-auspicious-tag {
+    padding: 4px 12px !important;
+    margin-bottom: 8px !important;
+    gap: 6px !important;
+    background: rgba(30, 4, 8, 0.72) !important;
+    border: 1px solid rgba(255, 215, 0, 0.55) !important;
+  }
+  .hero-diya-icon {
+    font-size: 11px !important;
+  }
+  .hero-shloka-text {
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
   }
 
   .hero-title-left {
-    color: #fffdf8;
-    line-height: 1.2 !important;
-    padding-bottom: 0.18em !important;
+    color: #ffffff !important;
+    font-size: clamp(34px, 8.8vw, 44px) !important;
+    line-height: 1.15 !important;
+    padding-bottom: 0.12em !important;
     overflow: visible !important;
-    text-shadow: 0 2px 10px rgba(36, 16, 20, 0.42);
+    text-shadow: 0 3px 20px rgba(0, 0, 0, 0.9), 0 1px 4px rgba(0, 0, 0, 0.95) !important;
   }
 
   .hero-subtitle-left {
     color: #ffd700 !important;
-    line-height: 1.25 !important;
-    padding-bottom: 0.14em !important;
+    font-size: 0.52em !important;
+    line-height: 1.2 !important;
+    padding-bottom: 0.12em !important;
     overflow: visible !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.9) !important;
+  }
+
+  .hero-actions-left {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 4px !important;
   }
 
   .hero-btn-gold {
+    width: 100% !important;
+    min-height: 44px !important;
+    padding: 0 18px !important;
+    font-size: 11.5px !important;
+    letter-spacing: 0.08em !important;
+    justify-content: center !important;
     background: linear-gradient(135deg, #c9a84c 0%, #ffd700 45%, #e8c97a 75%, #c9a84c 100%) !important;
     color: #3a0505 !important;
     font-weight: 800 !important;
@@ -6153,7 +6224,19 @@ h4 em {
     box-shadow: 0 6px 22px rgba(255, 215, 0, 0.4) !important;
   }
 
+  .hero-sub-actions {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
   .hero-btn-whatsapp {
+    width: 100% !important;
+    min-height: 40px !important;
+    padding: 0 10px !important;
+    font-size: 11px !important;
+    justify-content: center !important;
     background: #25d366 !important;
     border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
     color: #ffffff !important;
@@ -6161,6 +6244,11 @@ h4 em {
   }
 
   .hero-btn-call {
+    width: 100% !important;
+    min-height: 40px !important;
+    padding: 0 10px !important;
+    font-size: 11px !important;
+    justify-content: center !important;
     background: #ffffff !important;
     border: 1.5px solid var(--color-gold) !important;
     color: #5c0a0a !important;
@@ -6172,9 +6260,10 @@ h4 em {
   }
 
   .hero-bottom-bar-left {
-    background: rgba(14, 2, 4, 0.9) !important;
+    padding: 10px 16px 12px !important;
+    background: rgba(14, 2, 4, 0.92) !important;
     border-top: 1.5px solid rgba(201, 168, 76, 0.4) !important;
-    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.45) !important;
   }
 
   .scroll-discover-link,

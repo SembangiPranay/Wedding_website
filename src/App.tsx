@@ -1035,24 +1035,26 @@ function App() {
             <button className="button hero-btn-gold" onClick={scrollToInquiry}>
               PLAN YOUR CELEBRATION <Icon name="arrow" size={16} />
             </button>
-            <a
-              className="button hero-btn-whatsapp"
-              href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20would%20like%20to%20plan%20our%20celebration."
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Chat with us on WhatsApp"
-            >
-              <WhatsAppIcon size={18} />
-              <span>WhatsApp Us</span>
-            </a>
-            <a
-              className="button hero-btn-call"
-              href="tel:9491155403"
-              aria-label="Call 9491155403"
-            >
-              <Icon name="phone" size={15} />
-              <span>Call: 94911 55403</span>
-            </a>
+            <div className="hero-sub-actions">
+              <a
+                className="button hero-btn-whatsapp"
+                href="https://wa.me/919491155403?text=Namaskaram%20Tirumala%20Balaji%20Events,%20we%20would%20like%20to%20plan%20our%20celebration."
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp"
+              >
+                <WhatsAppIcon size={17} />
+                <span>WhatsApp</span>
+              </a>
+              <a
+                className="button hero-btn-call"
+                href="tel:9491155403"
+                aria-label="Call 9491155403"
+              >
+                <Icon name="phone" size={14} />
+                <span>Call Us</span>
+              </a>
+            </div>
           </div>
         </div>
 
