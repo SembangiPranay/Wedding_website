@@ -51,15 +51,26 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; overflow-x: hidden; }
+html {
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+}
 body {
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
   color: var(--ink);
   background: var(--paper);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: pan-y;
 }
 button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -262,14 +273,13 @@ img { display: block; width: 100%; }
   height: 100vh;
   height: 100dvh;
   min-height: 640px;
-  max-height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
   box-sizing: border-box;
   padding-top: 74px;
+  touch-action: pan-y;
 }
 .hero-media-wrapper {
   position: absolute;
@@ -277,6 +287,7 @@ img { display: block; width: 100%; }
   z-index: 0;
   overflow: hidden;
   background: #0c0204;
+  pointer-events: none;
 }
 
 .hero-temple {
@@ -633,12 +644,11 @@ img { display: block; width: 100%; }
   color: #fffdf5;
 }
 
-/* Editorial Scroll Reveals */
+/* Editorial Scroll Reveals - GPU-optimized without memory leak */
 .reveal-init {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.85s var(--ease-editorial), transform 0.85s var(--ease-editorial);
-  will-change: opacity, transform;
+  transition: opacity 0.65s var(--ease-editorial), transform 0.65s var(--ease-editorial);
 }
 .reveal-init.reveal-in {
   opacity: 1;
@@ -6137,15 +6147,34 @@ h4 em {
   .hero {
     height: 100vh !important;
     height: 100dvh !important;
-    min-height: 580px !important;
+    min-height: 560px !important;
     padding-top: 74px !important;
     padding-bottom: 0px !important;
     justify-content: space-between !important;
-    overflow: hidden !important;
+    overflow: visible !important;
+    touch-action: pan-y !important;
+  }
+
+  /* Mobile 60fps/120fps GPU Scroll Acceleration: disable heavy backdrop-filter shaders */
+  .site-header {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(253, 250, 242, 0.98) !important;
+  }
+  .nav-links,
+  .header-phone-pill,
+  .nav-cta-pill-desktop,
+  .menu-button-circle,
+  .hero-auspicious-tag,
+  .hero-bottom-bar-left,
+  .hero-btn-whatsapp {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 
   .hero-media-wrapper {
     background: #0d0205;
+    pointer-events: none !important;
   }
 
   .hero-temple {
