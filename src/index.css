@@ -3115,6 +3115,83 @@ blockquote {
   }
 }
 
+/* Light classical alternatives for high-traffic promotional and footer surfaces. */
+.decor-banner-cta {
+  background: linear-gradient(135deg, #fffaf0 0%, #f7edd8 100%);
+  border: 1px solid rgba(201, 148, 22, 0.48);
+  color: var(--wine-deep);
+  box-shadow: 0 14px 32px rgba(74, 43, 22, 0.1);
+}
+
+.decor-banner-text strong {
+  color: var(--wine-deep);
+}
+
+.decor-banner-text p {
+  color: var(--muted);
+}
+
+.decor-banner-cta .button-gold {
+  background: var(--champagne);
+  color: var(--wine-deep);
+  border: 1px solid var(--champagne);
+}
+
+.decor-banner-cta .button-forest,
+.decor-banner-cta .button-outline-light {
+  background: var(--wine);
+  color: #fffaf0;
+  border-color: var(--wine);
+}
+
+footer {
+  color: var(--wine-deep);
+  background: linear-gradient(180deg, #fffaf1 0%, #f7edda 100%);
+  border-top: 4px solid var(--turmeric);
+}
+
+.footer-brand strong {
+  color: var(--wine-deep);
+}
+
+.footer-brand small,
+.footer-block-heading,
+.footer-office-block a,
+.footer-map-action,
+.footer-gmaps-link-tag {
+  color: var(--turmeric-deep);
+}
+
+footer > p {
+  color: var(--muted);
+}
+
+.footer-offices-row {
+  background: rgba(255, 253, 248, 0.72);
+  border-color: rgba(201, 148, 22, 0.3);
+  box-shadow: 0 10px 26px rgba(74, 43, 22, 0.06);
+}
+
+.footer-office-block p,
+.footer-links a,
+.footer-links button {
+  color: var(--muted);
+}
+
+.footer-phone-line strong {
+  color: var(--wine-deep);
+}
+
+.footer-links a:hover,
+.footer-links button:hover {
+  color: var(--turmeric-deep);
+}
+
+.footer-bottom {
+  color: rgba(59, 17, 24, 0.58);
+  border-top-color: rgba(96, 61, 43, 0.18);
+}
+
 .form-field-group {
   display: flex;
   flex-direction: column;
@@ -5547,16 +5624,69 @@ h4 em,
    ========================================================================== */
 
 .site-header {
-  background: rgba(142, 22, 28, 0.94);
-  border-bottom: 1.5px solid rgba(245, 207, 83, 0.52);
-  box-shadow: 0 4px 22px rgba(120, 18, 23, 0.28);
-  backdrop-filter: blur(14px);
+  background: rgba(255, 253, 249, 0.96) !important;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.45) !important;
+  box-shadow: 0 4px 20px rgba(60, 15, 20, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
+.brand-title {
+  color: #8a151b !important;
+}
+
+.brand-subtitle {
+  color: #a8740c !important;
+}
+
+.nav-item {
+  color: #3b1217 !important;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: #b82229 !important;
+}
+
+.nav-item.active::after {
+  background: #d4af37 !important;
+}
+
+.header-phone-pill {
+  background: #ffffff !important;
+  border: 1.5px solid #d4af37 !important;
+  color: #781016 !important;
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.15);
+}
+
+.header-phone-pill svg {
+  color: #b82229 !important;
+}
+
+.header-phone-pill:hover {
+  background: #fdfaf3 !important;
+  color: #a81c24 !important;
+  border-color: #f5cf53 !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.28);
+}
+
+.header-phone-pill:hover,
+.nav-cta-pill-desktop:hover {
+  background: linear-gradient(135deg, #fff0a5 0%, #f3c955 50%, #d4a330 100%) !important;
+  color: #42080d !important;
+  border-color: #fff !important;
+}
+
+.menu-button-circle {
+  background: rgba(138, 21, 27, 0.08) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+  color: #8a151b !important;
+}
+
+/* Natural Cinematic Temple Vignette (Removes heavy muddy red wash) */
 .hero-shade-left {
   background:
-    linear-gradient(90deg, rgba(128, 20, 26, 0.9) 0%, rgba(146, 24, 31, 0.62) 38%, rgba(170, 28, 36, 0.16) 68%, transparent 84%),
-    linear-gradient(180deg, rgba(105, 15, 20, 0.35) 0%, transparent 35%, rgba(88, 12, 16, 0.78) 100%);
+    linear-gradient(90deg, rgba(12, 2, 5, 0.82) 0%, rgba(18, 4, 7, 0.52) 38%, rgba(28, 6, 12, 0.12) 68%, transparent 85%),
+    linear-gradient(180deg, rgba(12, 2, 5, 0.15) 0%, transparent 35%, rgba(10, 2, 4, 0.82) 100%) !important;
 }
 
 /* Hero Typography: descender "g" is protected with generous line-height & bottom padding */
@@ -5577,7 +5707,7 @@ h4 em,
   line-height: 1.25 !important;
   padding-bottom: 6px;
   color: #f7d268 !important;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
 }
 
 /* Luminous Temple Gold Buttons (Inspired by Reference) */
@@ -5587,65 +5717,105 @@ h4 em,
   color: #42080d !important;
   font-weight: 800;
   letter-spacing: 0.04em;
-  border: 1.5px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 8px 26px rgba(229, 185, 66, 0.38) !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 26px rgba(229, 185, 66, 0.4) !important;
   text-shadow: none;
 }
 
 .hero-btn-gold:hover,
 .button-gold:hover {
   background: linear-gradient(135deg, #fff0a5 0%, #f3c955 50%, #d4a330 100%) !important;
-  box-shadow: 0 12px 32px rgba(229, 185, 66, 0.52) !important;
+  box-shadow: 0 12px 32px rgba(229, 185, 66, 0.55) !important;
   transform: translateY(-2px);
 }
 
+/* WhatsApp: Authentic Trusted Emerald Green */
 .hero-btn-whatsapp {
-  background: rgba(146, 24, 31, 0.75);
-  border: 1.5px solid #d4af37;
-  color: #ffffff;
-  box-shadow: 0 6px 20px rgba(120, 18, 23, 0.3);
+  background: #25d366 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35) !important;
   backdrop-filter: blur(8px);
 }
 
 .hero-btn-whatsapp:hover {
-  background: rgba(175, 30, 38, 0.9);
-  border-color: #f7dc78;
+  background: #1ebc59 !important;
   transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(37, 211, 102, 0.45) !important;
 }
 
+/* Call: Crisp Ivory Pill with Polished Gold Border */
 .hero-btn-call {
-  background: #ffffff;
-  border: 1.5px solid #d4af37;
-  color: #781016;
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+  background: #ffffff !important;
+  border: 1.5px solid #d4af37 !important;
+  color: #781016 !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
 .hero-btn-call:hover {
-  background: #fdfaf3;
-  border-color: #f7dc78;
-  color: #a81c24;
+  background: #fdfaf3 !important;
+  border-color: #f7dc78 !important;
+  color: #a81c24 !important;
   transform: translateY(-2px);
 }
 
-.header-phone-pill {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(245, 207, 83, 0.5);
-  color: #fff;
+/* The Bottom Thing: Floating Golden Glass Dock for Metrics */
+.hero-metrics-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 36px);
+  flex-wrap: wrap;
+  background: rgba(16, 3, 6, 0.74) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(212, 175, 55, 0.42) !important;
+  border-radius: 14px;
+  padding: 12px 24px !important;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.45);
+  margin-top: 8px;
 }
 
-.header-phone-pill:hover,
-.nav-cta-pill-desktop:hover {
-  background: linear-gradient(135deg, #f7dc78 0%, #e0b43e 100%);
-  color: #42080d;
-  border-color: #fff;
+.metric-cell {
+  color: #f7d268 !important;
 }
 
-.hero-subtitle-left,
-.kicker-lines,
-.metric-cell,
-.scroll-discover-link,
+.metric-cell strong {
+  color: #ffffff !important;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.metric-cell span {
+  color: #f0dfb3 !important;
+  font-size: 8.5px;
+}
+
+/* Bottom Bar: Frosted Temple Glass with Gold Trims */
+.hero-bottom-bar-left {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  padding: 14px clamp(24px, 5.5vw, 84px) 16px;
+  background: rgba(10, 2, 4, 0.8) !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.scroll-discover-link {
+  color: #f7d268 !important;
+}
+
+.bottom-bar-gold-line {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.6) 0%, rgba(212, 175, 55, 0.15) 100%);
+}
+
 .mandala-text strong {
-  color: #f7d268;
+  color: #f7d268 !important;
+}
+
+.mandala-text small {
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* Authentic Telugu Sindhoor Red Accents */
@@ -5800,4 +5970,161 @@ h4 em {
 
 .promise-card-text span {
   color: var(--muted);
+}
+
+/* Classical softness: keep the geometry structured, but avoid harsh square corners. */
+.catalog-service-card,
+.ritual-card,
+.scenery-card,
+.occasion-card,
+.promise-card,
+.catalog-header-card,
+.catalog-cta-banner,
+.decor-banner,
+.inquiry-card,
+.form-card {
+  border-radius: 8px;
+}
+
+.catalog-service-card,
+.promise-card,
+.catalog-cta-banner,
+.inquiry-card,
+.form-card {
+  overflow: hidden;
+}
+
+.button,
+.hero-btn-gold,
+.hero-btn-whatsapp,
+.hero-btn-call,
+.button-gold,
+.button-forest,
+.button-outline-light,
+.nav-cta-pill-desktop {
+  border-radius: 6px;
+}
+
+.catalog-service-card:hover,
+.ritual-card:hover,
+.scenery-card:hover,
+.occasion-card:hover,
+.promise-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Mobile home: Royal Sandalwood Ivory Header & Crisp Temple Night View */
+@media (max-width: 640px) {
+  .site-header {
+    background: rgba(255, 253, 249, 0.98) !important;
+    border-bottom: 1.5px solid rgba(212, 175, 55, 0.45) !important;
+    box-shadow: 0 4px 18px rgba(60, 15, 20, 0.08) !important;
+  }
+
+  .nav-links {
+    background: #fffdf9 !important;
+    color: #2b080c !important;
+    border-bottom: 2.5px solid var(--gold) !important;
+    box-shadow: 0 20px 48px rgba(60, 15, 20, 0.15) !important;
+  }
+
+  .nav-links a {
+    color: #3b1217 !important;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22) !important;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #b82229 !important;
+  }
+
+  .hero-metrics-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    padding: 10px 14px !important;
+    gap: 10px !important;
+    border-radius: 12px !important;
+  }
+
+  .hero-media-wrapper {
+    background: #0d0205;
+  }
+
+  .hero-temple {
+    filter: saturate(1.05) contrast(1.04) brightness(1.08);
+  }
+
+  .hero-shade-left {
+    background:
+      linear-gradient(180deg, rgba(12, 2, 5, 0.3) 0%, transparent 35%, rgba(10, 2, 4, 0.88) 100%),
+      linear-gradient(90deg, rgba(14, 3, 6, 0.78) 0%, transparent 90%) !important;
+  }
+
+  .hero-container-left {
+    text-shadow: 0 2px 10px rgba(36, 16, 20, 0.35);
+  }
+
+  .hero-title-left {
+    color: #fffdf8;
+    text-shadow: 0 2px 10px rgba(36, 16, 20, 0.42);
+  }
+
+  .hero-subtitle-left {
+    color: #f7d268 !important;
+  }
+
+  .hero-btn-gold {
+    background: linear-gradient(135deg, #fce282 0%, #e5b942 50%, #c49424 100%) !important;
+    color: #42080d !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 6px 22px rgba(229, 185, 66, 0.38) !important;
+  }
+
+  .hero-btn-whatsapp {
+    background: #25d366 !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35) !important;
+  }
+
+  .hero-btn-call {
+    background: #ffffff !important;
+    border: 1.5px solid #d4af37 !important;
+    color: #781016 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+  }
+
+  .hero-btn-call svg {
+    color: #b82229 !important;
+  }
+
+  .metric-cell {
+    color: #f7d268 !important;
+    text-shadow: none;
+  }
+
+  .metric-cell strong {
+    color: #ffffff !important;
+    font-size: 13px !important;
+  }
+
+  .metric-cell span {
+    color: #f0dfb3 !important;
+    font-size: 8px !important;
+  }
+
+  .hero-bottom-bar-left {
+    background: rgba(10, 2, 4, 0.85) !important;
+    border-top: 1px solid rgba(212, 175, 55, 0.35) !important;
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  .scroll-discover-link,
+  .mandala-text strong {
+    color: #f7d268 !important;
+  }
+
+  .mandala-text small {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
 }
