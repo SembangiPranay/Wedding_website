@@ -1020,17 +1020,10 @@ function App() {
 
         {/* Left-Aligned Hero Content */}
         <div className="hero-container-left">
-          <div className="hero-kicker-stack">
-            <span className="kicker-rule" />
-            <div className="kicker-lines">
-              <span>A DIVINE BEGINNING</span>
-              <span>FOR YOUR SPECIAL MOMENTS ·</span>
-            </div>
-          </div>
-
-          <div className="hero-lotus-ornament">
-            <span className="lotus-stem" />
-            <LotusIcon size={26} />
+          <div className="hero-auspicious-tag">
+            <span className="hero-diya-icon">🪔</span>
+            <span className="hero-shloka-text">॥ శ్రీ వేంకటేశ్వర ప్రసన్నః ॥</span>
+            <span className="hero-diya-icon">🪔</span>
           </div>
 
           <h1 className="hero-title-left">
@@ -1060,37 +1053,6 @@ function App() {
               <Icon name="phone" size={15} />
               <span>Call: 94911 55403</span>
             </a>
-          </div>
-
-          <div className="hero-metrics-row">
-            <div className="metric-cell">
-              <Icon name="guests" size={18} />
-              <div>
-                <strong>500+</strong>
-                <span>Happy Families</span>
-              </div>
-            </div>
-            <div className="metric-cell">
-              <Icon name="flower" size={18} />
-              <div>
-                <strong>Every Budget</strong>
-                <span>Simple to Grand</span>
-              </div>
-            </div>
-            <div className="metric-cell">
-              <Icon name="pin" size={18} />
-              <div>
-                <strong>Tirumala &amp; Tirupati</strong>
-                <span>Direct Local Offices</span>
-              </div>
-            </div>
-            <div className="metric-cell">
-              <Icon name="clock" size={18} />
-              <div>
-                <strong>24/7 Support</strong>
-                <span>Direct Coordinator</span>
-              </div>
-            </div>
           </div>
         </div>
 
