@@ -1038,10 +1038,6 @@ function App() {
             <span className="hero-subtitle-left">Marriages &amp; Events</span>
           </h1>
 
-          <p className="hero-copy-left">
-            We organize weddings and all types of events for every budget, offering complete end-to-end event management services. From simple ceremonies to grand celebrations, we ensure a smooth, hassle-free, and unforgettable experience with quality service at affordable prices.
-          </p>
-
           <div className="hero-actions-left">
             <button className="button hero-btn-gold" onClick={scrollToInquiry}>
               PLAN YOUR CELEBRATION <Icon name="arrow" size={16} />
