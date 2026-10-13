@@ -9,9 +9,9 @@ const images = {
   ballroom: "/images/telugu_function_hall.jpg",
   flowers: "/images/telugu_floral_decor.jpg",
   dinner: "/images/satvik_bhojanam.jpg",
-  // Temple_5 has the clearest real photographic composition: bright gopuram,
-  // visible Seshachalam ridge, and open sky for the hero copy.
-  temple: "/images/Temple_reference/Temple_5.jpg",
+  // Authentic high-resolution Tirumala sanctum dusk image featuring the pristine
+  // white Mahadwaram gopuram, golden Ananda Nilayam vimanam, and Seshachalam hills.
+  temple: "/images/Temple_reference/Tirumala_Sanctum_Dusk.jpg",
   hillsPanorama: "/images/tirumala_overview.jpg",
   hillsMorning: "/images/tirumala_morning_hills.jpg",
   hillsRidge: "/images/sapthagiri_hills.jpg",

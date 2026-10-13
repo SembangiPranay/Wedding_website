@@ -294,8 +294,8 @@ img { display: block; width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 48%;
-  filter: saturate(1.12) contrast(1.06) brightness(1.08);
+  object-position: center 36%;
+  filter: saturate(1.12) contrast(1.06) brightness(1.06);
   transform-origin: center center;
 }
 
