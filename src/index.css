@@ -4422,6 +4422,428 @@ footer, .site-footer {
   box-shadow: 0 10px 26px rgba(189, 139, 50, 0.22);
 }
 
+/* ==========================================================================
+   Founder & Master Organizer Spotlight Section (Sri R. Rajesh)
+   ========================================================================== */
+.founder-section {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(255, 245, 220, 0.95) 0%, rgba(254, 235, 179, 0.5) 45%, rgba(248, 219, 142, 0.25) 75%),
+    linear-gradient(135deg, #FFFDF7 0%, #FEF8E7 30%, #FDF1D0 65%, #F7E4B2 100%);
+  color: #2b130e;
+  padding: 100px clamp(24px, 6vw, 96px);
+  overflow: hidden;
+  border-top: 4px solid #d4af37;
+  border-bottom: 4px solid #d4af37;
+  box-shadow: inset 0 20px 40px rgba(212, 175, 55, 0.08), inset 0 -20px 40px rgba(212, 175, 55, 0.08);
+}
+
+.founder-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: clamp(40px, 5vw, 84px);
+  align-items: center;
+}
+
+.founder-portrait-column {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.founder-portrait-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(245, 200, 98, 0.45) 0%, rgba(212, 175, 55, 0.18) 45%, transparent 70%);
+  filter: blur(36px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.founder-portrait-frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(145deg, #ffffff 0%, #fef8ea 100%);
+  border: 3px solid #d4af37;
+  box-shadow:
+    0 0 0 1px rgba(245, 200, 98, 0.6),
+    0 24px 60px rgba(180, 115, 20, 0.2),
+    0 10px 24px rgba(0, 0, 0, 0.08),
+    inset 0 0 16px rgba(212, 175, 55, 0.12);
+}
+
+.founder-corner-ornament {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: #d4af37;
+  border-style: solid;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.founder-corner-ornament.corner-tl {
+  top: 7px;
+  left: 7px;
+  border-width: 2.5px 0 0 2.5px;
+}
+
+.founder-corner-ornament.corner-tr {
+  top: 7px;
+  right: 7px;
+  border-width: 2.5px 2.5px 0 0;
+}
+
+.founder-corner-ornament.corner-bl {
+  bottom: 7px;
+  left: 7px;
+  border-width: 0 0 2.5px 2.5px;
+}
+
+.founder-corner-ornament.corner-br {
+  bottom: 7px;
+  right: 7px;
+  border-width: 0 2.5px 2.5px 0;
+}
+
+.founder-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.founder-portrait-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  object-position: center 12%;
+  display: block;
+  border-radius: 10px;
+  filter: contrast(1.05) saturate(1.06);
+  transition: transform 0.5s ease;
+}
+
+.founder-portrait-frame:hover .founder-portrait-img {
+  transform: scale(1.02);
+}
+
+.founder-portrait-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 5, 8, 0.45) 0%, rgba(20, 5, 8, 0) 40%);
+  pointer-events: none;
+}
+
+.founder-badge-pill {
+  position: absolute;
+  bottom: 26px;
+  left: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, rgba(58, 12, 16, 0.96) 0%, rgba(38, 7, 10, 0.96) 100%);
+  border: 1.5px solid #f5c862;
+  border-radius: 10px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 24px rgba(45, 8, 12, 0.45);
+  z-index: 2;
+}
+
+.founder-badge-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.founder-badge-pill strong {
+  display: block;
+  color: #f5c862;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.founder-badge-pill small {
+  display: block;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.founder-exp-tag {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #fff9e6 0%, #fae8b2 100%);
+  border: 1.5px solid #d4af37;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(189, 139, 50, 0.25);
+  z-index: 2;
+}
+
+.founder-exp-num {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: #871a25;
+  line-height: 1.1;
+  font-family: var(--serif);
+}
+
+.founder-exp-lbl {
+  display: block;
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #5c4314;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Founder Copy Column */
+.founder-copy-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.founder-heading {
+  color: #2b130e;
+  margin: 12px 0 20px;
+  font-family: var(--sans);
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 800 !important;
+  font-style: normal !important;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.founder-heading-gold {
+  color: #991b1b;
+  background: linear-gradient(135deg, #891a26 0%, #aa7c11 50%, #891a26 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.founder-intro {
+  font-size: clamp(14px, 1.25vw, 16px);
+  line-height: 1.75;
+  color: #4b382a;
+  margin-bottom: 22px;
+}
+
+.founder-intro strong {
+  color: #871a25;
+  font-weight: 700;
+}
+
+/* Quote Box */
+.founder-quote-box {
+  position: relative;
+  background: #ffffff;
+  border-left: 4px solid #d4af37;
+  border-radius: 0 12px 12px 0;
+  padding: 20px 24px 20px 28px;
+  margin: 0 0 26px 0;
+  box-shadow: 0 8px 24px rgba(189, 139, 50, 0.12);
+  border-top: 1px solid rgba(212, 175, 55, 0.25);
+  border-right: 1px solid rgba(212, 175, 55, 0.25);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.founder-quote-mark {
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  font-size: 54px;
+  color: rgba(212, 175, 55, 0.28);
+  font-family: var(--serif);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.founder-quote-box p {
+  position: relative;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.7;
+  color: #3d271d;
+  margin: 0 0 10px 0;
+}
+
+.founder-quote-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: #871a25;
+  letter-spacing: 0.02em;
+}
+
+/* Pillars Grid */
+.founder-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.founder-pillar-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(212, 175, 55, 0.35);
+  border-radius: 10px;
+  padding: 16px 14px;
+  box-shadow: 0 4px 12px rgba(189, 139, 50, 0.08);
+  transition: all 0.25s ease;
+}
+
+.founder-pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: #d4af37;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(189, 139, 50, 0.18);
+}
+
+.founder-pillar-icon {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.founder-pillar-info strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2b080c;
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+
+.founder-pillar-info p {
+  margin: 0;
+  font-size: 11.5px;
+  color: #5c4d44;
+  line-height: 1.55;
+}
+
+/* CTA Group */
+.founder-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.founder-call-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #aa7c11 0%, #d4af37 50%, #aa7c11 100%);
+  color: #1a0507;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(170, 124, 17, 0.3);
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.founder-call-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(170, 124, 17, 0.45);
+  background: linear-gradient(135deg, #b88613 0%, #e0bd46 50%, #b88613 100%);
+}
+
+.founder-wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.28);
+  transition: all 0.25s var(--ease-editorial);
+}
+
+.founder-wa-btn:hover {
+  background: #1ebc59;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.38);
+}
+
+/* Contact Action Card Avatar Styling (Inquiry Section) */
+.contact-action-card-founder {
+  border-color: rgba(212, 175, 55, 0.55) !important;
+  background: rgba(212, 175, 55, 0.08) !important;
+}
+
+.contact-action-card-founder:hover {
+  background: rgba(212, 175, 55, 0.16) !important;
+  border-color: var(--gold-light) !important;
+}
+
+.contact-avatar-wrapper {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #d4af37;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #2b080c;
+}
+
+.contact-avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.contact-avatar-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #10b981;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid #2b080c;
+  line-height: 1;
+}
+
 @media (max-width: 1024px) {
   .hero {
     height: auto;
@@ -5317,6 +5739,32 @@ footer, .site-footer {
     justify-content: center;
     text-align: center;
   }
+
+  /* Founder section mobile */
+  .founder-section { padding: 56px 16px; }
+  .founder-container { grid-template-columns: 1fr; gap: 32px; }
+  .founder-portrait-column { max-width: 340px; margin: 0 auto; width: 100%; }
+  .founder-portrait-frame { padding: 10px; }
+  .founder-portrait-img { height: 380px; }
+  .founder-badge-pill {
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    padding: 8px 12px;
+  }
+  .founder-badge-pill strong { font-size: 14px; }
+  .founder-badge-pill small { font-size: 8.5px; }
+  .founder-exp-tag { top: 14px; right: 14px; padding: 4px 10px; }
+  .founder-exp-num { font-size: 15px; }
+  .founder-exp-lbl { font-size: 7.5px; }
+  .founder-heading { font-size: 28px; line-height: 1.15; margin: 10px 0 16px; }
+  .founder-intro { font-size: 13px; line-height: 1.7; margin-bottom: 18px; }
+  .founder-quote-box { padding: 16px 18px; margin-bottom: 20px; }
+  .founder-quote-box p { font-size: 13.5px; line-height: 1.65; }
+  .founder-pillars-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 22px; }
+  .founder-pillar-card { padding: 14px 12px; }
+  .founder-cta-group { flex-direction: column; width: 100%; gap: 10px; }
+  .founder-call-btn, .founder-wa-btn { width: 100%; justify-content: center; }
 
   /* Inquiry section on mobile */
   .inquiry-section { padding: 58px 16px; gap: 32px; }
@@ -6435,6 +6883,7 @@ h4 em {
   .process-section,
   .story-section,
   .blessing-section,
+  .founder-section,
   .inquiry-section {
     content-visibility: auto;
     contain-intrinsic-size: 1px 600px;

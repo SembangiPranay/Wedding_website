@@ -54,6 +54,9 @@ const images = {
   // Official Company Logo
   logo: "/images/Logo.png",
   logoJpg: "/images/Logo.jpg",
+  // Founder & Managing Director
+  ownerRajesh: "/images/owner_rajesh.jpg",
+  ownerRajeshAvatar: "/images/owner_rajesh_avatar.jpg",
 };
 
 type IconName =
@@ -968,6 +971,7 @@ function App() {
           <a href="#scenery" className="nav-item" onClick={() => setMenuOpen(false)}>Sacred Hills</a>
           <a href="#blessing" className="nav-item" onClick={() => setMenuOpen(false)}>Divine Grace</a>
           <a href="#stories" className="nav-item" onClick={() => setMenuOpen(false)}>Stories</a>
+          <a href="#founder" className="nav-item" onClick={() => setMenuOpen(false)}>Founder</a>
           <a href="#inquiry" className="nav-item" onClick={() => setMenuOpen(false)}>Contact</a>
           <a href="tel:9491155403" className="nav-item nav-phone-mobile">
             <Icon name="phone" size={14} /> Call: 94911 55403
@@ -1839,6 +1843,112 @@ function App() {
         </div>
       </section>
 
+      {/* ============================================================
+          FOUNDER & MASTER ORGANIZER SPOTLIGHT
+          ============================================================ */}
+      <section className="founder-section reveal-init" id="founder" aria-label="Founder Spotlight">
+        <div className="founder-container">
+          <div className="founder-portrait-column">
+            <div className="founder-portrait-aura" />
+            <div className="founder-portrait-frame">
+              <span className="founder-corner-ornament corner-tl" />
+              <span className="founder-corner-ornament corner-tr" />
+              <span className="founder-corner-ornament corner-bl" />
+              <span className="founder-corner-ornament corner-br" />
+              
+              <div className="founder-image-wrapper">
+                <img
+                  src={images.ownerRajesh}
+                  alt="Sri R. Rajesh, Founder & Managing Director of Tirumala Balaji Marriages & Events"
+                  className="founder-portrait-img"
+                  loading="lazy"
+                  width={682}
+                  height={1024}
+                />
+                <div className="founder-portrait-gradient" />
+              </div>
+
+              <div className="founder-badge-pill">
+                <span className="founder-badge-icon">🎖️</span>
+                <div>
+                  <strong>Sri R. Rajesh</strong>
+                  <small>Founder &amp; Managing Director</small>
+                </div>
+              </div>
+
+              <div className="founder-exp-tag">
+                <span className="founder-exp-num">15+</span>
+                <span className="founder-exp-lbl">Years Direct Kshetram Experience</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="founder-copy-column">
+            <p className="eyebrow light"><span /> LEADERSHIP &amp; SACRED TRUST · FOUNDER</p>
+            <h2 className="founder-heading">
+              Dedicated to Every Muhurtham.<br />
+              <span className="founder-heading-gold">Guided by Lord Balaji’s Grace.</span>
+            </h2>
+            
+            <p className="founder-intro">
+              Behind every seamless wedding at Tirumala Balaji Marriages &amp; Events is the personal care, Vedic knowledge, and hands-on leadership of <strong>Sri R. Rajesh</strong>. For over a decade and a half, Sri Rajesh has been a trusted guide to thousands of families, ensuring their auspicious union is conducted strictly according to Vedic traditions with royal hospitality.
+            </p>
+
+            <blockquote className="founder-quote-box">
+              <span className="founder-quote-mark" aria-hidden="true">“</span>
+              <p>
+                To organize a wedding at the divine hill of Lord Venkateswara is not merely an event service—it is a sacred seva. We treat every bride, groom, and elder as our own family, taking complete responsibility from the sacred mandapam to TTD darshan coordination.
+              </p>
+              <footer className="founder-quote-author">
+                — <strong>Sri R. Rajesh</strong>, Founder &amp; Managing Director
+              </footer>
+            </blockquote>
+
+            <div className="founder-pillars-grid">
+              <div className="founder-pillar-card">
+                <div className="founder-pillar-icon">🏛️</div>
+                <div className="founder-pillar-info">
+                  <strong>Personal On-Site Supervision</strong>
+                  <p>Sri Rajesh personally attends your wedding day on Tirumala hill, overseeing timings, decorations, and rituals.</p>
+                </div>
+              </div>
+
+              <div className="founder-pillar-card">
+                <div className="founder-pillar-icon">🕉️</div>
+                <div className="founder-pillar-info">
+                  <strong>Strict Vedic Shastra Integrity</strong>
+                  <p>Authentic Smartha &amp; Vaishnava purohits performing every shastric ritual without rushing or compromises.</p>
+                </div>
+              </div>
+
+              <div className="founder-pillar-card">
+                <div className="founder-pillar-icon">🤝</div>
+                <div className="founder-pillar-info">
+                  <strong>Direct Transparency &amp; Care</strong>
+                  <p>Direct communication with the founder ensures transparent packages, bespoke arrangements, and zero stress.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="founder-cta-group">
+              <a href="tel:9491155403" className="founder-call-btn">
+                <Icon name="phone" size={17} />
+                <span>Call Sri Rajesh: <strong>+91 94911 55403</strong></span>
+              </a>
+              <a
+                href="https://wa.me/919491155403?text=Namaskaram%20Sri%20Rajesh%20garu,%20we%20would%20like%20to%20plan%20our%20wedding%20at%20Tirumala."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="founder-wa-btn"
+              >
+                <WhatsAppIcon size={17} />
+                <span>WhatsApp Directly</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="inquiry-section reveal-init" id="inquiry">
         <div className="inquiry-copy">
           <div className="inquiry-brand-badge">
@@ -1862,14 +1972,21 @@ function App() {
           </p>
 
           <div className="inquiry-action-cards">
-            <a href="tel:9491155403" className="contact-action-card">
-              <span className="contact-icon-wrapper">
-                <Icon name="phone" size={20} />
-              </span>
+            <a href="tel:9491155403" className="contact-action-card contact-action-card-founder">
+              <div className="contact-avatar-wrapper">
+                <img
+                  src={images.ownerRajeshAvatar}
+                  alt="Sri R. Rajesh - Founder & Managing Director"
+                  className="contact-avatar-img"
+                  width={44}
+                  height={44}
+                />
+                <span className="contact-avatar-badge" title="Verified Founder">✓</span>
+              </div>
               <div>
-                <small>Direct Phone Call / Immediate Support</small>
+                <small>Direct Founder Call / Immediate Support</small>
                 <strong>+91 94911 55403</strong>
-                <span className="contact-subtext">R. Rajesh · 24/7 Available</span>
+                <span className="contact-subtext">Sri R. Rajesh · Founder &amp; Managing Director</span>
               </div>
             </a>
 
@@ -1960,7 +2077,7 @@ function App() {
             <span className="success-mantra">|| OM NAMO VENKATESHAYA ||</span>
             <h3>Inquiry Received with Reverence</h3>
             <p className="success-intro-p">
-              Namaskaram <strong>{submittedInquiry.name}</strong>, your celebration details have been received. Our dedicated wedding coordinator R. Rajesh will contact you shortly on <strong>{submittedInquiry.phone}</strong> with customized package options and auspicious date confirmation.
+              Namaskaram <strong>{submittedInquiry.name}</strong>, your celebration details have been received. Our Founder &amp; Master Wedding Organizer Sri R. Rajesh will contact you directly on <strong>{submittedInquiry.phone}</strong> with customized package options and auspicious date confirmation.
             </p>
 
             <div className="success-summary-box">
@@ -2370,8 +2487,9 @@ function App() {
           <a href="#rituals">Sacred Rituals</a>
           <a href="#scenery">Sacred Hills</a>
           <a href="#blessing">Divine Grace</a>
-          <a href="#process">Our Approach</a>
           <a href="#stories">Real Stories</a>
+          <a href="#founder">Founder</a>
+          <a href="#process">Our Approach</a>
           <button onClick={scrollToInquiry} className="footer-nav-btn">Inquire Now</button>
           <button
             type="button"
