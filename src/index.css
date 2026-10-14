@@ -70,7 +70,7 @@ body {
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
-  touch-action: pan-y;
+  touch-action: manipulation;
 }
 button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -6393,6 +6393,53 @@ h4 em {
     color: var(--color-crimson) !important;
   }
 
+  /* Native touch momentum & zero-lag scrolling */
+  html {
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    touch-action: manipulation !important;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: auto;
+  }
+
+  /* Mobile 60fps/120fps GPU Scroll Acceleration: disable all heavy backdrop-filter shaders */
+  *, *::before, *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* GPU-accelerated fixed header */
+  .site-header {
+    transform: translateZ(0);
+    will-change: transform;
+    background: rgba(253, 250, 242, 0.98) !important;
+  }
+
+  /* Zero-jank instant reveal on mobile */
+  .reveal-init {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Off-screen rendering optimizations for buttery smooth 120Hz swiping */
+  .services,
+  .venue-section,
+  .rituals-section,
+  .scenery-section,
+  .occasions,
+  .decorations-section,
+  .process-section,
+  .story-section,
+  .blessing-section,
+  .inquiry-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 600px;
+  }
+
   /* Mobile Hero High Efficiency & Clear Mountain Gopuram Framing */
   .hero {
     height: 100vh !important;
@@ -6402,24 +6449,7 @@ h4 em {
     padding-bottom: 0px !important;
     justify-content: space-between !important;
     overflow: visible !important;
-    touch-action: pan-y !important;
-  }
-
-  /* Mobile 60fps/120fps GPU Scroll Acceleration: disable heavy backdrop-filter shaders */
-  .site-header {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    background: rgba(253, 250, 242, 0.98) !important;
-  }
-  .nav-links,
-  .header-phone-pill,
-  .nav-cta-pill-desktop,
-  .menu-button-circle,
-  .hero-auspicious-tag,
-  .hero-bottom-bar-left,
-  .hero-btn-whatsapp {
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
+    touch-action: manipulation !important;
   }
 
   .hero-media-wrapper {
