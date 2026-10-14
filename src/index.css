@@ -4526,12 +4526,12 @@ footer, .site-footer {
 
 .founder-portrait-img {
   width: 100%;
-  height: 520px;
+  height: 480px;
   object-fit: cover;
-  object-position: center 12%;
+  object-position: center top;
   display: block;
   border-radius: 10px;
-  filter: contrast(1.05) saturate(1.06);
+  filter: contrast(1.03) saturate(1.05);
   transition: transform 0.5s ease;
 }
 
@@ -4539,49 +4539,40 @@ footer, .site-footer {
   transform: scale(1.02);
 }
 
-.founder-portrait-gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(20, 5, 8, 0.45) 0%, rgba(20, 5, 8, 0) 40%);
-  pointer-events: none;
-}
-
 .founder-badge-pill {
-  position: absolute;
-  bottom: 26px;
-  left: 24px;
-  right: 24px;
-  background: linear-gradient(135deg, rgba(58, 12, 16, 0.96) 0%, rgba(38, 7, 10, 0.96) 100%);
-  border: 1.5px solid #f5c862;
+  position: relative;
+  margin-top: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #fffdf8 50%, #fef7e4 100%);
+  border: 2px solid #d4af37;
   border-radius: 10px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  box-shadow: 0 10px 24px rgba(45, 8, 12, 0.45);
+  gap: 14px;
+  box-shadow: 0 6px 20px rgba(189, 139, 50, 0.15), 0 2px 6px rgba(0, 0, 0, 0.04);
   z-index: 2;
 }
 
 .founder-badge-icon {
-  font-size: 24px;
+  font-size: 26px;
   line-height: 1;
   flex-shrink: 0;
 }
 
 .founder-badge-pill strong {
   display: block;
-  color: #f5c862;
+  color: #871a25;
   font-family: var(--serif);
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 .founder-badge-pill small {
   display: block;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 600;
+  color: #92400e;
+  font-size: 10.5px;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 2px;
@@ -4589,20 +4580,20 @@ footer, .site-footer {
 
 .founder-exp-tag {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  background: linear-gradient(135deg, #fff9e6 0%, #fae8b2 100%);
+  top: 12px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.96);
   border: 1.5px solid #d4af37;
   border-radius: 8px;
   padding: 6px 12px;
   text-align: center;
-  box-shadow: 0 6px 16px rgba(189, 139, 50, 0.25);
+  box-shadow: 0 4px 14px rgba(189, 139, 50, 0.22);
   z-index: 2;
 }
 
 .founder-exp-num {
   display: block;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   color: #871a25;
   line-height: 1.1;
@@ -4611,7 +4602,7 @@ footer, .site-footer {
 
 .founder-exp-lbl {
   display: block;
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: 700;
   color: #5c4314;
   text-transform: uppercase;
@@ -4658,23 +4649,23 @@ footer, .site-footer {
 /* Quote Box */
 .founder-quote-box {
   position: relative;
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff 0%, #fffdfa 100%);
   border-left: 4px solid #d4af37;
   border-radius: 0 12px 12px 0;
-  padding: 20px 24px 20px 28px;
-  margin: 0 0 26px 0;
-  box-shadow: 0 8px 24px rgba(189, 139, 50, 0.12);
-  border-top: 1px solid rgba(212, 175, 55, 0.25);
-  border-right: 1px solid rgba(212, 175, 55, 0.25);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  padding: 22px 24px 20px 28px;
+  margin: 0 0 24px 0;
+  box-shadow: 0 6px 20px rgba(189, 139, 50, 0.1);
+  border-top: 1px solid rgba(212, 175, 55, 0.28);
+  border-right: 1px solid rgba(212, 175, 55, 0.28);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
 }
 
 .founder-quote-mark {
   position: absolute;
-  top: -8px;
+  top: -6px;
   left: 12px;
   font-size: 54px;
-  color: rgba(212, 175, 55, 0.28);
+  color: rgba(212, 175, 55, 0.3);
   font-family: var(--serif);
   line-height: 1;
   pointer-events: none;
@@ -4686,15 +4677,25 @@ footer, .site-footer {
   font-size: 15px;
   font-style: italic;
   line-height: 1.7;
-  color: #3d271d;
-  margin: 0 0 10px 0;
+  color: #3b281f;
+  margin: 0 0 12px 0;
 }
 
 .founder-quote-author {
-  font-size: 12px;
-  font-weight: 600;
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
   color: #871a25;
   letter-spacing: 0.02em;
+  border-top: 1px dashed rgba(212, 175, 55, 0.4);
+  padding-top: 10px;
+  margin-top: 6px;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* Pillars Grid */
@@ -5744,17 +5745,17 @@ footer, .site-footer {
   .founder-section { padding: 56px 16px; }
   .founder-container { grid-template-columns: 1fr; gap: 32px; }
   .founder-portrait-column { max-width: 340px; margin: 0 auto; width: 100%; }
-  .founder-portrait-frame { padding: 10px; }
-  .founder-portrait-img { height: 380px; }
+  .founder-portrait-frame { padding: 10px; max-width: 330px; }
+  .founder-portrait-img { height: 360px; object-fit: cover; object-position: center top; }
   .founder-badge-pill {
-    bottom: 14px;
-    left: 14px;
-    right: 14px;
-    padding: 8px 12px;
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 14px;
+    gap: 10px;
   }
-  .founder-badge-pill strong { font-size: 14px; }
-  .founder-badge-pill small { font-size: 8.5px; }
-  .founder-exp-tag { top: 14px; right: 14px; padding: 4px 10px; }
+  .founder-badge-pill strong { font-size: 15px; }
+  .founder-badge-pill small { font-size: 9px; }
+  .founder-exp-tag { top: 10px; right: 10px; padding: 4px 8px; }
   .founder-exp-num { font-size: 15px; }
   .founder-exp-lbl { font-size: 7.5px; }
   .founder-heading { font-size: 28px; line-height: 1.15; margin: 10px 0 16px; }

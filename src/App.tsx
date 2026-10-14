@@ -1862,10 +1862,13 @@ function App() {
                   alt="Sri R. Rajesh, Founder & Managing Director of Tirumala Balaji Marriages & Events"
                   className="founder-portrait-img"
                   loading="lazy"
-                  width={682}
-                  height={1024}
+                  width={580}
+                  height={710}
                 />
-                <div className="founder-portrait-gradient" />
+                <div className="founder-exp-tag">
+                  <span className="founder-exp-num">15+</span>
+                  <span className="founder-exp-lbl">Years Experience</span>
+                </div>
               </div>
 
               <div className="founder-badge-pill">
@@ -1874,11 +1877,6 @@ function App() {
                   <strong>Sri R. Rajesh</strong>
                   <small>Founder &amp; Managing Director</small>
                 </div>
-              </div>
-
-              <div className="founder-exp-tag">
-                <span className="founder-exp-num">15+</span>
-                <span className="founder-exp-lbl">Years Direct Kshetram Experience</span>
               </div>
             </div>
           </div>
@@ -1899,9 +1897,9 @@ function App() {
               <p>
                 To organize a wedding at the divine hill of Lord Venkateswara is not merely an event service—it is a sacred seva. We treat every bride, groom, and elder as our own family, taking complete responsibility from the sacred mandapam to TTD darshan coordination.
               </p>
-              <footer className="founder-quote-author">
+              <div className="founder-quote-author">
                 — <strong>Sri R. Rajesh</strong>, Founder &amp; Managing Director
-              </footer>
+              </div>
             </blockquote>
 
             <div className="founder-pillars-grid">
