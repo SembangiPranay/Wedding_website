@@ -563,8 +563,8 @@ img { display: block; width: 100%; }
   justify-content: space-between;
   gap: 20px;
   box-sizing: border-box;
-  background: linear-gradient(180deg, transparent 0%, rgba(20, 3, 3, 0.7) 40%, rgba(20, 3, 3, 0.9) 100%);
-  border-top: 1px solid rgba(201, 168, 76, 0.35);
+  background: linear-gradient(180deg, transparent 0%, rgba(75, 12, 18, 0.45) 40%, rgba(60, 9, 14, 0.82) 100%);
+  border-top: 1px solid rgba(255, 215, 0, 0.45);
   animation: heroFadeIn 0.95s var(--ease-editorial) 0.56s both;
 }
 .bottom-bar-left-side {
@@ -4676,12 +4676,19 @@ footer, .site-footer {
     padding-bottom: 12px;
   }
   .hero-temple {
-    object-position: 65% center;
+    object-position: 48% 10%;
+    filter: saturate(1.18) contrast(1.04) brightness(1.15);
   }
   .hero-shade-left {
     background:
-      linear-gradient(180deg, rgba(120, 18, 23, 0.88) 0%, rgba(138, 22, 28, 0.5) 32%, rgba(105, 15, 20, 0.88) 72%, rgba(80, 11, 15, 0.96) 100%),
-      linear-gradient(90deg, rgba(120, 18, 23, 0.88) 0%, rgba(138, 22, 28, 0.3) 100%);
+      linear-gradient(180deg,
+        rgba(15, 3, 6, 0.05) 0%,
+        transparent 28%,
+        transparent 50%,
+        rgba(75, 12, 18, 0.42) 66%,
+        rgba(92, 14, 22, 0.76) 84%,
+        rgba(72, 10, 16, 0.90) 100%
+      );
   }
   .hero-container-left { padding: 14px 16px 16px; gap: 12px; }
   .hero-kicker-stack { gap: 8px; }
@@ -5988,11 +5995,21 @@ h4 em,
   color: #8a151b !important;
 }
 
-/* Natural Cinematic Temple Vignette (Removes heavy muddy red wash) */
+/* Radiant Temple Ambiance: Warm Sindhoor & Golden Twilight (Bright & Crisp) */
 .hero-shade-left {
   background:
-    linear-gradient(90deg, rgba(12, 2, 5, 0.82) 0%, rgba(18, 4, 7, 0.52) 38%, rgba(28, 6, 12, 0.12) 68%, transparent 85%),
-    linear-gradient(180deg, rgba(12, 2, 5, 0.15) 0%, transparent 35%, rgba(10, 2, 4, 0.82) 100%) !important;
+    linear-gradient(90deg,
+      rgba(72, 12, 16, 0.68) 0%,
+      rgba(85, 14, 20, 0.42) 34%,
+      rgba(105, 18, 25, 0.12) 58%,
+      transparent 76%
+    ),
+    linear-gradient(180deg,
+      rgba(35, 6, 10, 0.12) 0%,
+      transparent 22%,
+      transparent 68%,
+      rgba(62, 10, 15, 0.72) 100%
+    ) !important;
 }
 
 /* Hero Typography: descender "g" is protected with generous line-height & bottom padding */
@@ -6406,19 +6423,25 @@ h4 em {
   }
 
   .hero-media-wrapper {
-    background: #0d0205;
+    background: #1a0508;
     pointer-events: none !important;
   }
 
   .hero-temple {
-    object-position: 48% 28% !important;
-    filter: saturate(1.1) contrast(1.06) brightness(1.02);
+    object-position: 48% 10% !important;
+    filter: saturate(1.18) contrast(1.04) brightness(1.15) !important;
   }
 
   .hero-shade-left {
     background:
-      linear-gradient(180deg, rgba(10, 2, 4, 0.22) 0%, rgba(10, 2, 4, 0.55) 32%, rgba(10, 2, 4, 0.82) 62%, rgba(10, 2, 4, 0.96) 100%),
-      radial-gradient(ellipse 95% 75% at 50% 55%, rgba(14, 2, 5, 0.65) 0%, transparent 85%) !important;
+      linear-gradient(180deg,
+        rgba(15, 3, 6, 0.05) 0%,
+        transparent 28%,
+        transparent 50%,
+        rgba(75, 12, 18, 0.42) 66%,
+        rgba(92, 14, 22, 0.76) 84%,
+        rgba(72, 10, 16, 0.90) 100%
+      ) !important;
   }
 
   .hero-container-left {
@@ -6432,11 +6455,13 @@ h4 em {
   }
 
   .hero-auspicious-tag {
-    padding: 4px 12px !important;
+    padding: 5px 14px !important;
     margin-bottom: 8px !important;
-    gap: 6px !important;
-    background: rgba(30, 4, 8, 0.72) !important;
-    border: 1px solid rgba(255, 215, 0, 0.55) !important;
+    gap: 7px !important;
+    background: linear-gradient(135deg, rgba(168, 28, 36, 0.88), rgba(122, 16, 24, 0.92)) !important;
+    border: 1px solid rgba(255, 215, 0, 0.85) !important;
+    box-shadow: 0 4px 16px rgba(168, 28, 36, 0.4), inset 0 1px 0 rgba(255, 235, 160, 0.35) !important;
+    border-radius: 9999px !important;
   }
   .hero-diya-icon {
     font-size: 11px !important;
@@ -6474,16 +6499,17 @@ h4 em {
 
   .hero-btn-gold {
     width: 100% !important;
-    min-height: 44px !important;
+    min-height: 46px !important;
     padding: 0 18px !important;
-    font-size: 11.5px !important;
-    letter-spacing: 0.08em !important;
+    font-size: 12px !important;
+    letter-spacing: 0.1em !important;
     justify-content: center !important;
-    background: linear-gradient(135deg, #c9a84c 0%, #ffd700 45%, #e8c97a 75%, #c9a84c 100%) !important;
-    color: #3a0505 !important;
+    background: linear-gradient(135deg, #ffd700 0%, #ffc000 35%, #f5a623 70%, #d48806 100%) !important;
+    color: #3b0709 !important;
     font-weight: 800 !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.85) !important;
-    box-shadow: 0 6px 22px rgba(255, 215, 0, 0.4) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 6px 24px rgba(255, 200, 0, 0.45) !important;
+    border-radius: 9999px !important;
   }
 
   .hero-sub-actions {
@@ -6495,26 +6521,29 @@ h4 em {
 
   .hero-btn-whatsapp {
     width: 100% !important;
-    min-height: 40px !important;
+    min-height: 42px !important;
     padding: 0 10px !important;
-    font-size: 11px !important;
+    font-size: 11.5px !important;
     justify-content: center !important;
-    background: #25d366 !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+    background: linear-gradient(135deg, #25d366 0%, #1ebe5d 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
     color: #ffffff !important;
     box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35) !important;
+    border-radius: 9999px !important;
   }
 
   .hero-btn-call {
     width: 100% !important;
-    min-height: 40px !important;
+    min-height: 42px !important;
     padding: 0 10px !important;
-    font-size: 11px !important;
+    font-size: 11.5px !important;
     justify-content: center !important;
     background: #ffffff !important;
-    border: 1.5px solid var(--color-gold) !important;
-    color: #5c0a0a !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18) !important;
+    border: 1.5px solid rgba(218, 165, 32, 0.85) !important;
+    color: #610d13 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 9999px !important;
   }
 
   .hero-btn-call svg {
@@ -6523,9 +6552,9 @@ h4 em {
 
   .hero-bottom-bar-left {
     padding: 10px 16px 12px !important;
-    background: rgba(14, 2, 4, 0.92) !important;
-    border-top: 1.5px solid rgba(201, 168, 76, 0.4) !important;
-    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.45) !important;
+    background: linear-gradient(180deg, rgba(85, 14, 20, 0.75) 0%, rgba(65, 10, 15, 0.92) 100%) !important;
+    border-top: 1px solid rgba(255, 215, 0, 0.6) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3) !important;
   }
 
   .scroll-discover-link,
